@@ -72,7 +72,7 @@ $first_price = $pills ? $pills[0]['price'] : $product->get_price_html();
         <?php endif; ?>
         <?php
         echo $product->get_image_id()
-            ? wp_get_attachment_image($product->get_image_id(), 'woocommerce_single', false, ['class' => 'h-full w-full object-contain p-8 transition-transform duration-500 ease-out group-hover:scale-105', 'loading' => 'lazy', 'alt' => $title])
+            ? wp_get_attachment_image($product->get_image_id(), 'woocommerce_single', false, ['class' => 'h-full w-full object-contain p-8 mix-blend-multiply transition-transform duration-500 ease-out group-hover:scale-105', 'loading' => 'lazy', 'alt' => $title])
             : '<img src="' . esc_url(wc_placeholder_img_src()) . '" alt="" class="h-full w-full object-contain p-8">';
         ?>
     </a>

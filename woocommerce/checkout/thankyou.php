@@ -47,9 +47,9 @@ $bacs_acc      = '48880531';
                 <p class="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto mb-8"><?php esc_html_e( 'Unfortunately your order payment could not be completed. Please re-attempt your payment or select direct bank transfer.', 'woocommerce' ); ?></p>
                 
                 <div class="flex flex-wrap items-center justify-center gap-4">
-                    <a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-lg"><?php esc_html_e( 'Retry Payment', 'woocommerce' ); ?></a>
+                    <a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-primary text-white font-bold hover:bg-primary-dark transition-all shadow-md hover:shadow-none"><?php esc_html_e( 'Retry Payment', 'woocommerce' ); ?></a>
                     <?php if ( is_user_logged_in() ) : ?>
-                        <a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-border text-foreground font-bold hover:bg-muted transition-all"><?php esc_html_e( 'My Account', 'woocommerce' ); ?></a>
+                        <a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-border text-foreground font-bold hover:bg-muted transition-all"><?php esc_html_e( 'My Account', 'woocommerce' ); ?></a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -69,8 +69,8 @@ $bacs_acc      = '48880531';
 
             <!-- Hero Header Card -->
             <div class="text-center mb-8">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-semibold mb-4 shadow-xs">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-success-soft border border-border text-success text-xs sm:text-sm font-semibold mb-4 shadow-xs">
+                    <span class="w-2 h-2 rounded-full bg-success-soft0 animate-pulse"></span>
                     <?php echo $is_bacs ? 'Order Placed • Awaiting Bank Transfer' : 'Order Placed Successfully'; ?>
                 </div>
                 
@@ -117,8 +117,8 @@ $bacs_acc      = '48880531';
                             <span>Confirmation sent to: </span>
                             <strong class="text-foreground"><?php echo esc_html( $order->get_billing_email() ); ?></strong>
                         </div>
-                        <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
-                            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span class="inline-flex items-center gap-1.5 text-success font-medium">
+                            <svg class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             Tax Invoice Generated
                         </span>
                     </div>
@@ -127,12 +127,12 @@ $bacs_acc      = '48880531';
 
             <?php if ( $is_bacs ) : ?>
                 <!-- Commonwealth Bank Transfer Card -->
-                <div class="bg-gradient-to-b from-[#FAF5E8]/60 to-[#FFFDF9] border-2 border-[#EAB308]/40 rounded-3xl p-6 sm:p-8 shadow-sm mb-8 relative overflow-hidden">
+                <div class="bg-gradient-to-b from-[#FAF5E8]/60 to-[#FFFDF9] border border-[#EAB308]/40 rounded-3xl p-6 sm:p-8 shadow-sm mb-8 relative overflow-hidden">
                     <!-- Brand Top Bar -->
                     <div class="flex flex-wrap items-center justify-between gap-3 pb-5 mb-6 border-b border-[#EAB308]/30">
                         <div class="flex items-center gap-3">
                             <!-- Commonwealth Bank Yellow Diamond Badge -->
-                            <div class="w-11 h-11 rounded-xl bg-[#FFCC00] flex items-center justify-center shadow-xs border border-amber-300">
+                            <div class="w-11 h-11 rounded-xl bg-[#FFCC00] flex items-center justify-center shadow-xs border border-border">
                                 <svg class="w-6 h-6 text-[#1A1A1A]" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2L2 12l10 10 10-10L12 2zm0 4.2L17.8 12 12 17.8 6.2 12 12 6.2z"/>
                                 </svg>
@@ -204,7 +204,7 @@ $bacs_acc      = '48880531';
                     <!-- Transfer Reference Warning Box -->
                     <div class="bg-white/95 border border-[#EAB308]/60 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5">
+                            <div class="w-8 h-8 rounded-full bg-primary-soft text-primary flex items-center justify-center shrink-0 mt-0.5">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                             </div>
                             <div>
@@ -243,7 +243,7 @@ $bacs_acc      = '48880531';
                         </div>
 
                         <div class="bg-white/80 border border-blue-100 rounded-2xl p-4">
-                            <div class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center mb-2">3</div>
+                            <div class="w-7 h-7 rounded-full bg-success-soft text-success font-bold text-xs flex items-center justify-center mb-2">3</div>
                             <h4 class="font-bold text-sm text-foreground mb-1">Fast Dispatch</h4>
                             <p class="text-xs text-muted-foreground mb-0">Once verified, your order is dispatched via Australia Post with tracking sent straight to your email.</p>
                         </div>
@@ -483,11 +483,11 @@ function copyValue(text, btn) {
 
 function showCopied(btn) {
     var originalHTML = btn.innerHTML;
-    btn.innerHTML = '<svg class="w-3.5 h-3.5 text-emerald-600 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="text-emerald-700 font-bold">Copied!</span>';
-    btn.classList.add('border-emerald-300', 'bg-emerald-50');
+    btn.innerHTML = '<svg class="w-3.5 h-3.5 text-success inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span class="text-success font-bold">Copied!</span>';
+    btn.classList.add('border-border', 'bg-success-soft');
     setTimeout(function() {
         btn.innerHTML = originalHTML;
-        btn.classList.remove('border-emerald-300', 'bg-emerald-50');
+        btn.classList.remove('border-border', 'bg-success-soft');
     }, 2000);
 }
 </script>

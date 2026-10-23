@@ -32,7 +32,7 @@ $btn2_url = get_sub_field('secondary_button_url') ?: 'mailto:orders@waklertaustr
                     <a href="<?= esc_url($btn_url) ?>" class="inline-flex items-center justify-center gap-2 bg-white text-primary-dark font-bold px-4 py-2 sm:px-7 sm:py-3 rounded-full hover:bg-accent transition-colors shadow-sm text-xs sm:text-sm whitespace-nowrap">
                         <?= $btn ?>
                     </a>
-                    <a href="<?= esc_url($btn2_url) ?>" class="inline-flex items-center justify-center gap-2 border-2 border-white/50 text-white font-bold px-4 py-2 sm:px-7 sm:py-3 rounded-full hover:border-accent hover:bg-accent hover:text-ink transition-colors text-xs sm:text-sm whitespace-nowrap">
+                    <a href="<?= esc_url($btn2_url) ?>" class="inline-flex items-center justify-center gap-2 border border-white/50 text-white font-bold px-4 py-2 sm:px-7 sm:py-3 rounded-full hover:border-accent hover:bg-accent hover:text-ink transition-colors text-xs sm:text-sm whitespace-nowrap">
                         <?= $btn2 ?>
                     </a>
                 </div>

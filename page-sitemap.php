@@ -90,55 +90,55 @@ if ($delivery_links) {
 
 <main>
     <!-- 2-Tone Patterned Header -->
-    <header class="relative overflow-hidden border-b-2 border-dashed border-sky-300/80 bg-gradient-to-b from-[#f0f6fa] via-[#eef5fa] to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9">
+    <header class="relative overflow-hidden border-b border-border bg-gradient-to-b from-primary-softer via-primary-softer to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9">
         <div class="container-site max-w-4xl mx-auto px-4 relative z-10">
             <!-- Breadcrumbs -->
             <div class="mb-3">
-                <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-dashed border-sky-300/80 bg-white/90 px-3.5 py-1 text-xs font-medium text-slate-500 shadow-xs backdrop-blur">
-                    <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-slate-600 transition-colors hover:text-[#0c4161]">Home</a>
-                    <span class="text-sky-300 font-normal">/</span>
-                    <span aria-current="page" class="font-extrabold text-[#0c4161]">Sitemap</span>
+                <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-border bg-white/90 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-xs backdrop-blur">
+                    <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-muted-foreground transition-colors hover:text-ink">Home</a>
+                    <span class="text-primary-light font-normal">/</span>
+                    <span aria-current="page" class="font-extrabold text-ink">Sitemap</span>
                 </nav>
             </div>
 
             <!-- Eyebrow Badge -->
             <div class="mb-2.5">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#0c4161] shadow-xs">
-                    <span class="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" aria-hidden="true"></span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink shadow-xs">
+                    <span class="h-1.5 w-1.5 rounded-full bg-primary-soft0 animate-pulse" aria-hidden="true"></span>
                     Site Directory
                 </span>
             </div>
 
-            <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-[#0c4161]">
+            <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-ink">
                 <?= esc_html($sitemap_title) ?>
             </h1>
 
-            <p class="mx-auto mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-slate-600">
+            <p class="mx-auto mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-muted-foreground">
                 <?= esc_html($sitemap_intro) ?>
             </p>
         </div>
     </header>
 
-    <section class="py-7 md:py-10 bg-gradient-to-b from-white via-slate-50/50 to-white">
+    <section class="py-7 md:py-10 bg-gradient-to-b from-white via-primary-softer to-white">
         <div class="container-site grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             <?php foreach ($columns as $column): ?>
-            <section class="rounded-2xl border-2 border-dashed border-sky-200/80 bg-white p-6 shadow-xs transition-all hover:border-sky-400 hover:shadow-md">
-                <h2 class="mb-4 border-b border-slate-100 pb-3 font-heading text-base font-black text-[#0c4161] uppercase tracking-wider">
+            <section class="rounded-2xl border border-border bg-white p-6 shadow-xs transition-all hover:border-border hover:shadow-md">
+                <h2 class="mb-4 border-b border-border pb-3 font-heading text-base font-black text-ink uppercase tracking-wider">
                     <?= esc_html($column['title']) ?>
                 </h2>
                 <?php if (!empty($column['links'])): ?>
                 <ul class="space-y-2.5">
                     <?php foreach ($column['links'] as $link): ?>
                     <li>
-                        <a href="<?= esc_url($link['url']) ?>" <?= !empty($link['target']) ? 'target="' . esc_attr($link['target']) . '" rel="noopener noreferrer"' : '' ?> class="group flex items-center gap-2 text-sm text-slate-600 hover:text-[#0c4161] font-medium transition-all">
-                            <span class="h-1.5 w-1.5 rounded-full bg-sky-300 group-hover:bg-[#0c4161] transition-colors"></span>
+                        <a href="<?= esc_url($link['url']) ?>" <?= !empty($link['target']) ? 'target="' . esc_attr($link['target']) . '" rel="noopener noreferrer"' : '' ?> class="group flex items-center gap-2 text-sm text-muted-foreground hover:text-ink font-medium transition-all">
+                            <span class="h-1.5 w-1.5 rounded-full bg-primary group-hover:bg-primary transition-colors"></span>
                             <span class="group-hover:translate-x-0.5 transition-transform"><?= esc_html($link['title']) ?></span>
                         </a>
                     </li>
                     <?php endforeach; ?>
                 </ul>
                 <?php else: ?>
-                <p class="text-xs text-slate-400">No links in this category.</p>
+                <p class="text-xs text-muted-foreground">No links in this category.</p>
                 <?php endif; ?>
             </section>
             <?php endforeach; ?>

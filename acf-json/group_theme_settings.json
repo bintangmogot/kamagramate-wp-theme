@@ -1316,6 +1316,182 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_kmg_tab_labels",
+            "label": "Interface Labels",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_kmg_lbl_toc",
+            "label": "Table of Contents Label",
+            "name": "label_on_this_page",
+            "type": "text",
+            "instructions": "Policy and guide pages (e.g. On this page).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_lbl_updated",
+            "label": "Last Updated Label",
+            "name": "label_last_updated",
+            "type": "text",
+            "instructions": "Shown before the date (e.g. Last updated).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_lbl_read",
+            "label": "Read Article Label",
+            "name": "label_read_article",
+            "type": "text",
+            "instructions": "Blog list link text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_lbl_related",
+            "label": "Related Posts Heading",
+            "name": "label_related_posts",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_lbl_reading",
+            "label": "Reading Time Suffix",
+            "name": "label_reading_time",
+            "type": "text",
+            "instructions": "e.g. min read",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_lbl_notfound_t",
+            "label": "404 Heading",
+            "name": "label_404_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_lbl_notfound_d",
+            "label": "404 Text",
+            "name": "label_404_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_lbl_notfound_b",
+            "label": "404 Button Label",
+            "name": "label_404_button",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_lbl_search_t",
+            "label": "Search Results Heading",
+            "name": "label_search_title",
+            "type": "text",
+            "instructions": "Search query is appended.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_lbl_empty",
+            "label": "No Results Text",
+            "name": "label_no_results",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -1339,5 +1515,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792762780
+    "modified": 1792770598
 }

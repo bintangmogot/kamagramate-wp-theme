@@ -12,7 +12,7 @@ $has_modules  = $blog_page_id && have_rows('modules', $blog_page_id);
 function modmy_render_blog_loop() {
     $has_posts = have_posts();
     ?>
-    <section id="blog-articles" class="py-8 md:py-12 bg-gradient-to-b from-white via-slate-50/40 to-white min-h-[50vh]" aria-label="Articles">
+    <section id="blog-articles" class="py-8 md:py-12 bg-gradient-to-b from-white via-primary-softer to-white min-h-[50vh]" aria-label="Articles">
         <div class="container-site max-w-7xl">
             <?php if ($has_posts) : ?>
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -53,7 +53,7 @@ function modmy_render_blog_loop() {
                             $excerpt = wp_trim_words($plain_text, 22, '...');
                         }
                     ?>
-                        <article id="post-<?php the_ID(); ?>" <?php post_class('group flex flex-col h-full bg-white border-2 border-dashed border-sky-300/80 hover:border-[#0c4161] rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-out'); ?>>
+                        <article id="post-<?php the_ID(); ?>" <?php post_class('group flex flex-col h-full bg-white border  border-border hover:border-primary rounded-2xl overflow-hidden shadow-xs hover:shadow-none hover:-translate-y-1.5 transition-all duration-300 ease-out'); ?>>
                             <!-- Thumbnail / Visual Media Area -->
                             <a href="<?php echo esc_url($permalink); ?>" class="block relative aspect-[16/10] overflow-hidden bg-slate-900 focus:outline-hidden" tabindex="-1" aria-hidden="true">
                                 <?php if (has_post_thumbnail($post_id)) : ?>
@@ -78,7 +78,7 @@ function modmy_render_blog_loop() {
 
                                 <!-- Floating Category Badge -->
                                 <div class="absolute top-3.5 left-3.5 z-10">
-                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black tracking-wider uppercase bg-amber-400 text-slate-950 shadow-md border border-amber-500/30">
+                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black tracking-wider uppercase bg-primary text-ink shadow-md border border-border">
                                         ★ <?php echo esc_html($cat_label); ?>
                                     </span>
                                 </div>
@@ -88,16 +88,16 @@ function modmy_render_blog_loop() {
                             <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between bg-white">
                                 <div>
                                     <!-- Meta: Date & Read Time -->
-                                    <div class="flex items-center gap-3 text-xs text-slate-500 mb-3 font-semibold">
+                                    <div class="flex items-center gap-3 text-xs text-muted-foreground mb-3 font-semibold">
                                         <time datetime="<?php echo esc_attr(get_the_date('c')); ?>" class="inline-flex items-center gap-1.5">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-sky-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-primary">
                                                 <path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd" />
                                             </svg>
                                             <?php echo esc_html(get_the_date('j M Y')); ?>
                                         </time>
                                         <span class="w-1 h-1 rounded-full bg-slate-300"></span>
                                         <span class="inline-flex items-center gap-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-amber-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-primary">
                                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" />
                                             </svg>
                                             <?php echo esc_html($read_time); ?> min read
@@ -105,21 +105,21 @@ function modmy_render_blog_loop() {
                                     </div>
 
                                     <!-- Title -->
-                                    <h2 class="font-heading font-black text-xl sm:text-2xl text-[#0c4161] group-hover:text-sky-900 transition-colors line-clamp-2 mb-3 leading-snug">
+                                    <h2 class="font-heading font-black text-xl sm:text-2xl text-ink group-hover:text-primary transition-colors line-clamp-2 mb-3 leading-snug">
                                         <a href="<?php echo esc_url($permalink); ?>">
                                             <?php the_title(); ?>
                                         </a>
                                     </h2>
 
                                     <!-- Excerpt -->
-                                    <p class="text-sm text-slate-600 line-clamp-3 mb-4 leading-relaxed flex-1">
+                                    <p class="text-sm text-muted-foreground line-clamp-3 mb-4 leading-relaxed flex-1">
                                         <?php echo esc_html(wp_trim_words($excerpt, 22, '...')); ?>
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Two-Tone Footer Block -->
-                            <a href="<?php echo esc_url($permalink); ?>" class="bg-[#f0f6fa] group-hover:bg-[#0c4161] p-3 px-4 sm:p-4 sm:px-6 border-t-2 border-dashed border-sky-200/80 flex items-center justify-between transition-colors duration-300 text-xs sm:text-sm font-black text-[#0c4161] group-hover:text-white mt-auto">
+                            <a href="<?php echo esc_url($permalink); ?>" class="bg-primary-softer group-hover:bg-primary p-3 px-4 sm:p-4 sm:px-6 border-t border-border flex items-center justify-between transition-colors duration-300 text-xs sm:text-sm font-black text-ink group-hover:text-white mt-auto">
                                 <span>Read Full Guide</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -143,17 +143,17 @@ function modmy_render_blog_loop() {
                         foreach ($pages as $page) {
                             if (strpos($page, 'current') !== false) {
                                 $num = strip_tags($page);
-                                echo '<li><span class="flex h-10 w-10 pointer-events-none items-center justify-center rounded-xl bg-[#0c4161] text-sm font-black text-white shadow-sm">' . esc_html($num) . '</span></li>';
+                                echo '<li><span class="flex h-10 w-10 pointer-events-none items-center justify-center rounded-xl bg-primary text-sm font-black text-white shadow-sm">' . esc_html($num) . '</span></li>';
                             } elseif (strpos($page, 'dots') !== false) {
-                                echo '<li><span class="flex h-10 w-10 items-center justify-center font-bold text-slate-400">&hellip;</span></li>';
+                                echo '<li><span class="flex h-10 w-10 items-center justify-center font-bold text-muted-foreground">&hellip;</span></li>';
                             } else {
                                 $styled_link = preg_replace(
                                     '/class="([^"]*)"/',
-                                    'class="$1 flex h-10 w-10 items-center justify-center rounded-xl border-2 border-dashed border-sky-200/80 bg-white text-sm font-bold text-[#0c4161] transition-all hover:bg-sky-50 hover:border-sky-300 hover:shadow-xs"',
+                                    'class="$1 flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-white text-sm font-bold text-ink transition-all hover:bg-primary-soft hover:border-border hover:shadow-xs"',
                                     $page
                                 );
                                 if (strpos($styled_link, 'class=') === false) {
-                                    $styled_link = str_replace('<a ', '<a class="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-dashed border-sky-200/80 bg-white text-sm font-bold text-[#0c4161] transition-all hover:bg-sky-50 hover:border-sky-300 hover:shadow-xs" ', $styled_link);
+                                    $styled_link = str_replace('<a ', '<a class="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-white text-sm font-bold text-ink transition-all hover:bg-primary-soft hover:border-border hover:shadow-xs" ', $styled_link);
                                 }
                                 echo '<li>' . $styled_link . '</li>';
                             }
@@ -164,14 +164,14 @@ function modmy_render_blog_loop() {
                 </div>
             <?php else : ?>
                 <div class="col-span-full py-12 text-center">
-                    <div class="mx-auto max-w-xl rounded-3xl border-2 border-dashed border-sky-200/80 bg-white px-6 py-12 shadow-xs md:px-10">
-                        <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#0c4161]">
+                    <div class="mx-auto max-w-xl rounded-3xl border border-border bg-white px-6 py-12 shadow-xs md:px-10">
+                        <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink">
                             <?php echo is_search() ? 'Search' : 'Waklert Australia Insights'; ?>
                         </span>
-                        <h2 class="mt-4 font-heading text-2xl font-black text-[#0c4161] md:text-3xl">
+                        <h2 class="mt-4 font-heading text-2xl font-black text-ink md:text-3xl">
                             <?php echo is_search() ? 'No results found' : 'No articles are published yet'; ?>
                         </h2>
-                        <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-600">
+                        <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
                             <?php echo is_search() ? 'Try a different search term.' : 'Please check back for new articles and general information.'; ?>
                         </p>
                         <?php if (is_search()) : ?>
@@ -225,17 +225,17 @@ if (is_home() && $has_modules) {
         $subtitle = '';
     }
     ?>
-    <section class="relative overflow-hidden border-b-2 border-dashed border-sky-300/80 bg-gradient-to-b from-[#f0f6fa] via-[#eef5fa] to-white bg-pattern-dots text-center py-10 md:py-14" data-testid="blog-archive-hero">
+    <section class="relative overflow-hidden border-b border-border bg-gradient-to-b from-primary-softer via-primary-softer to-white bg-pattern-dots text-center py-10 md:py-14" data-testid="blog-archive-hero">
         <div class="container-site mx-auto max-w-4xl px-4 relative z-10">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#0c4161] shadow-xs mb-3">
-                <span class="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" aria-hidden="true"></span>
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink shadow-xs mb-3">
+                <span class="h-1.5 w-1.5 rounded-full bg-primary-soft0 animate-pulse" aria-hidden="true"></span>
                 <?php echo is_search() ? 'Search Results' : 'Waklert Australia Insights'; ?>
             </span>
-            <h1 class="mx-auto mt-2 max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-tight text-[#0c4161]">
+            <h1 class="mx-auto mt-2 max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-tight text-ink">
                 <?php echo esc_html($title); ?>
             </h1>
             <?php if ($subtitle) : ?>
-                <div class="mx-auto mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-slate-600">
+                <div class="mx-auto mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-muted-foreground">
                     <?php echo is_archive() ? wp_kses_post($subtitle) : esc_html($subtitle); ?>
                 </div>
             <?php endif; ?>

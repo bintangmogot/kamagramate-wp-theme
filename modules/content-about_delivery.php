@@ -18,12 +18,12 @@ $fallback_presets = ['australia_delivery', 'express_shipping', 'discreet_sealed'
 <section class="py-6 md:py-10 bg-white">
     <div class="container-site max-w-5xl">
         <div class="text-center max-w-3xl mx-auto mb-8">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3 py-0.5 text-[11px] font-black uppercase tracking-[0.16em] text-[#0c4161]">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3 py-0.5 text-[11px] font-black uppercase tracking-[0.16em] text-ink">
                 Shipping &amp; Dispatch
             </span>
-            <h2 class="mt-2 font-heading font-black text-2xl sm:text-3xl md:text-4xl text-[#0c4161]"><?= esc_html($heading) ?></h2>
+            <h2 class="mt-2 font-heading font-black text-2xl sm:text-3xl md:text-4xl text-ink"><?= esc_html($heading) ?></h2>
             <?php if ($desc): ?>
-                <p class="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed whitespace-pre-line"><?= esc_html($desc) ?></p>
+                <p class="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed whitespace-pre-line"><?= esc_html($desc) ?></p>
             <?php endif; ?>
         </div>
 
@@ -46,17 +46,17 @@ $fallback_presets = ['australia_delivery', 'express_shipping', 'discreet_sealed'
                     'size_class'     => 'h-10 w-10 shrink-0',
                 ]);
             ?>
-            <div class="relative flex flex-col rounded-2xl border-2 border-dashed border-sky-200/80 bg-gradient-to-br from-sky-50/40 via-white to-transparent p-6 shadow-xs transition-all hover:border-sky-400 hover:shadow-md">
+            <div class="relative flex flex-col rounded-2xl border border-border bg-gradient-to-br from-primary-softer via-white to-transparent p-6 shadow-xs transition-all hover:border-border hover:shadow-md">
                 <div class="flex items-center gap-3.5 mb-3">
-                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white border border-sky-100 shadow-xs">
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white border border-border shadow-xs">
                         <?= $icon_html ?>
                     </span>
                     <?php if ($item_title !== ''): ?>
-                        <h3 class="font-heading font-bold text-base text-slate-900 m-0"><?= esc_html($item_title) ?></h3>
+                        <h3 class="font-heading font-bold text-base text-ink m-0"><?= esc_html($item_title) ?></h3>
                     <?php endif; ?>
                 </div>
                 <?php if ($item_desc !== ''): ?>
-                    <p class="text-sm text-slate-600 leading-relaxed m-0"><?= esc_html($item_desc) ?></p>
+                    <p class="text-sm text-muted-foreground leading-relaxed m-0"><?= esc_html($item_desc) ?></p>
                 <?php endif; ?>
             </div>
             <?php endforeach; ?>

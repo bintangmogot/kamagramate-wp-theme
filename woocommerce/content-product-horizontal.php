@@ -31,7 +31,7 @@ $min_price  = $product->is_type('variable') ? $product->get_variation_price('min
     <a href="<?php echo esc_url($link); ?>" class="relative flex aspect-[4/3] items-center justify-center bg-primary-soft md:aspect-auto md:min-h-[320px]">
         <?php
         echo $product->get_image_id()
-            ? wp_get_attachment_image($product->get_image_id(), 'woocommerce_single', false, ['class' => 'h-full max-h-[300px] w-full object-contain p-8 transition-transform duration-500 ease-out group-hover:scale-105', 'loading' => 'lazy', 'alt' => $title])
+            ? wp_get_attachment_image($product->get_image_id(), 'woocommerce_single', false, ['class' => 'h-full max-h-[300px] w-full object-contain p-8 mix-blend-multiply transition-transform duration-500 ease-out group-hover:scale-105', 'loading' => 'lazy', 'alt' => $title])
             : '';
         ?>
     </a>

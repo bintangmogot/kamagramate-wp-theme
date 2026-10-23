@@ -42,36 +42,36 @@ $v_icon = waklert_render_card_icon([
         <div class="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
             
             <!-- Mission / Approach Card -->
-            <div class="relative overflow-hidden rounded-2xl border-2 border-dashed border-sky-300/80 bg-gradient-to-br from-sky-50/50 via-white to-sky-50/20 p-6 sm:p-8 shadow-xs hover:border-sky-400 hover:shadow-md transition-all">
+            <div class="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary-softer via-white to-primary-softer p-6 sm:p-8 shadow-xs hover:border-border hover:shadow-md transition-all">
                 <div class="flex items-center gap-3.5 mb-4">
-                    <span class="flex h-13 w-13 shrink-0 items-center justify-center rounded-xl bg-white border border-sky-100 shadow-xs">
+                    <span class="flex h-13 w-13 shrink-0 items-center justify-center rounded-xl bg-white border border-border shadow-xs">
                         <?= $m_icon ?>
                     </span>
                     <div>
-                        <span class="text-[11px] font-black uppercase tracking-widest text-[#0c4161]/70">Core Purpose</span>
-                        <h2 class="font-heading font-black text-xl sm:text-2xl text-[#0c4161] m-0"><?= esc_html($m_head) ?></h2>
+                        <span class="text-[11px] font-black uppercase tracking-widest text-ink">Core Purpose</span>
+                        <h2 class="font-heading font-black text-xl sm:text-2xl text-ink m-0"><?= esc_html($m_head) ?></h2>
                     </div>
                 </div>
                 <?php if ($m_desc): ?>
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed whitespace-pre-line m-0">
+                    <p class="text-muted-foreground text-sm sm:text-base leading-relaxed whitespace-pre-line m-0">
                         <?= esc_html($m_desc) ?>
                     </p>
                 <?php endif; ?>
             </div>
 
             <!-- Vision / Information First Card -->
-            <div class="relative overflow-hidden rounded-2xl border-2 border-dashed border-amber-300/80 bg-gradient-to-br from-amber-50/50 via-white to-amber-50/20 p-6 sm:p-8 shadow-xs hover:border-amber-400 hover:shadow-md transition-all">
+            <div class="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary via-white to-primary p-6 sm:p-8 shadow-xs hover:border-border hover:shadow-md transition-all">
                 <div class="flex items-center gap-3.5 mb-4">
-                    <span class="flex h-13 w-13 shrink-0 items-center justify-center rounded-xl bg-white border border-amber-100 shadow-xs">
+                    <span class="flex h-13 w-13 shrink-0 items-center justify-center rounded-xl bg-white border border-border shadow-xs">
                         <?= $v_icon ?>
                     </span>
                     <div>
-                        <span class="text-[11px] font-black uppercase tracking-widest text-amber-700">Medical Clarity</span>
-                        <h2 class="font-heading font-black text-xl sm:text-2xl text-slate-900 m-0"><?= esc_html($v_head) ?></h2>
+                        <span class="text-[11px] font-black uppercase tracking-widest text-primary">Medical Clarity</span>
+                        <h2 class="font-heading font-black text-xl sm:text-2xl text-ink m-0"><?= esc_html($v_head) ?></h2>
                     </div>
                 </div>
                 <?php if ($v_desc): ?>
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed whitespace-pre-line m-0">
+                    <p class="text-muted-foreground text-sm sm:text-base leading-relaxed whitespace-pre-line m-0">
                         <?= esc_html($v_desc) ?>
                     </p>
                 <?php endif; ?>

@@ -114,7 +114,7 @@ $get_variations = static function ($product) {
             </p>
         </header>
 
-        <div role="region" aria-label="Product comparison carousel" tabindex="0" class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-4 pb-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:mx-0 md:grid md:grid-cols-3 md:items-stretch md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+        <div role="region" aria-label="Product comparison carousel" tabindex="0" class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-4 pb-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:mx-0 md:grid md:grid-cols-3 md:items-stretch md:gap-5 md:overflow-visible md:px-0 md:pb-0">
             <?php foreach ($catalog_products as $product): ?>
                 <article class="flex h-full w-[86%] max-w-sm shrink-0 snap-start flex-col rounded-2xl border border-border bg-card p-5 shadow-card md:w-auto md:max-w-none md:shrink md:p-6">
                     <?php

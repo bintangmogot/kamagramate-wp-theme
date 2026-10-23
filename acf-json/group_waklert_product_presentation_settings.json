@@ -233,6 +233,198 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_tab",
+            "label": "Product Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_kmg_pdp_qh",
+            "label": "Quantity Selector Heading",
+            "name": "product_quantity_heading",
+            "type": "text",
+            "instructions": "Required wording: Choose Quantity (prices in AUD)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_ql",
+            "label": "Quantity Stepper Label",
+            "name": "product_quantity_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_buy",
+            "label": "Buy Button Label",
+            "name": "product_buy_button_label",
+            "type": "text",
+            "instructions": "Total price is appended after a hyphen.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_sticky",
+            "label": "Sticky Bar Button Label",
+            "name": "product_sticky_button_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_stock",
+            "label": "In Stock Badge",
+            "name": "product_in_stock_badge",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_oos",
+            "label": "Out of Stock Label",
+            "name": "product_out_of_stock_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_td1",
+            "label": "Trust 1 Subtitle (Dispatch)",
+            "name": "product_trust_dispatch_desc",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_td2",
+            "label": "Trust 2 Subtitle (Checkout)",
+            "name": "product_trust_checkout_desc",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_td3",
+            "label": "Trust 3 Subtitle (Quality)",
+            "name": "product_trust_quality_desc",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_rel_e",
+            "label": "Related Products Eyebrow",
+            "name": "product_related_eyebrow",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_pdp_rel_h",
+            "label": "Related Products Heading",
+            "name": "product_related_heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -253,5 +445,5 @@
     "active": true,
     "description": "Editable labels and shipping/trust messages used on WooCommerce product pages.",
     "show_in_rest": 0,
-    "modified": 1792763086
+    "modified": 1792770653
 }

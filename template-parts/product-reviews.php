@@ -61,22 +61,22 @@ if ($average_rating !== null) {
 }
 ?>
 
-<section id="product-reviews" class="scroll-mt-24 border-t border-slate-200 bg-slate-50 py-8 md:py-12" data-testid="section-reviews">
+<section id="product-reviews" class="scroll-mt-24 border-t border-border bg-muted py-8 md:py-12" data-testid="section-reviews">
     <div class="container-site max-w-6xl">
         <header class="mb-10 flex flex-col items-center justify-center text-center">
             <span class="mb-4 inline-flex items-center gap-1.5 rounded-full bg-primary-softer px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-dark">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-accent" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.2 6.8 1-4.9 4.8L18 21l-6-3.2L5.9 21l1.2-7-5-4.8 6.9-1L12 2Z"/></svg>
                 Verified reviews
             </span>
-            <h2 class="mb-2 font-heading text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">What our customers say</h2>
-            <p class="text-sm font-medium text-slate-500 md:text-base">Real experiences from verified buyers</p>
+            <h2 class="mb-2 font-heading text-3xl font-extrabold tracking-tight text-ink md:text-4xl">What our customers say</h2>
+            <p class="text-sm font-medium text-muted-foreground md:text-base">Real experiences from verified buyers</p>
         </header>
 
         <?php if ($review_count > 0 && $rating_count > 0): ?>
-            <div class="mb-8 flex flex-col gap-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:flex-row md:gap-16 md:p-10">
+            <div class="mb-8 flex flex-col gap-8 rounded-3xl border border-border bg-white p-6 shadow-sm md:flex-row md:gap-16 md:p-10">
                 <div class="flex shrink-0 flex-col justify-center">
-                    <div class="mb-2 text-sm font-semibold text-slate-500">Customer rating</div>
-                    <div class="mb-3 text-5xl font-extrabold text-slate-900"><?= esc_html(number_format((float) $average_rating, 1)) ?></div>
+                    <div class="mb-2 text-sm font-semibold text-muted-foreground">Customer rating</div>
+                    <div class="mb-3 text-5xl font-extrabold text-ink"><?= esc_html(number_format((float) $average_rating, 1)) ?></div>
                     <div class="mb-3 flex gap-0.5" aria-label="<?= esc_attr(number_format((float) $average_rating, 1)) ?> out of 5 stars">
                         <?php for ($star = 1; $star <= 5; $star++): ?>
                             <span class="flex h-6 w-6 items-center justify-center rounded-sm <?= $star <= $rounded_rating ? 'bg-primary' : 'bg-slate-200' ?>">
@@ -84,15 +84,15 @@ if ($average_rating !== null) {
                             </span>
                         <?php endfor; ?>
                     </div>
-                    <div class="mb-1 font-bold text-slate-900"><?= esc_html($rating_label) ?></div>
-                    <div class="text-xs font-medium text-slate-500">Based on <?= esc_html(number_format_i18n($review_count)) ?> <?= esc_html(_n('review', 'reviews', $review_count, 'modmy')) ?></div>
+                    <div class="mb-1 font-bold text-ink"><?= esc_html($rating_label) ?></div>
+                    <div class="text-xs font-medium text-muted-foreground">Based on <?= esc_html(number_format_i18n($review_count)) ?> <?= esc_html(_n('review', 'reviews', $review_count, 'modmy')) ?></div>
                 </div>
 
                 <div class="flex w-full max-w-lg flex-1 flex-col justify-center gap-3">
                     <?php foreach ([5, 4, 3, 2, 1] as $star): ?>
-                        <div class="flex items-center gap-4 text-xs font-semibold text-slate-600">
+                        <div class="flex items-center gap-4 text-xs font-semibold text-muted-foreground">
                             <span class="w-10 whitespace-nowrap"><?= esc_html($star) ?>-star</span>
-                            <span class="h-2.5 flex-1 overflow-hidden rounded-full bg-slate-100">
+                            <span class="h-2.5 flex-1 overflow-hidden rounded-full bg-muted">
                                 <span class="block h-full rounded-full bg-primary" style="width: <?= esc_attr($rating_percentages[$star]) ?>%"></span>
                             </span>
                             <span class="w-10 text-right"><?= esc_html($rating_percentages[$star]) ?>%</span>
@@ -104,10 +104,10 @@ if ($average_rating !== null) {
 
         <?php if ($review_count > 1): ?>
             <div class="mb-4 flex justify-end gap-2 pr-2">
-                <button type="button" class="waklert-review-prev flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:border-primary-light hover:text-primary-dark" aria-label="Previous reviews">
+                <button type="button" class="waklert-review-prev flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-muted-foreground transition-colors hover:border-primary-light hover:text-primary-dark" aria-label="Previous reviews">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6"/></svg>
                 </button>
-                <button type="button" class="waklert-review-next flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:border-primary-light hover:text-primary-dark" aria-label="Next reviews">
+                <button type="button" class="waklert-review-next flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-muted-foreground transition-colors hover:border-primary-light hover:text-primary-dark" aria-label="Next reviews">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
                 </button>
             </div>
@@ -134,7 +134,7 @@ if ($average_rating !== null) {
                     $initials = strtoupper($first_initial . $last_initial);
                     $is_verified = !$reviewer_meta || stripos((string) $reviewer_meta, 'verified') !== false;
                 ?>
-                    <article class="w-full shrink-0 snap-start rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:w-[350px]" data-testid="review-<?= esc_attr($index) ?>">
+                    <article class="w-full shrink-0 snap-start rounded-2xl border border-border bg-white p-6 shadow-sm sm:w-[350px]" data-testid="review-<?= esc_attr($index) ?>">
                         <?php if (is_numeric($rating_value) && (float) $rating_value >= 1 && (float) $rating_value <= 5): ?>
                             <div class="mb-4 flex gap-0.5" aria-label="<?= esc_attr($rating_value) ?> out of 5 stars">
                                 <?php for ($star = 1; $star <= 5; $star++): ?>
@@ -143,15 +143,15 @@ if ($average_rating !== null) {
                             </div>
                         <?php endif; ?>
 
-                        <h3 class="mb-2 text-[15px] font-bold leading-snug text-slate-900"><?= esc_html($title) ?></h3>
-                        <div class="mb-6 line-clamp-4 flex-1 text-[13px] leading-relaxed text-slate-600"><?= wp_kses_post($body) ?></div>
+                        <h3 class="mb-2 text-[15px] font-bold leading-snug text-ink"><?= esc_html($title) ?></h3>
+                        <div class="mb-6 line-clamp-4 flex-1 text-[13px] leading-relaxed text-muted-foreground"><?= wp_kses_post($body) ?></div>
 
-                        <div class="mt-auto flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
+                        <div class="mt-auto flex items-center justify-between gap-3 border-t border-border pt-4">
                             <div class="flex min-w-0 items-center gap-3">
                                 <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-softer text-[11px] font-bold uppercase tracking-wider text-primary-dark"><?= esc_html($initials) ?></span>
                                 <span class="flex min-w-0 flex-col">
-                                    <span class="truncate text-[13px] font-bold leading-tight text-slate-900"><?= esc_html($reviewer) ?></span>
-                                    <span class="mt-0.5 text-[10px] font-medium text-slate-400"><?= esc_html(get_the_date('j F Y', $post_id)) ?></span>
+                                    <span class="truncate text-[13px] font-bold leading-tight text-ink"><?= esc_html($reviewer) ?></span>
+                                    <span class="mt-0.5 text-[10px] font-medium text-muted-foreground"><?= esc_html(get_the_date('j F Y', $post_id)) ?></span>
                                 </span>
                             </div>
                             <span class="inline-flex shrink-0 items-center gap-1 rounded bg-primary-softer px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-primary-dark">
@@ -163,17 +163,17 @@ if ($average_rating !== null) {
                 <?php endforeach; ?>
             </div>
         <?php else: ?>
-            <div class="mb-8 rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center md:p-12">
-                <p class="font-medium text-slate-500">No reviews yet. Be the first to review this product.</p>
+            <div class="mb-8 rounded-2xl border border-border bg-white p-8 text-center md:p-12">
+                <p class="font-medium text-muted-foreground">No reviews yet. Be the first to review this product.</p>
             </div>
         <?php endif; ?>
 
-        <div class="relative mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-            <div class="mb-5 flex items-center gap-3 border-b border-slate-100 pb-5">
+        <div class="relative mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-sm md:p-8">
+            <div class="mb-5 flex items-center gap-3 border-b border-border pb-5">
                 <span class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-softer text-primary-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 </span>
-                <h3 class="font-bold text-slate-900">Write a Review <span class="font-normal text-slate-400">for <?= esc_html($product_name) ?></span></h3>
+                <h3 class="font-bold text-ink">Write a Review <span class="font-normal text-muted-foreground">for <?= esc_html($product_name) ?></span></h3>
             </div>
 
             <form id="waklert-product-review-form" class="space-y-4" data-endpoint="<?= esc_url(admin_url('admin-ajax.php')) ?>">
@@ -183,7 +183,7 @@ if ($average_rating !== null) {
                 <?php wp_nonce_field('waklert_submit_product_review', 'review_nonce'); ?>
 
                 <div>
-                    <label class="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-700">Your rating</label>
+                    <label class="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Your rating</label>
                     <div class="flex items-center gap-1" role="group" aria-label="Choose a rating">
                         <?php for ($star = 1; $star <= 5; $star++): ?>
                             <button type="button" class="waklert-review-star text-slate-300 transition-colors hover:text-accent" data-rating="<?= esc_attr($star) ?>" aria-label="<?= esc_attr($star) ?> star<?= $star === 1 ? '' : 's' ?>" aria-pressed="false">
@@ -194,29 +194,29 @@ if ($average_rating !== null) {
                 </div>
 
                 <div class="grid grid-cols-1 gap-3 md:grid-cols-3">
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">Name
-                        <input type="text" name="reviewer_name" required autocomplete="name" placeholder="Your name" class="mt-1.5 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Name
+                        <input type="text" name="reviewer_name" required autocomplete="name" placeholder="Your name" class="mt-1.5 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-ink placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
                     </label>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">Email
-                        <input type="email" name="reviewer_email" required autocomplete="email" placeholder="you@example.com" class="mt-1.5 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Email
+                        <input type="email" name="reviewer_email" required autocomplete="email" placeholder="you@example.com" class="mt-1.5 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-ink placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
                     </label>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">Title
-                        <input type="text" name="review_title" required placeholder="Summarize your review" class="mt-1.5 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Title
+                        <input type="text" name="review_title" required placeholder="Summarize your review" class="mt-1.5 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-ink placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
                     </label>
                 </div>
 
-                <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">Your review
-                    <textarea name="review_content" required rows="4" placeholder="Share your experience..." class="mt-1.5 w-full resize-y rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"></textarea>
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Your review
+                    <textarea name="review_content" required rows="4" placeholder="Share your experience..." class="mt-1.5 w-full resize-y rounded-lg border border-border bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-ink placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"></textarea>
                 </label>
 
                 <div class="flex flex-col items-center justify-between gap-4 pt-2 sm:flex-row">
-                    <p class="w-full text-left text-[10px] text-slate-400 sm:w-auto">All fields are required.</p>
+                    <p class="w-full text-left text-[10px] text-muted-foreground sm:w-auto">All fields are required.</p>
                     <div class="flex w-full flex-col items-end sm:w-auto">
                         <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 sm:px-8 sm:py-3.5 text-xs sm:text-sm font-bold text-primary-foreground transition-colors hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-primary/20 disabled:cursor-wait disabled:opacity-70 sm:w-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m22 2-7 20-4-9-9-4 20-7ZM22 2 11 13"/></svg>
                             Submit Review
                         </button>
-                        <span class="mt-2 text-[10px] font-medium text-slate-400">Moderated before publishing</span>
+                        <span class="mt-2 text-[10px] font-medium text-muted-foreground">Moderated before publishing</span>
                     </div>
                 </div>
 

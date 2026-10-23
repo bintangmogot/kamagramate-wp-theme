@@ -23,11 +23,11 @@ remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
         </div>
     </div>
 
-    <h2 class="font-heading text-3xl font-black text-slate-900 mb-4">
+    <h2 class="font-heading text-3xl font-black text-ink mb-4">
         <?= "Your cart is empty" ?>
     </h2>
     
-    <p class="text-slate-500 mb-10 max-w-md mx-auto">
+    <p class="text-muted-foreground mb-10 max-w-md mx-auto">
         <?= "Looks like you haven't added anything to your cart yet. Discover our premium products and get started." ?>
     </p>
 

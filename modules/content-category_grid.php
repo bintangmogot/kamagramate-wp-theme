@@ -27,7 +27,7 @@ $suffix     = trim((string) get_sub_field('count_suffix'));
         <div class="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-3">
             <?php foreach ($terms as $term) :
                 $image = get_field('top_image', 'product_cat_' . $term->term_id) ?: get_term_meta($term->term_id, 'thumbnail_id', true);
-                $img   = kmg_image($image, 'medium_large', ['class' => 'h-full w-full object-contain p-6 transition-transform duration-500 ease-out group-hover:scale-105', 'loading' => 'lazy', 'alt' => '']);
+                $img   = kmg_image($image, 'medium_large', ['class' => 'h-full w-full object-contain p-6 mix-blend-multiply transition-transform duration-500 ease-out group-hover:scale-105', 'loading' => 'lazy', 'alt' => '']);
                 ?>
                 <a href="<?php echo esc_url(get_term_link($term)); ?>" class="group flex flex-col overflow-hidden rounded-[1.75rem] bg-primary-softer p-3 transition-colors hover:bg-primary-soft">
                     <span class="block aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-white"><?php echo $img; ?></span>

@@ -509,7 +509,7 @@ html {
 }
 
 .prose.prose-invert a {
-  color: #38bdf8 !important;
+  color: #8b5cf6 !important;
 }
 
 .prose.prose-invert a:hover {
@@ -686,17 +686,17 @@ details .prose > :last-child {
   -webkit-overflow-scrolling: touch;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  border: 2px dashed rgba(125, 211, 252, 0.85); /* border-sky-300/80 */
+  border: 1px solid rgba(233, 228, 243, 0.85); /* border-sky-300/80 */
   border-radius: 1.5rem; /* rounded-3xl / 24px */
   background-color: #ffffff;
-  box-shadow: 0 4px 20px -4px rgba(12, 65, 97, 0.08), 0 2px 6px -1px rgba(12, 65, 97, 0.04);
+  box-shadow: 0 4px 20px -4px rgba(26, 16, 48, 0.08), 0 2px 6px -1px rgba(26, 16, 48, 0.04);
 }
 
 .prose .table-wrapper::-webkit-scrollbar {
   height: 6px;
 }
 .prose .table-wrapper::-webkit-scrollbar-track {
-  background: #f0f6fa;
+  background: #faf8ff;
   border-radius: 9999px;
 }
 .prose .table-wrapper::-webkit-scrollbar-thumb {
@@ -704,7 +704,7 @@ details .prose > :last-child {
   border-radius: 9999px;
 }
 .prose .table-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: #6b2bd9;
 }
 
 /* Standalone table (when not wrapped in .table-wrapper) */
@@ -719,10 +719,10 @@ details .prose > :last-child {
   font-size: 0.9375rem;
   line-height: 1.55;
   background-color: #ffffff;
-  border: 2px dashed rgba(125, 211, 252, 0.85);
+  border: 1px solid rgba(233, 228, 243, 0.85);
   border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 4px 20px -4px rgba(12, 65, 97, 0.08);
+  box-shadow: 0 4px 20px -4px rgba(26, 16, 48, 0.08);
 }
 
 /* Table inside wrapper loses outer borders to avoid double lines */
@@ -737,8 +737,8 @@ details .prose > :last-child {
 
 /* Table Headers (Pacific Navy Gradient with crisp white typography) */
 .prose thead {
-  background: linear-gradient(135deg, #0c4161 0%, #082c42 100%);
-  border-bottom: 2px solid rgba(12, 65, 97, 0.3) !important;
+  background: linear-gradient(135deg, #1a1030 0%, #1a1030 100%);
+  border-bottom: 2px solid rgba(26, 16, 48, 0.3) !important;
 }
 
 .prose thead th,
@@ -752,8 +752,8 @@ details .prose > :last-child {
   padding: 1.125rem 1.35rem;
   vertical-align: middle;
   background: transparent;
-  border-bottom: 2px solid rgba(12, 65, 97, 0.3) !important;
-  border-right: 1px dashed rgba(255, 255, 255, 0.18) !important;
+  border-bottom: 2px solid rgba(26, 16, 48, 0.3) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.18) !important;
   border-left: none !important;
   border-top: none !important;
   text-align: left;
@@ -763,8 +763,8 @@ details .prose > :last-child {
 .prose thead td:last-child,
 .prose th:last-child {
   border-right: none !important;
-  background: linear-gradient(135deg, #09344e 0%, #062235 100%) !important;
-  border-left: 1px dashed rgba(255, 255, 255, 0.2) !important;
+  background: linear-gradient(135deg, #2a1d4a 0%, #1a1030 100%) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Ensure strong, b, span, p inside headers are bright white */
@@ -779,7 +779,7 @@ details .prose > :last-child {
 /* First row when no explicit thead is used by the WYSIWYG editor */
 .prose table:not(:has(thead)) tbody tr:first-child td,
 .prose table:not(:has(thead)) tbody tr:first-child th {
-  background: linear-gradient(135deg, #0c4161 0%, #082c42 100%) !important;
+  background: linear-gradient(135deg, #1a1030 0%, #1a1030 100%) !important;
   font-family: var(--font-heading, inherit);
   font-weight: 800;
   font-size: 0.9375rem;
@@ -787,8 +787,8 @@ details .prose > :last-child {
   color: #ffffff !important;
   padding: 1.125rem 1.35rem;
   vertical-align: middle;
-  border-bottom: 2px solid rgba(12, 65, 97, 0.3) !important;
-  border-right: 1px dashed rgba(255, 255, 255, 0.18) !important;
+  border-bottom: 2px solid rgba(26, 16, 48, 0.3) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.18) !important;
   border-left: none !important;
   border-top: none !important;
 }
@@ -801,8 +801,8 @@ details .prose > :last-child {
 .prose table:not(:has(thead)) tbody tr:first-child td:last-child,
 .prose table:not(:has(thead)) tbody tr:first-child th:last-child {
   border-right: none !important;
-  background: linear-gradient(135deg, #09344e 0%, #062235 100%) !important;
-  border-left: 1px dashed rgba(255, 255, 255, 0.2) !important;
+  background: linear-gradient(135deg, #2a1d4a 0%, #1a1030 100%) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Table Body Rows */
@@ -818,13 +818,13 @@ details .prose > :last-child {
 
 /* Row Hover Feedback */
 .prose tbody tr:hover {
-  background-color: #f0f7fd !important;
+  background-color: #f3eefe !important;
 }
 
 /* Table Body Cells */
 .prose tbody td {
   padding: 1rem 1.35rem;
-  border-bottom: 1px dashed rgba(186, 230, 253, 0.75) !important;
+  border-bottom: 1px solid rgba(233, 228, 243, 0.75) !important;
   border-right: none !important;
   border-left: none !important;
   border-top: none !important;
@@ -840,46 +840,46 @@ details .prose > :last-child {
 .prose tbody th:first-child {
   font-family: var(--font-heading, inherit);
   font-weight: 800;
-  color: #0c4161 !important;
-  background-color: rgba(240, 246, 250, 0.5);
-  border-right: 1px dashed rgba(186, 230, 253, 0.65) !important;
+  color: #1a1030 !important;
+  background-color: rgba(250, 248, 255, 0.5);
+  border-right: 1px solid rgba(233, 228, 243, 0.65) !important;
 }
 
 .prose tbody td:first-child *,
 .prose tbody th:first-child * {
-  color: #0c4161 !important;
+  color: #1a1030 !important;
   font-weight: 800;
 }
 
 .prose tbody tr:nth-child(even) td:first-child,
 .prose tbody tr:nth-child(even) th:first-child {
-  background-color: rgba(240, 246, 250, 0.8);
+  background-color: rgba(250, 248, 255, 0.8);
 }
 
 .prose tbody tr:hover td:first-child,
 .prose tbody tr:hover th:first-child {
-  background-color: rgba(224, 242, 254, 0.65) !important;
+  background-color: rgba(243, 238, 254, 0.65) !important;
 }
 
 /* Last Column / Fallback Highlight (when no explicit highlight class is set) */
 .prose table:not(:has(.waklert-highlight-cell)) tbody tr td:last-child {
-  background-color: rgba(224, 242, 254, 0.35);
-  border-left: 1px dashed rgba(125, 211, 252, 0.75) !important;
-  color: #0c4161 !important;
+  background-color: rgba(243, 238, 254, 0.35);
+  border-left: 1px solid rgba(233, 228, 243, 0.75) !important;
+  color: #1a1030 !important;
   font-weight: 700;
 }
 
 .prose table:not(:has(.waklert-highlight-cell)) tbody tr td:last-child * {
-  color: #0c4161 !important;
+  color: #1a1030 !important;
   font-weight: 700;
 }
 
 .prose table:not(:has(.waklert-highlight-cell)) tbody tr:nth-child(even) td:last-child {
-  background-color: rgba(224, 242, 254, 0.55);
+  background-color: rgba(243, 238, 254, 0.55);
 }
 
 .prose table:not(:has(.waklert-highlight-cell)) tbody tr:hover td:last-child {
-  background-color: rgba(186, 230, 253, 0.75) !important;
+  background-color: rgba(233, 228, 243, 0.75) !important;
 }
 
 /* Last Row */
@@ -892,39 +892,39 @@ details .prose > :last-child {
 .prose th.waklert-highlight-header,
 .prose thead th.waklert-highlight-header,
 .prose thead td.waklert-highlight-header {
-  background: linear-gradient(135deg, #09344e 0%, #062235 100%) !important;
+  background: linear-gradient(135deg, #2a1d4a 0%, #1a1030 100%) !important;
   color: #ffffff !important;
   font-weight: 800;
-  border-left: 2px dashed rgba(251, 191, 36, 0.65) !important;
+  border-left: 1px solid rgba(139, 92, 246, 0.65) !important;
 }
 
 .prose td.waklert-highlight-cell,
 .prose tbody tr td.waklert-highlight-cell {
-  background-color: rgba(224, 242, 254, 0.4) !important;
+  background-color: rgba(243, 238, 254, 0.4) !important;
   font-weight: 700;
-  color: #0c4161 !important;
-  border-left: 1px dashed rgba(125, 211, 252, 0.8) !important;
+  color: #1a1030 !important;
+  border-left: 1px solid rgba(233, 228, 243, 0.8) !important;
 }
 
 .prose td.waklert-highlight-cell *,
 .prose tbody tr td.waklert-highlight-cell * {
-  color: #0c4161 !important;
+  color: #1a1030 !important;
   font-weight: 700;
 }
 
 .prose tbody tr:nth-child(even) td.waklert-highlight-cell {
-  background-color: rgba(224, 242, 254, 0.6) !important;
+  background-color: rgba(243, 238, 254, 0.6) !important;
 }
 
 .prose tbody tr:hover td.waklert-highlight-cell {
-  background-color: rgba(186, 230, 253, 0.8) !important;
+  background-color: rgba(233, 228, 243, 0.8) !important;
 }
 
 /* Special Featured Column (manual .is-featured) */
 .prose th.is-featured,
 .prose td.is-featured {
-  background-color: rgba(224, 242, 254, 0.5) !important;
-  color: #0c4161 !important;
+  background-color: rgba(243, 238, 254, 0.5) !important;
+  color: #1a1030 !important;
   font-weight: 700;
 }
 
@@ -2117,7 +2117,7 @@ a[aria-label="Waklert Australia"] > span:first-child::after {
   border-radius: var(--radius-xl, 1rem);
   padding: 0.5rem;
   box-shadow: 0 16px 36px -6px rgba(9, 21, 43, 0.16), 0 4px 12px -2px rgba(9, 21, 43, 0.08);
-  border: 2px dashed rgba(186, 230, 253, 0.8);
+  border: 1px solid rgba(233, 228, 243, 0.8);
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);

@@ -27,14 +27,14 @@ if (strpos($cta_link, '/dosage-guide') !== false) {
     <div class="container-site max-w-4xl">
         <div class="prose prose-slate max-w-none prose-a:text-primary hover:prose-a:text-primary-dark prose-headings:font-heading prose-headings:font-bold">
             <?php 
-            $default_seo_html = '<h2 class="font-heading text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">Ordering Modafinil in Australia</h2>
-            <p class="text-base text-slate-600 leading-relaxed mb-6">We\'ve made the process of buying modafinil online as straightforward as possible. Here\'s what to expect when you place an order with Waklert Australia.</p>
-            <h3 class="font-heading text-lg font-bold text-slate-900 mt-6 mb-2">Delivery Timeframes</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-6">Semua pesanan dihantar dengan cepat ke seluruh Australia dengan penjejakan penuh. Bandar-bandar utama cities like Sydney, Melbourne, Brisbane, and Perth biasanya menerima pesanan dalam masa 7-12 hari bekerja. Sabah dan Sarawak mengambil 10-16 hari bekerja. Pesanan atas A$399 layak untuk penghantaran percuma.</p>
-            <h3 class="font-heading text-lg font-bold text-slate-900 mt-6 mb-2">Customs & Packaging</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-6">Every order is shipped in plain, unmarked packaging with no indication of the contents. There is no branding or product information visible on the outside. Our shipments are processed through international channels and we maintain a high delivery success rate across all Australian states and territories.</p>
-            <h3 class="font-heading text-lg font-bold text-slate-900 mt-6 mb-2">What to Expect After Ordering</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-6">Once your order is placed, you\'ll receive a confirmation email with your order details. Tracking information is provided within 1-2 business days. If you have any questions about your order at any point, our support team is available via our contact page.</p>';
+            $default_seo_html = '<h2 class="font-heading text-2xl md:text-3xl font-extrabold text-ink mb-3">Ordering Modafinil in Australia</h2>
+            <p class="text-base text-muted-foreground leading-relaxed mb-6">We\'ve made the process of buying modafinil online as straightforward as possible. Here\'s what to expect when you place an order with Waklert Australia.</p>
+            <h3 class="font-heading text-lg font-bold text-ink mt-6 mb-2">Delivery Timeframes</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed mb-6">Semua pesanan dihantar dengan cepat ke seluruh Australia dengan penjejakan penuh. Bandar-bandar utama cities like Sydney, Melbourne, Brisbane, and Perth biasanya menerima pesanan dalam masa 7-12 hari bekerja. Sabah dan Sarawak mengambil 10-16 hari bekerja. Pesanan atas A$399 layak untuk penghantaran percuma.</p>
+            <h3 class="font-heading text-lg font-bold text-ink mt-6 mb-2">Customs & Packaging</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed mb-6">Every order is shipped in plain, unmarked packaging with no indication of the contents. There is no branding or product information visible on the outside. Our shipments are processed through international channels and we maintain a high delivery success rate across all Australian states and territories.</p>
+            <h3 class="font-heading text-lg font-bold text-ink mt-6 mb-2">What to Expect After Ordering</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed mb-6">Once your order is placed, you\'ll receive a confirmation email with your order details. Tracking information is provided within 1-2 business days. If you have any questions about your order at any point, our support team is available via our contact page.</p>';
 
             if ($content) {
                 echo $content ?: $default_seo_html;
@@ -52,8 +52,8 @@ if (strpos($cta_link, '/dosage-guide') !== false) {
                 </svg>
             </div>
             <div class="flex-1">
-                <h3 class="font-heading font-bold text-slate-900 text-lg"><?= $cta_title ?></h3>
-                <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                <h3 class="font-heading font-bold text-ink text-lg"><?= $cta_title ?></h3>
+                <p class="text-muted-foreground text-sm mt-1 leading-relaxed">
                     <?= $cta_desc ?>
                 </p>
             </div>

@@ -103,7 +103,7 @@ add_filter('nav_menu_link_attributes', function($atts, $item, $args, $depth = 0)
         if ($is_mobile) {
             if ($depth === 0) {
                 // Mobile Menu Root Link
-                $atts['class'] = (isset($atts['class']) ? $atts['class'] . ' ' : '') . 'flex-1 block px-6 py-3.5 text-[17px] font-semibold text-slate-800 hover:bg-stone-50 hover:text-primary transition-colors';
+                $atts['class'] = (isset($atts['class']) ? $atts['class'] . ' ' : '') . 'flex-1 block px-6 py-3.5 text-[17px] font-semibold text-ink hover:bg-stone-50 hover:text-primary transition-colors';
             } else {
                 // Mobile Menu Sub-item Link
                 $atts['class'] = (isset($atts['class']) ? $atts['class'] . ' ' : '') . 'flex items-center justify-between w-full px-4 py-2.5 text-[15px] font-medium text-foreground/85 hover:text-primary hover:bg-white rounded-xl transition-colors';
