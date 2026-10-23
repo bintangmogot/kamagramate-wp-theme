@@ -29,7 +29,7 @@ if (have_rows('steps')) {
 if (!$steps) {
     return;
 }
-$cols = count($steps) >= 4 ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-' . count($steps);
+$cols = ['', 'md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'md:grid-cols-2 lg:grid-cols-4'][min(4, count($steps))];
 ?>
 <section class="kmg-section kmg-section-tint" data-testid="how-to-order">
     <div class="kmg-container">

@@ -121,7 +121,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "#0C4161",
+                            "default_value": "",
                             "placeholder": "#0C4161",
                             "prepend": "",
                             "append": "",
@@ -365,20 +365,27 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                        "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                        "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel guarantee / reship or refund",
+                                        "live_chat_support": "Real people on chat / support",
+                                        "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                                        "aud_checkout": "Simple AUD checkout / bank transfer",
+                                        "express_shipping": "Fast domestic shipping",
+                                        "australia_delivery": "Australia-wide tracked delivery",
+                                        "browse_catalogue": "Browse the range / product catalogue",
+                                        "listing_details": "Clear listing details / compare strengths",
+                                        "returning_loyalty": "Returning customers / loyalty",
+                                        "discreet_sealed": "Discreet plain packaging",
+                                        "po_box_delivery": "PO Box and parcel locker delivery",
+                                        "no_customs": "Smooth domestic dispatch",
+                                        "affordable_value": "Affordable direct pricing",
+                                        "secure_lock": "Secure and encrypted",
+                                        "clock": "Hours / fast response",
+                                        "medicine": "Genuine medicine",
+                                        "heart": "Care / wellbeing",
+                                        "person": "Person / audience",
+                                        "mail": "Email",
+                                        "phone": "Phone"
                                     },
                                     "default_value": "auto",
                                     "return_format": "value",
@@ -527,7 +534,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "MOST POPULAR in 2026",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -761,20 +768,27 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                        "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                        "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel guarantee / reship or refund",
+                                        "live_chat_support": "Real people on chat / support",
+                                        "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                                        "aud_checkout": "Simple AUD checkout / bank transfer",
+                                        "express_shipping": "Fast domestic shipping",
+                                        "australia_delivery": "Australia-wide tracked delivery",
+                                        "browse_catalogue": "Browse the range / product catalogue",
+                                        "listing_details": "Clear listing details / compare strengths",
+                                        "returning_loyalty": "Returning customers / loyalty",
+                                        "discreet_sealed": "Discreet plain packaging",
+                                        "po_box_delivery": "PO Box and parcel locker delivery",
+                                        "no_customs": "Smooth domestic dispatch",
+                                        "affordable_value": "Affordable direct pricing",
+                                        "secure_lock": "Secure and encrypted",
+                                        "clock": "Hours / fast response",
+                                        "medicine": "Genuine medicine",
+                                        "heart": "Care / wellbeing",
+                                        "person": "Person / audience",
+                                        "mail": "Email",
+                                        "phone": "Phone"
                                     },
                                     "default_value": "auto",
                                     "return_format": "value",
@@ -1045,7 +1059,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "FAQ",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -1065,7 +1079,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Frequently Asked Questions",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -1171,7 +1185,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Full FAQ",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -1191,7 +1205,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "http://waklertaustralia.com.test/faq",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -1236,7 +1250,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Contact Us",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -1256,7 +1270,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "WhatsApp Us",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -1666,7 +1680,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Simple, transparent, and private. Ordering Armodafinil across Australia takes just 3 straightforward steps.",
+                            "default_value": "",
                             "rows": 2,
                             "new_lines": "",
                             "maxlength": "",
@@ -1708,20 +1722,27 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                        "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                        "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel guarantee / reship or refund",
+                                        "live_chat_support": "Real people on chat / support",
+                                        "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                                        "aud_checkout": "Simple AUD checkout / bank transfer",
+                                        "express_shipping": "Fast domestic shipping",
+                                        "australia_delivery": "Australia-wide tracked delivery",
+                                        "browse_catalogue": "Browse the range / product catalogue",
+                                        "listing_details": "Clear listing details / compare strengths",
+                                        "returning_loyalty": "Returning customers / loyalty",
+                                        "discreet_sealed": "Discreet plain packaging",
+                                        "po_box_delivery": "PO Box and parcel locker delivery",
+                                        "no_customs": "Smooth domestic dispatch",
+                                        "affordable_value": "Affordable direct pricing",
+                                        "secure_lock": "Secure and encrypted",
+                                        "clock": "Hours / fast response",
+                                        "medicine": "Genuine medicine",
+                                        "heart": "Care / wellbeing",
+                                        "person": "Person / audience",
+                                        "mail": "Email",
+                                        "phone": "Phone"
                                     },
                                     "default_value": "auto",
                                     "return_format": "value",
@@ -1952,7 +1973,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "SHIPPING NATIONWIDE",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "SHIPPING NATIONWIDE",
                             "prepend": "",
@@ -1972,7 +1993,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Delivered Everywhere in Australia",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "Delivered Everywhere in Australia",
                             "prepend": "",
@@ -1992,10 +2013,10 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Metro cities, regional towns, or remote FIFO camps — we ship to your address.",
+                            "default_value": "",
                             "new_lines": "",
                             "maxlength": "",
-                            "placeholder": "Metro cities, regional towns, or remote FIFO camps — we ship to your address.",
+                            "placeholder": "Metro cities, regional towns, or remote FIFO camps - we ship to your address.",
                             "rows": 3
                         },
                         {
@@ -2099,21 +2120,21 @@
                             "label": "Tag",
                             "name": "tag",
                             "type": "text",
-                            "default_value": "About Us"
+                            "default_value": ""
                         },
                         {
                             "key": "field_f2349bf4f6724",
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Malaysia's Trusted Modafinil Supplier"
+                            "default_value": ""
                         },
                         {
                             "key": "field_c475fe4ca3274",
                             "label": "Desc",
                             "name": "desc",
                             "type": "textarea",
-                            "default_value": "ModafinilMY serves students, professionals, and shift workers across Malaysia — from Kuala Lumpur to Kota Kinabalu."
+                            "default_value": ""
                         }
                     ]
                 },
@@ -2128,7 +2149,7 @@
                             "label": "Mission Heading",
                             "name": "mission_heading",
                             "type": "text",
-                            "default_value": "Our Approach"
+                            "default_value": ""
                         },
                         {
                             "key": "field_483eab146da44",
@@ -2136,7 +2157,7 @@
                             "name": "mission_desc",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "We organise armodafinil product information so customers can compare brands, strengths and batch details with clarity."
+                            "default_value": ""
                         },
                         {
                             "key": "field_am_mission_icon_preset",
@@ -2153,20 +2174,27 @@
                                 "id": ""
                             },
                             "choices": {
-                                "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                "auto": "Auto-match from title and description (recommended)",
+                                "parcel_guarantee": "Parcel guarantee / reship or refund",
+                                "live_chat_support": "Real people on chat / support",
+                                "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                                "aud_checkout": "Simple AUD checkout / bank transfer",
+                                "express_shipping": "Fast domestic shipping",
+                                "australia_delivery": "Australia-wide tracked delivery",
+                                "browse_catalogue": "Browse the range / product catalogue",
+                                "listing_details": "Clear listing details / compare strengths",
+                                "returning_loyalty": "Returning customers / loyalty",
+                                "discreet_sealed": "Discreet plain packaging",
+                                "po_box_delivery": "PO Box and parcel locker delivery",
+                                "no_customs": "Smooth domestic dispatch",
+                                "affordable_value": "Affordable direct pricing",
+                                "secure_lock": "Secure and encrypted",
+                                "clock": "Hours / fast response",
+                                "medicine": "Genuine medicine",
+                                "heart": "Care / wellbeing",
+                                "person": "Person / audience",
+                                "mail": "Email",
+                                "phone": "Phone"
                             },
                             "default_value": "browse_catalogue",
                             "return_format": "value",
@@ -2206,7 +2234,7 @@
                             "label": "Vision Heading",
                             "name": "vision_heading",
                             "type": "text",
-                            "default_value": "Information First"
+                            "default_value": ""
                         },
                         {
                             "key": "field_b6b97d8f0f494",
@@ -2214,7 +2242,7 @@
                             "name": "vision_desc",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "We use plain English, state clearly that armodafinil is prescription-only in Australia, and encourage customers to speak to a doctor before ordering."
+                            "default_value": ""
                         },
                         {
                             "key": "field_am_vision_icon_preset",
@@ -2231,20 +2259,27 @@
                                 "id": ""
                             },
                             "choices": {
-                                "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                "auto": "Auto-match from title and description (recommended)",
+                                "parcel_guarantee": "Parcel guarantee / reship or refund",
+                                "live_chat_support": "Real people on chat / support",
+                                "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                                "aud_checkout": "Simple AUD checkout / bank transfer",
+                                "express_shipping": "Fast domestic shipping",
+                                "australia_delivery": "Australia-wide tracked delivery",
+                                "browse_catalogue": "Browse the range / product catalogue",
+                                "listing_details": "Clear listing details / compare strengths",
+                                "returning_loyalty": "Returning customers / loyalty",
+                                "discreet_sealed": "Discreet plain packaging",
+                                "po_box_delivery": "PO Box and parcel locker delivery",
+                                "no_customs": "Smooth domestic dispatch",
+                                "affordable_value": "Affordable direct pricing",
+                                "secure_lock": "Secure and encrypted",
+                                "clock": "Hours / fast response",
+                                "medicine": "Genuine medicine",
+                                "heart": "Care / wellbeing",
+                                "person": "Person / audience",
+                                "mail": "Email",
+                                "phone": "Phone"
                             },
                             "default_value": "medical_rx_clarity",
                             "return_format": "value",
@@ -2292,14 +2327,14 @@
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Products We Sell"
+                            "default_value": ""
                         },
                         {
                             "key": "field_9e5242778e824",
                             "label": "Desc",
                             "name": "desc",
                             "type": "textarea",
-                            "default_value": "We specialize in the two most trusted Modafinil brands globally:"
+                            "default_value": ""
                         },
                         {
                             "key": "field_1bfab0f22cce4",
@@ -2337,14 +2372,14 @@
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Delivery Across Malaysia"
+                            "default_value": ""
                         },
                         {
                             "key": "field_db0fe9dccbec4",
                             "label": "Desc",
                             "name": "desc",
                             "type": "textarea",
-                            "default_value": "We use Pos Malaysia for reliable delivery to all postcodes across Malaysia:"
+                            "default_value": ""
                         },
                         {
                             "key": "field_3da652fbdede4",
@@ -2368,20 +2403,27 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                        "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                        "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel guarantee / reship or refund",
+                                        "live_chat_support": "Real people on chat / support",
+                                        "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                                        "aud_checkout": "Simple AUD checkout / bank transfer",
+                                        "express_shipping": "Fast domestic shipping",
+                                        "australia_delivery": "Australia-wide tracked delivery",
+                                        "browse_catalogue": "Browse the range / product catalogue",
+                                        "listing_details": "Clear listing details / compare strengths",
+                                        "returning_loyalty": "Returning customers / loyalty",
+                                        "discreet_sealed": "Discreet plain packaging",
+                                        "po_box_delivery": "PO Box and parcel locker delivery",
+                                        "no_customs": "Smooth domestic dispatch",
+                                        "affordable_value": "Affordable direct pricing",
+                                        "secure_lock": "Secure and encrypted",
+                                        "clock": "Hours / fast response",
+                                        "medicine": "Genuine medicine",
+                                        "heart": "Care / wellbeing",
+                                        "person": "Person / audience",
+                                        "mail": "Email",
+                                        "phone": "Phone"
                                     },
                                     "default_value": "auto",
                                     "return_format": "value",
@@ -2472,7 +2514,7 @@
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Have Questions? We Are Here."
+                            "default_value": ""
                         },
                         {
                             "key": "field_19334cb614cc4",
@@ -2480,7 +2522,7 @@
                             "name": "description",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "Our team speaks English and Australia. We usually reply within 30 minutes during business hours."
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_wa_title",
@@ -2495,7 +2537,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "WhatsApp (Fastest Option)"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_wa_number",
@@ -2510,7 +2552,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "+61 488 841 833"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_wa_url",
@@ -2540,7 +2582,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Email"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_email_address",
@@ -2555,7 +2597,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "orders@waklertaustralia.com.au"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_email_subtext",
@@ -2570,7 +2612,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Within 24 hours"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_hours_title",
@@ -2585,7 +2627,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "OPERATING HOURS"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_hours_mon_fri",
@@ -2600,7 +2642,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "8:00 AM – 8:00 PM AEST"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_hours_sat",
@@ -2615,7 +2657,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "9:00 AM – 5:00 PM AEST"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_hours_sun",
@@ -2630,7 +2672,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Limited (WhatsApp only)"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_address_title",
@@ -2645,7 +2687,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Visit us"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_address_line1",
@@ -2660,7 +2702,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "50 Holt St"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_address_line2",
@@ -2675,7 +2717,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Surry Hills NSW 2010"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_address_country",
@@ -2690,7 +2732,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Australia"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_directions_url",
@@ -2850,7 +2892,7 @@
                             "name": "eyebrow",
                             "type": "text",
                             "required": false,
-                            "default_value": "Full catalogue"
+                            "default_value": ""
                         },
                         {
                             "key": "field_page_hero_title_en",
@@ -2859,7 +2901,7 @@
                             "type": "text",
                             "instructions": "The main H1 heading for this page.",
                             "required": false,
-                            "default_value": "Shop Armodafinil Products in Australia"
+                            "default_value": ""
                         },
                         {
                             "key": "field_page_hero_subtitle_en",
@@ -2868,7 +2910,7 @@
                             "type": "textarea",
                             "rows": 3,
                             "required": false,
-                            "default_value": "Browse our current range of genuine Armodafinil tablets with fast delivery across Australia."
+                            "default_value": ""
                         },
                         {
                             "key": "field_page_hero_bullets",
@@ -2908,7 +2950,7 @@
                             "name": "heading",
                             "type": "text",
                             "required": false,
-                            "default_value": "Choosing the Right Modafinil"
+                            "default_value": ""
                         },
                         {
                             "key": "field_product_guide_description_en",
@@ -2917,7 +2959,7 @@
                             "type": "textarea",
                             "rows": 3,
                             "required": false,
-                            "default_value": "With several brands and dosages available, the right product depends on your experience level, desired effects, and budget. Below is a comparison of our most popular options."
+                            "default_value": ""
                         },
                         {
                             "key": "field_product_guide_guide_items",
@@ -3020,7 +3062,7 @@
                             "name": "content",
                             "type": "wysiwyg",
                             "required": false,
-                            "default_value": "<h2>Ordering Modafinil in Malaysia</h2>\n<p>We've made the process of buying modafinil online as straightforward as possible. Here's what to expect when you place an order with ModafinilMY.</p>\n\n<h3>Delivery Timeframes</h3>\n<p>Semua pesanan dihantar dengan cepat ke seluruh Malaysia dengan penjejakan penuh. Bandar-bandar utama Semenanjung seperti KL, Selangor, Penang, dan Johor biasanya menerima pesanan dalam masa 7-12 hari bekerja. Sabah dan Sarawak mengambil 10-16 hari bekerja. Pesanan atas RM399 layak untuk penghantaran percuma.</p>\n\n<h3>Customs & Packaging</h3>\n<p>Every order is shipped in plain, unmarked packaging with no indication of the contents. There is no branding or product information visible on the outside. Our shipments are processed through international channels and we maintain a high delivery success rate across all Malaysian states and territories.</p>\n\n<h3>What to Expect After Ordering</h3>\n<p>Once your order is placed, you'll receive a confirmation email with your order details. Tracking information is provided within 1-2 business days. If you have any questions about your order at any point, our support team is available via our contact page.</p>"
+                            "default_value": ""
                         },
                         {
                             "key": "field_seo_text_show_cta",
@@ -3037,7 +3079,7 @@
                             "name": "cta_title",
                             "type": "text",
                             "required": false,
-                            "default_value": "Modafinil Dosage Guide"
+                            "default_value": ""
                         },
                         {
                             "key": "field_seo_text_cta_desc_en",
@@ -3046,7 +3088,7 @@
                             "type": "textarea",
                             "rows": 3,
                             "required": false,
-                            "default_value": "Not sure which dose is right for you? Read our complete dosage guide with recommendations, timing tips, and brand comparisons."
+                            "default_value": ""
                         },
                         {
                             "key": "field_seo_text_cta_link",
@@ -3054,7 +3096,7 @@
                             "name": "cta_link",
                             "type": "text",
                             "required": false,
-                            "default_value": "/dosage-guide"
+                            "default_value": ""
                         },
                         {
                             "key": "field_kmg_seo_btn",
@@ -3085,14 +3127,14 @@
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "What Malaysian Customers Say"
+                            "default_value": ""
                         },
                         {
                             "key": "field_6f47fd49d5334",
                             "label": "Description",
                             "name": "description",
                             "type": "text",
-                            "default_value": "Real testimonials from ModafinilMY users across Malaysia."
+                            "default_value": ""
                         },
                         {
                             "key": "field_kmg_rv_eb",
@@ -3179,14 +3221,14 @@
                             "label": "Badge Text",
                             "name": "badge_text",
                             "type": "text",
-                            "default_value": "Live Australia Post Tracking"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_heading",
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Track Your Parcel"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_description",
@@ -3194,7 +3236,7 @@
                             "name": "description",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "Follow your Waklert Australia delivery from our warehouse to your doorstep with real-time Australia Post tracking."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_intro_callout_p1",
@@ -3202,7 +3244,7 @@
                             "name": "intro_callout_p1",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "Welcome to the Waklert Australia order tracking page. Every parcel we dispatch is shipped with Australia Post and comes with a unique tracking number, so you can follow your delivery from our warehouse to your door."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_intro_callout_p2",
@@ -3210,7 +3252,7 @@
                             "name": "intro_callout_p2",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "Your tracking number was emailed to you when your order was dispatched. Enter it below and we'll take you straight to the live Australia Post tracking results for your parcel."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_tab_form",
@@ -3225,7 +3267,7 @@
                             "label": "Tracking Form Heading",
                             "name": "form_heading",
                             "type": "text",
-                            "default_value": "Enter Your Tracking Number"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_form_instructions",
@@ -3233,21 +3275,21 @@
                             "name": "form_instructions",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "Tracking numbers are usually 10–23 characters long, e.g. 33ABC1234567. You can find yours in your dispatch confirmation email."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_input_placeholder",
                             "label": "Input Placeholder",
                             "name": "input_placeholder",
                             "type": "text",
-                            "default_value": "e.g. 33ABC1234567"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_btn_text",
                             "label": "Button Text",
                             "name": "track_btn_text",
                             "type": "text",
-                            "default_value": "Track My Order"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_redirect_notice",
@@ -3255,7 +3297,7 @@
                             "name": "redirect_notice",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "You'll be redirected to the official Australia Post tracking page (auspost.com.au), where your parcel's latest scan events are shown automatically."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_tab_banner",
@@ -3270,63 +3312,63 @@
                             "label": "Banner Partner Label",
                             "name": "banner_partner_label",
                             "type": "text",
-                            "default_value": "Official Partner"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_brand_badge",
                             "label": "Banner Brand Badge",
                             "name": "banner_brand_badge",
                             "type": "text",
-                            "default_value": "Waklert Australia"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_kicker",
                             "label": "Banner Subtitle / Kicker",
                             "name": "banner_kicker",
                             "type": "text",
-                            "default_value": "Direct Express Delivery"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_title_1",
                             "label": "Banner Headline Line 1",
                             "name": "banner_title_1",
                             "type": "text",
-                            "default_value": "JUST STAY AT HOME"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_title_2",
                             "label": "Banner Headline Line 2",
                             "name": "banner_title_2",
                             "type": "text",
-                            "default_value": "WE DELIVER!"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_safe_stamp",
                             "label": "Banner Safe Stamp Text",
                             "name": "banner_safe_stamp",
                             "type": "text",
-                            "default_value": "100% SAFE"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_button_text",
                             "label": "Banner Button Text",
                             "name": "banner_button_text",
                             "type": "text",
-                            "default_value": "ORDER NOW"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_button_link",
                             "label": "Banner Button Link",
                             "name": "banner_button_link",
                             "type": "text",
-                            "default_value": "/shop/"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_domain",
                             "label": "Banner Domain Footer",
                             "name": "banner_domain",
                             "type": "text",
-                            "default_value": "waklertaustralia.com"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_tab_steps",
@@ -3341,7 +3383,7 @@
                             "label": "Section Heading",
                             "name": "how_works_heading",
                             "type": "text",
-                            "default_value": "How Order Tracking Works"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_how_works_steps",
@@ -3381,7 +3423,7 @@
                             "label": "Need Help Title",
                             "name": "help_heading",
                             "type": "text",
-                            "default_value": "Need Help?"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_help_description",
@@ -3389,21 +3431,21 @@
                             "name": "help_description",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "Can't find your tracking number or no scans after 3 business days? Contact our support team and we'll look into it."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_help_btn_text",
                             "label": "Help Button Text",
                             "name": "help_btn_text",
                             "type": "text",
-                            "default_value": "Contact Support"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_help_btn_url",
                             "label": "Help Button Link",
                             "name": "help_btn_url",
                             "type": "text",
-                            "default_value": "/contact/"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_trust_cards",
@@ -3419,23 +3461,23 @@
                                     "name": "card_type",
                                     "type": "select",
                                     "choices": {
-                                        "shipping": "🚚 Australia Post Express Van (Free Shipping)",
-                                        "support": "💬 24/7 Verified Support",
-                                        "payment": "💳 100% Encrypted AUD Checkout",
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
+                                        "shipping": "Australia Post Express Van (Free Shipping)",
+                                        "support": "24/7 Verified Support",
+                                        "payment": "100% Encrypted AUD Checkout",
+                                        "auto": "Auto-Match from Title & Description (Recommended)",
+                                        "parcel_guarantee": "Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
+                                        "live_chat_support": "Real People on Chat / 24/7 SMS & Support",
+                                        "medical_rx_clarity": "Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
+                                        "aud_checkout": "Simple AUD Checkout / PayID & Secure Payment",
+                                        "express_shipping": "Fast Domestic Express Shipping / Australia Post Van",
                                         "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
+                                        "browse_catalogue": "Focused Armodafinil Range / Blister Pack Catalogue",
+                                        "listing_details": "Clear Listing Details / Compare Strengths & Packs",
                                         "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "discreet_sealed": "Discreet Plain Packaging / Sealed Pharmacy Pack",
+                                        "po_box_delivery": "PO Box & Parcel Locker Delivery",
+                                        "no_customs": "Smooth Domestic Dispatch / No Customs Hassle",
+                                        "affordable_value": "Affordable Direct Pricing / Best Value"
                                     },
                                     "default_value": "shipping",
                                     "wrapper": {
@@ -3509,7 +3551,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Knowledge & Resources",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3529,7 +3571,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Latest Articles & Guides",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3549,7 +3591,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Helpful insights, dosage guides, and research on Armodafinil and cognitive performance.",
+                            "default_value": "",
                             "rows": 2,
                             "placeholder": "",
                             "new_lines": ""
@@ -3641,7 +3683,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "View All Articles",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3661,7 +3703,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "/blog",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3691,7 +3733,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Knowledge & Resources",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3711,7 +3753,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Latest Articles & Guides",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3731,7 +3773,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Helpful insights, dosage guides, and research on Armodafinil and cognitive performance.",
+                            "default_value": "",
                             "rows": 2,
                             "placeholder": "",
                             "new_lines": ""
@@ -3823,7 +3865,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "View All Articles",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3843,7 +3885,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "/blog",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3873,7 +3915,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "FAQ",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3890,7 +3932,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Frequently Asked Questions / FAQ",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3907,7 +3949,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Everything you need to know about buying Modafinil in Malaysia.",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3924,7 +3966,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Still Have Questions?",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3941,7 +3983,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Our team speaks Malay and English, ready to assist 7 days a week.",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3958,7 +4000,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "WhatsApp Us Now",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3975,7 +4017,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "https://wa.me/60185754182",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -4221,7 +4263,7 @@
                             "label": "Contact Callout Heading",
                             "name": "contact_heading",
                             "type": "text",
-                            "default_value": "Have questions about our terms?",
+                            "default_value": "",
                             "placeholder": "Have questions about our terms?"
                         },
                         {
@@ -4230,7 +4272,7 @@
                             "name": "contact_description",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "Contact our legal support team via WhatsApp for any clarifications before placing your order.",
+                            "default_value": "",
                             "placeholder": "Contact our legal support team via WhatsApp for any clarifications before placing your order."
                         },
                         {
@@ -4238,7 +4280,7 @@
                             "label": "WhatsApp Button Label",
                             "name": "contact_btn_label",
                             "type": "text",
-                            "default_value": "Support WhatsApp",
+                            "default_value": "",
                             "placeholder": "Support WhatsApp"
                         },
                         {
@@ -4247,7 +4289,7 @@
                             "name": "whatsapp_number",
                             "type": "text",
                             "instructions": "Enter Australian phone number (e.g. +61 488 841 833) or direct link (e.g. https://wa.me/61488841833). Defaults to Theme Settings.",
-                            "default_value": "+61 488 841 833",
+                            "default_value": "",
                             "placeholder": "+61 488 841 833"
                         },
                         {
@@ -4271,7 +4313,7 @@
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Have questions about our terms?",
+                            "default_value": "",
                             "placeholder": "Have questions about our terms?"
                         },
                         {
@@ -4280,7 +4322,7 @@
                             "name": "description",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "Contact our legal support team via WhatsApp for any clarifications before placing your order.",
+                            "default_value": "",
                             "placeholder": "Contact our legal support team via WhatsApp for any clarifications before placing your order."
                         },
                         {
@@ -4288,7 +4330,7 @@
                             "label": "Button Label",
                             "name": "btn_label",
                             "type": "text",
-                            "default_value": "Support WhatsApp",
+                            "default_value": "",
                             "placeholder": "Support WhatsApp"
                         },
                         {
@@ -4297,7 +4339,7 @@
                             "name": "whatsapp_number",
                             "type": "text",
                             "instructions": "Enter Australian phone number (e.g. +61 488 841 833) or direct wa.me link. Defaults to Theme Settings.",
-                            "default_value": "+61 488 841 833",
+                            "default_value": "",
                             "placeholder": "+61 488 841 833"
                         }
                     ]
@@ -4720,7 +4762,7 @@
                             "label": "FAQ Title",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Frequently Asked Questions"
+                            "default_value": ""
                         },
                         {
                             "key": "field_dsg_624949de81",
@@ -4871,7 +4913,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Need Help?",
+                            "default_value": "",
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
@@ -4891,7 +4933,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Talk to us via SMS or WhatsApp - 24/7.",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "Talk to us via SMS or WhatsApp - 24/7.",
                             "prepend": "",
@@ -4911,7 +4953,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "We are available all the time to handle any questions, offer advice or reassure you about your purchase.",
+                            "default_value": "",
                             "maxlength": "",
                             "rows": 4,
                             "placeholder": "We are available all the time to handle any questions, offer advice or reassure you about your purchase.",
@@ -4931,7 +4973,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "WhatsApp",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -4951,7 +4993,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "https://wa.me/61488841833",
+                            "default_value": "",
                             "placeholder": "https://wa.me/61488841833"
                         },
                         {
@@ -4967,7 +5009,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "sms:0488841833",
+                            "default_value": "",
                             "placeholder": "sms:0488841833",
                             "prepend": "",
                             "append": "",
@@ -4987,7 +5029,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Email Support",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "Email Support",
                             "prepend": "",
@@ -5007,7 +5049,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "mailto:support@waklertaustralia.com",
+                            "default_value": "",
                             "placeholder": "mailto:support@waklertaustralia.com"
                         },
                         {
@@ -5392,25 +5434,25 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "Auto-match",
-                                        "parcel_guarantee": "Parcel guarantee",
-                                        "live_chat_support": "Chat support",
-                                        "medical_rx_clarity": "Medicine information",
-                                        "aud_checkout": "Checkout",
-                                        "express_shipping": "Shipping",
-                                        "australia_delivery": "Australia delivery",
-                                        "browse_catalogue": "Catalogue",
-                                        "listing_details": "Search / details",
-                                        "returning_loyalty": "Star",
-                                        "discreet_sealed": "Discreet package",
-                                        "po_box_delivery": "PO Box",
-                                        "no_customs": "Check",
-                                        "affordable_value": "Price tag",
-                                        "secure_lock": "Lock",
-                                        "clock": "Clock",
-                                        "medicine": "Medicine",
-                                        "heart": "Heart",
-                                        "person": "Person",
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel guarantee / reship or refund",
+                                        "live_chat_support": "Real people on chat / support",
+                                        "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                                        "aud_checkout": "Simple AUD checkout / bank transfer",
+                                        "express_shipping": "Fast domestic shipping",
+                                        "australia_delivery": "Australia-wide tracked delivery",
+                                        "browse_catalogue": "Browse the range / product catalogue",
+                                        "listing_details": "Clear listing details / compare strengths",
+                                        "returning_loyalty": "Returning customers / loyalty",
+                                        "discreet_sealed": "Discreet plain packaging",
+                                        "po_box_delivery": "PO Box and parcel locker delivery",
+                                        "no_customs": "Smooth domestic dispatch",
+                                        "affordable_value": "Affordable direct pricing",
+                                        "secure_lock": "Secure and encrypted",
+                                        "clock": "Hours / fast response",
+                                        "medicine": "Genuine medicine",
+                                        "heart": "Care / wellbeing",
+                                        "person": "Person / audience",
                                         "mail": "Email",
                                         "phone": "Phone"
                                     },
@@ -5678,25 +5720,25 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "Auto-match",
-                                        "parcel_guarantee": "Parcel guarantee",
-                                        "live_chat_support": "Chat support",
-                                        "medical_rx_clarity": "Medicine information",
-                                        "aud_checkout": "Checkout",
-                                        "express_shipping": "Shipping",
-                                        "australia_delivery": "Australia delivery",
-                                        "browse_catalogue": "Catalogue",
-                                        "listing_details": "Search / details",
-                                        "returning_loyalty": "Star",
-                                        "discreet_sealed": "Discreet package",
-                                        "po_box_delivery": "PO Box",
-                                        "no_customs": "Check",
-                                        "affordable_value": "Price tag",
-                                        "secure_lock": "Lock",
-                                        "clock": "Clock",
-                                        "medicine": "Medicine",
-                                        "heart": "Heart",
-                                        "person": "Person",
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel guarantee / reship or refund",
+                                        "live_chat_support": "Real people on chat / support",
+                                        "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                                        "aud_checkout": "Simple AUD checkout / bank transfer",
+                                        "express_shipping": "Fast domestic shipping",
+                                        "australia_delivery": "Australia-wide tracked delivery",
+                                        "browse_catalogue": "Browse the range / product catalogue",
+                                        "listing_details": "Clear listing details / compare strengths",
+                                        "returning_loyalty": "Returning customers / loyalty",
+                                        "discreet_sealed": "Discreet plain packaging",
+                                        "po_box_delivery": "PO Box and parcel locker delivery",
+                                        "no_customs": "Smooth domestic dispatch",
+                                        "affordable_value": "Affordable direct pricing",
+                                        "secure_lock": "Secure and encrypted",
+                                        "clock": "Hours / fast response",
+                                        "medicine": "Genuine medicine",
+                                        "heart": "Care / wellbeing",
+                                        "person": "Person / audience",
                                         "mail": "Email",
                                         "phone": "Phone"
                                     },
@@ -5849,25 +5891,25 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "Auto-match",
-                                        "parcel_guarantee": "Parcel guarantee",
-                                        "live_chat_support": "Chat support",
-                                        "medical_rx_clarity": "Medicine information",
-                                        "aud_checkout": "Checkout",
-                                        "express_shipping": "Shipping",
-                                        "australia_delivery": "Australia delivery",
-                                        "browse_catalogue": "Catalogue",
-                                        "listing_details": "Search / details",
-                                        "returning_loyalty": "Star",
-                                        "discreet_sealed": "Discreet package",
-                                        "po_box_delivery": "PO Box",
-                                        "no_customs": "Check",
-                                        "affordable_value": "Price tag",
-                                        "secure_lock": "Lock",
-                                        "clock": "Clock",
-                                        "medicine": "Medicine",
-                                        "heart": "Heart",
-                                        "person": "Person",
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel guarantee / reship or refund",
+                                        "live_chat_support": "Real people on chat / support",
+                                        "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                                        "aud_checkout": "Simple AUD checkout / bank transfer",
+                                        "express_shipping": "Fast domestic shipping",
+                                        "australia_delivery": "Australia-wide tracked delivery",
+                                        "browse_catalogue": "Browse the range / product catalogue",
+                                        "listing_details": "Clear listing details / compare strengths",
+                                        "returning_loyalty": "Returning customers / loyalty",
+                                        "discreet_sealed": "Discreet plain packaging",
+                                        "po_box_delivery": "PO Box and parcel locker delivery",
+                                        "no_customs": "Smooth domestic dispatch",
+                                        "affordable_value": "Affordable direct pricing",
+                                        "secure_lock": "Secure and encrypted",
+                                        "clock": "Hours / fast response",
+                                        "medicine": "Genuine medicine",
+                                        "heart": "Care / wellbeing",
+                                        "person": "Person / audience",
                                         "mail": "Email",
                                         "phone": "Phone"
                                     },
@@ -6273,6 +6315,6 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792772079,
+    "modified": 1792773371,
     "local_file": "C:laragonwwwwaklertaustralia.com/wp-content/themes/waklertaustralia.com-wp/acf-json/group_page_modules.json"
 }

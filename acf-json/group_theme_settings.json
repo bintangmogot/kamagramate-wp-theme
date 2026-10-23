@@ -59,7 +59,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Express Domestic Shipping",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "Express Domestic Shipping",
             "prepend": "",
@@ -79,7 +79,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Local Support 24/7",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "Local Support 24/7",
             "prepend": "",
@@ -99,7 +99,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "0488 841 833",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "0488 841 833",
             "prepend": "",
@@ -119,7 +119,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "0488 841 833",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "0488 841 833",
             "prepend": "",
@@ -139,7 +139,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "tel:0488841833",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "tel:0488841833",
             "prepend": "",
@@ -452,7 +452,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Monday to Sunday",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -472,7 +472,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "24/7",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -725,7 +725,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Waklert Australia provides clear information about a focused range of armodafinil products, ordering and delivery options.",
+            "default_value": "",
             "new_lines": "",
             "maxlength": "",
             "placeholder": "",
@@ -745,7 +745,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "256-Bit SSL Encryption",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "e.g. 256-Bit SSL Encryption",
             "prepend": "",
@@ -765,7 +765,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "AU Express Dispatch",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "e.g. AU Express Dispatch",
             "prepend": "",
@@ -785,7 +785,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Encrypted Checkout",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "e.g. Encrypted Checkout",
             "prepend": "",
@@ -805,7 +805,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "50 Holt Street, Surry Hills, 2010",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -825,7 +825,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Get in Touch with Us",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -845,7 +845,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Payment Accepted",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -935,7 +935,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Shipping Partner",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -1045,7 +1045,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "This website provides general information only and is not a substitute for advice from a qualified health professional.",
+            "default_value": "",
             "new_lines": "",
             "maxlength": "",
             "placeholder": "",
@@ -1611,5 +1611,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792772270
+    "modified": 1792773371
 }

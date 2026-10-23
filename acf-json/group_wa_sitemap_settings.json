@@ -7,14 +7,14 @@
             "label": "Sitemap Title",
             "name": "sitemap_title",
             "type": "text",
-            "default_value": "Site Map"
+            "default_value": ""
         },
         {
             "key": "field_wa_sitemap_intro",
             "label": "Introductory Text",
             "name": "sitemap_intro",
             "type": "textarea",
-            "default_value": "Browse the main pages, armodafinil products and support information on this site."
+            "default_value": ""
         },
         {
             "key": "field_wa_sitemap_columns",
@@ -69,5 +69,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": ""
+    "description": "",
+    "modified": 1792773371
 }
