@@ -28,6 +28,7 @@ function modmy_theme_setup() {
     // Register Navigation Menus
     register_nav_menus(array(
         'primary'         => __('Primary Navigation (Desktop)', 'waklert-australia'),
+        'category_nav'    => __('Header Category Row (Desktop)', 'waklert-australia'),
         'mobile'          => __('Mobile Navigation', 'waklert-australia'),
         'footer_quick'    => __('Footer Quick Links', 'waklert-australia'),
         'footer_info'     => __('Footer Information', 'waklert-australia'),
@@ -204,11 +205,6 @@ function waklert_get_logo_url($location = 'header') {
     if ($logo_id && ($src = wp_get_attachment_image_url($logo_id, 'full'))) {
         return $src;
     }
-    // Fallback to theme asset for fresh environments (e.g. InstaWP staging)
-    $theme_logo = get_template_directory() . '/assets/images/waklert-australia-logo.png';
-    if (file_exists($theme_logo)) {
-        return get_template_directory_uri() . '/assets/images/waklert-australia-logo.png';
-    }
     return false;
 }
 
@@ -221,7 +217,7 @@ function waklert_get_logo_url($location = 'header') {
 function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:max-w-[312px] object-contain', $location = 'header') {
     $logo_src = waklert_get_logo_url($location);
     $home_url = esc_url(home_url('/'));
-    $site_name = esc_attr(get_bloginfo('name') ?: 'Waklert Australia');
+    $site_name = esc_attr(get_bloginfo('name'));
 
     if ($logo_src) {
         $logo_classes = trim($classes . ' site-logo-img site-logo-img--' . esc_attr($location));
@@ -259,7 +255,7 @@ function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:m
             </a>',
             $home_url,
             $site_name,
-            esc_html(get_bloginfo('name') ?: 'Waklert Australia')
+            esc_html(get_bloginfo('name'))
         );
     } else {
         echo sprintf(
@@ -268,7 +264,7 @@ function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:m
             </a>',
             $home_url,
             $site_name,
-            esc_html(get_bloginfo('name') ?: 'Waklert Australia')
+            esc_html(get_bloginfo('name'))
         );
     }
 }

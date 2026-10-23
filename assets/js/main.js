@@ -197,3 +197,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Header product search toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('[data-kmg-search-toggle]');
+    const panel = document.getElementById('kmg-search');
+    if (!toggle || !panel) return;
+    toggle.addEventListener('click', () => {
+        const open = panel.classList.toggle('hidden') === false;
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open) panel.querySelector('input[type="search"]')?.focus();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.focus();
+        }
+    });
+});
+
+// Coupon toast: show once per browser session, copy code to clipboard
+document.addEventListener('DOMContentLoaded', () => {
+    const toast = document.getElementById('kmg-promo-toast');
+    if (!toast) return;
+    let dismissed = false;
+    try { dismissed = sessionStorage.getItem('kmgPromoDismissed') === '1'; } catch (e) {}
+    if (dismissed) return;
+    setTimeout(() => toast.classList.remove('hidden'), 2500);
+    toast.querySelector('[data-kmg-toast-close]')?.addEventListener('click', () => {
+        toast.classList.add('hidden');
+        try { sessionStorage.setItem('kmgPromoDismissed', '1'); } catch (e) {}
+    });
+    const copyBtn = toast.querySelector('[data-kmg-copy]');
+    copyBtn?.addEventListener('click', async () => {
+        const label = copyBtn.querySelector('[data-kmg-copy-label]');
+        try { await navigator.clipboard.writeText(copyBtn.dataset.kmgCopy); } catch (e) {}
+        if (label && toast.dataset.copied) label.textContent = toast.dataset.copied;
+    });
+});

@@ -1,6 +1,6 @@
 <?php
 /**
- * Waklert Australia — Theme Functions
+ * Kamagramate - theme functions
  */
 
 // Define constants for easy reference
@@ -8,17 +8,12 @@ define('MODMY_THEME_VERSION', '1.0.0');
 define('MODMY_THEME_DIR', get_stylesheet_directory());
 define('MODMY_THEME_URI', get_stylesheet_directory_uri());
 
-/** Render the subtle orbit-line background used across Waklert blue sections. */
+/** Legacy decorative rings. The minimal design has no background ornaments, so this prints nothing. */
 function waklert_output_pattern_rings($extra_class = '') {
-    $class = $extra_class ? ' ' . trim(esc_attr($extra_class)) : '';
-    ?>
-    <div aria-hidden="true" class="pointer-events-none absolute -right-40 -top-48 z-0 h-[34rem] w-[34rem] rounded-full border border-white/10<?= $class ?>"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute -right-20 -top-28 z-0 h-[26rem] w-[26rem] rounded-full border border-white/10<?= $class ?>"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute -bottom-64 left-[34%] z-0 h-[32rem] w-[32rem] rounded-full border border-white/5<?= $class ?>"></div>
-    <?php
 }
 
-// 1. Theme setup (menus, supports, image sizes)
+// 1. Theme setup (menus, supports, image sizes) and shared UI helpers
+require_once MODMY_THEME_DIR . '/inc/kmg-ui.php';
 require_once MODMY_THEME_DIR . '/inc/theme-setup.php';
 require_once MODMY_THEME_DIR . '/inc/nav-walkers.php';
 require_once MODMY_THEME_DIR . '/inc/icon-library.php';

@@ -146,6 +146,152 @@
             "append": ""
         },
         {
+            "key": "field_kmg_topbar_promo_code",
+            "label": "Top Bar Promo Code",
+            "name": "topbar_promo_code",
+            "type": "text",
+            "instructions": "Optional coupon code shown as a chip next to the centre text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_header_phone_label",
+            "label": "Header Phone Label",
+            "name": "header_phone_label",
+            "type": "text",
+            "instructions": "Small label above the phone number (e.g. Call or text).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_header_search_placeholder",
+            "label": "Search Placeholder",
+            "name": "header_search_placeholder",
+            "type": "text",
+            "instructions": "Leave empty to hide the product search.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_header_search_button",
+            "label": "Search Button Text",
+            "name": "header_search_button",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_drawer_help_eyebrow",
+            "label": "Mobile Menu Help Card - Eyebrow",
+            "name": "drawer_help_eyebrow",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_drawer_help_title",
+            "label": "Mobile Menu Help Card - Title",
+            "name": "drawer_help_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_drawer_help_text",
+            "label": "Mobile Menu Help Card - Text",
+            "name": "drawer_help_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_kmg_drawer_help_link_text",
+            "label": "Mobile Menu Help Card - Link Text",
+            "name": "drawer_help_link_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_drawer_help_link_url",
+            "label": "Mobile Menu Help Card - Link URL",
+            "name": "drawer_help_link_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_waklert_tab_social",
             "label": "Social Media",
             "name": "",
@@ -250,6 +396,22 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_kmg_telegram_number",
+            "label": "Telegram Number",
+            "name": "telegram_number",
+            "type": "text",
+            "instructions": "Optional. Used by Support CTA and floating buttons.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_waklert_support_cta_image",
@@ -888,6 +1050,272 @@
             "maxlength": "",
             "placeholder": "",
             "rows": ""
+        },
+        {
+            "key": "field_kmg_trustpilot_url",
+            "label": "Trustpilot Review Page URL",
+            "name": "trustpilot_url",
+            "type": "url",
+            "instructions": "Leave empty to hide the Trustpilot logo in the footer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_footer_tagline",
+            "label": "Footer Big Tagline",
+            "name": "footer_tagline",
+            "type": "textarea",
+            "instructions": "Large statement shown at the top of the footer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_kmg_tab_engage",
+            "label": "Floating Contact & Promo",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_kmg_floating_enabled",
+            "label": "Show Floating Chat Buttons",
+            "name": "floating_enabled",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_kmg_floating_whatsapp_label",
+            "label": "WhatsApp Button Label",
+            "name": "floating_whatsapp_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_floating_whatsapp_number",
+            "label": "WhatsApp Number or URL",
+            "name": "floating_whatsapp_number",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_floating_telegram_label",
+            "label": "Telegram Button Label",
+            "name": "floating_telegram_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_floating_telegram_number",
+            "label": "Telegram Number or URL",
+            "name": "floating_telegram_number",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_promo_toast_enabled",
+            "label": "Show Coupon Toast",
+            "name": "promo_toast_enabled",
+            "type": "true_false",
+            "instructions": "Small dismissible coupon card in the bottom-left corner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_kmg_promo_toast_title",
+            "label": "Coupon Toast Title",
+            "name": "promo_toast_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_promo_toast_code",
+            "label": "Coupon Code",
+            "name": "promo_toast_code",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_promo_toast_text",
+            "label": "Coupon Toast Text",
+            "name": "promo_toast_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_kmg_promo_toast_button",
+            "label": "Copy Button Label",
+            "name": "promo_toast_button",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_promo_toast_copied",
+            "label": "Copied Confirmation Label",
+            "name": "promo_toast_copied",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_tab_tracking",
+            "label": "Tracking",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_kmg_ga_measurement_id",
+            "label": "Google Analytics Measurement ID",
+            "name": "ga_measurement_id",
+            "type": "text",
+            "instructions": "Format G-XXXXXXX. Leave empty to disable.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -911,5 +1339,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792584873
+    "modified": 1792762780
 }
