@@ -1,44 +1,25 @@
 <?php
 /**
- * Module: About Intro / Hero
- * Waklert Australia 2-tone Dashed & Patterned Theme
+ * Module: about_intro
+ * Fields: tag, heading, desc.
  */
 
-$tag = get_sub_field('tag') ?: 'About Waklert Australia';
-$heading = get_sub_field('heading') ?: "Australia's Focused Minds. Your Reliable Supplier.";
-$desc = get_sub_field('desc') ?: "Waklert Australia was founded to provide Australian professionals, shift workers, and students with reliable access to genuine pharmaceutical-grade Armodafinil.";
+$heading = trim((string) get_sub_field('heading'));
+if ($heading === '') {
+    return;
+}
 ?>
-
-<!-- 2-Tone Patterned Header -->
-<header class="relative overflow-hidden border-b border-border bg-gradient-to-b from-primary-softer via-primary-softer to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9">
-    <div class="container-site max-w-4xl mx-auto px-4 relative z-10">
-        <!-- Breadcrumb Pill -->
-        <div class="mb-3">
-            <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-border bg-white/90 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-xs backdrop-blur">
-                <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-muted-foreground transition-colors hover:text-ink">Home</a>
-                <span class="text-primary-light font-normal">/</span>
-                <span aria-current="page" class="font-extrabold text-ink">About Us</span>
-            </nav>
+<section class="border-b border-border bg-primary-softer" data-testid="about-intro">
+    <div class="kmg-container pb-20 pt-12 md:pb-28 md:pt-16">
+        <?php get_template_part('template-parts/breadcrumbs'); ?>
+        <div class="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div class="lg:col-span-7">
+                <?php if (get_sub_field('tag')) : ?><p class="kmg-eyebrow"><?php echo esc_html(get_sub_field('tag')); ?></p><?php endif; ?>
+                <h1 class="kmg-display mt-4"><?php echo esc_html($heading); ?></h1>
+            </div>
+            <?php if (get_sub_field('desc')) : ?>
+                <p class="kmg-lead self-end lg:col-span-5"><?php echo esc_html(get_sub_field('desc')); ?></p>
+            <?php endif; ?>
         </div>
-
-        <!-- Eyebrow Badge -->
-        <?php if ($tag): ?>
-        <div class="mb-2.5">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink shadow-xs">
-                <span class="h-1.5 w-1.5 rounded-full bg-primary-soft0 animate-pulse" aria-hidden="true"></span>
-                <?= esc_html($tag) ?>
-            </span>
-        </div>
-        <?php endif; ?>
-
-        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-ink">
-            <?= esc_html($heading) ?>
-        </h1>
-
-        <?php if ($desc): ?>
-        <p class="mx-auto mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-muted-foreground whitespace-pre-line">
-            <?= esc_html($desc) ?>
-        </p>
-        <?php endif; ?>
     </div>
-</header>
+</section>

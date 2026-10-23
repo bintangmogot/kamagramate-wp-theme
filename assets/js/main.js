@@ -258,3 +258,15 @@ document.addEventListener('click', (e) => {
     const step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.8;
     track.scrollBy({ left: step * Number(btn.dataset.dir || 1), behavior: 'smooth' });
 });
+
+// FAQ page category chips: show one category, click again to show all
+document.addEventListener('click', (e) => {
+    const chip = e.target.closest('[data-kmg-faq-filter]');
+    if (!chip) return;
+    const active = chip.getAttribute('aria-pressed') === 'true';
+    document.querySelectorAll('[data-kmg-faq-filter]').forEach((c) => c.setAttribute('aria-pressed', 'false'));
+    document.querySelectorAll('[data-kmg-faq-group]').forEach((g) => {
+        g.hidden = !active && g.id !== chip.dataset.kmgFaqFilter;
+    });
+    if (!active) chip.setAttribute('aria-pressed', 'true');
+});

@@ -1,41 +1,24 @@
 <?php
 /**
- * Module: Call to Action (CTA)
+ * Module: cta
+ * Fields: title, description, button_text, button_url, secondary_button_text, secondary_button_url.
  */
 
-$heading = get_sub_field('heading') ?: get_sub_field('title') ?: "Need Help?";
-
-$is_buyers_guide = is_page('buyers-guide');
-$desc = get_sub_field('description') ?: ($is_buyers_guide
-    ? "Compare the current product listings and confirm the details shown at checkout before ordering."
-    : "We are available all the time to handle any questions, offer advice or reassure you about your purchase.");
-
-$btn = get_sub_field('button_text') ?: ($is_buyers_guide ? "Browse Products" : "WhatsApp Us");
-$wa_number = preg_replace('/[^0-9]/', '', get_field('whatsapp_number', 'option') ?: '61488841833');
-$btn_url = get_sub_field('button_url') ?: ($is_buyers_guide ? home_url('/shop/') : "https://wa.me/{$wa_number}");
-
-$btn2 = get_sub_field('secondary_button_text') ?: ($is_buyers_guide ? "Contact Us" : "Send an email");
-$btn2_url = get_sub_field('secondary_button_url') ?: 'mailto:orders@waklertaustralia.com.au';
+$title = trim((string) (get_sub_field('title') ?: get_sub_field('heading')));
+if ($title === '') {
+    return;
+}
 ?>
-<section class="py-4 pb-10 bg-white" data-testid="cta-section">
-    <div class="container-custom max-w-4xl">
-        <div class="relative isolate overflow-hidden rounded-2xl bg-primary p-8 text-center text-white shadow-sm md:p-10 not-prose">
-            <?php waklert_output_pattern_rings(); ?>
-            <div class="relative z-10">
-                <h2 class="font-heading font-black text-2xl md:text-3xl mb-3 text-white">
-                    <?= $heading ?>
-                </h2>
-                <p class="text-white/85 mb-6 max-w-2xl mx-auto font-medium text-sm md:text-base leading-relaxed">
-                    <?= $desc ?>
-                </p>
-                <div class="flex flex-row gap-3 sm:gap-4 justify-center items-center">
-                    <a href="<?= esc_url($btn_url) ?>" class="inline-flex items-center justify-center gap-2 bg-white text-primary-dark font-bold px-4 py-2 sm:px-7 sm:py-3 rounded-full hover:bg-accent transition-colors shadow-sm text-xs sm:text-sm whitespace-nowrap">
-                        <?= $btn ?>
-                    </a>
-                    <a href="<?= esc_url($btn2_url) ?>" class="inline-flex items-center justify-center gap-2 border border-white/50 text-white font-bold px-4 py-2 sm:px-7 sm:py-3 rounded-full hover:border-accent hover:bg-accent hover:text-ink transition-colors text-xs sm:text-sm whitespace-nowrap">
-                        <?= $btn2 ?>
-                    </a>
-                </div>
+<section class="kmg-section-sm" data-testid="cta">
+    <div class="kmg-container">
+        <div class="rounded-[2.5rem] bg-ink px-8 py-16 text-center md:px-16 md:py-24">
+            <h2 class="kmg-h2 mx-auto max-w-3xl !text-white"><?php echo esc_html($title); ?></h2>
+            <?php if (get_sub_field('description')) : ?>
+                <p class="kmg-lead mx-auto mt-6 max-w-2xl !text-white/70"><?php echo esc_html(get_sub_field('description')); ?></p>
+            <?php endif; ?>
+            <div class="mt-10 flex flex-wrap justify-center gap-3">
+                <?php kmg_button((string) get_sub_field('button_text'), (string) get_sub_field('button_url'), 'light'); ?>
+                <?php kmg_button((string) get_sub_field('secondary_button_text'), (string) get_sub_field('secondary_button_url'), 'ghost-light', '', false); ?>
             </div>
         </div>
     </div>

@@ -1,66 +1,47 @@
 <?php
 /**
- * Module: About Delivery
- * Waklert Australia 2-tone Dashed & Patterned Theme
+ * Module: about_delivery
+ * Fields: heading, desc, list_items (icon_preset, icon_image, icon_svg, title, desc).
  */
 
-$heading = get_sub_field('heading') ?: 'Delivery Across Australia';
-$desc = get_sub_field('desc') ?: 'Current delivery options, transit times, and parcel tracking are confirmed during ordering and dispatch.';
-$items = get_sub_field('list_items') ?: [];
-
-if (!$heading && !$desc && !$items) {
+$items = [];
+foreach ((array) get_sub_field('list_items') as $row) {
+    $title = trim((string) ($row['title'] ?? ''));
+    if ($title === '') {
+        continue;
+    }
+    $items[] = [
+        'title' => $title,
+        'desc'  => trim((string) ($row['desc'] ?? '')),
+        'icon'  => waklert_render_card_icon([
+            'icon_image'  => $row['icon_image'] ?? null,
+            'icon_preset' => (string) (($row['icon_preset'] ?? '') ?: 'auto'),
+            'icon_svg'    => (string) ($row['icon_svg'] ?? ''),
+            'title'       => $title,
+            'desc'        => (string) ($row['desc'] ?? ''),
+            'size_class'  => 'h-7 w-7',
+        ]),
+    ];
+}
+if (!$items && !get_sub_field('heading')) {
     return;
 }
-
-$fallback_presets = ['australia_delivery', 'express_shipping', 'discreet_sealed', 'po_box_delivery'];
 ?>
-
-<section class="py-6 md:py-10 bg-white">
-    <div class="container-site max-w-5xl">
-        <div class="text-center max-w-3xl mx-auto mb-8">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3 py-0.5 text-[11px] font-black uppercase tracking-[0.16em] text-ink">
-                Shipping &amp; Dispatch
-            </span>
-            <h2 class="mt-2 font-heading font-black text-2xl sm:text-3xl md:text-4xl text-ink"><?= esc_html($heading) ?></h2>
-            <?php if ($desc): ?>
-                <p class="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed whitespace-pre-line"><?= esc_html($desc) ?></p>
-            <?php endif; ?>
+<section class="kmg-section" data-testid="about-delivery">
+    <div class="kmg-container grid gap-14 lg:grid-cols-12 lg:gap-20">
+        <div class="lg:col-span-5">
+            <?php kmg_section_head(['title' => get_sub_field('heading'), 'lead' => get_sub_field('desc'), 'align' => 'left', 'class' => '!mb-0']); ?>
         </div>
-
-        <?php if ($items): ?>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <?php foreach ($items as $idx => $item):
-                $item_title  = (string) ($item['title'] ?? '');
-                $item_desc   = (string) ($item['desc'] ?? '');
-                $icon_preset = (string) ($item['icon_preset'] ?? 'auto');
-                $icon_image  = $item['icon_image'] ?? null;
-                $icon_svg    = (string) ($item['icon_svg'] ?? '');
-
-                $icon_html = waklert_render_card_icon([
-                    'icon_image'     => $icon_image,
-                    'icon_preset'    => $icon_preset,
-                    'icon_svg'       => $icon_svg,
-                    'title'          => $item_title,
-                    'desc'           => $item_desc,
-                    'default_preset' => $fallback_presets[$idx % count($fallback_presets)] ?? 'express_shipping',
-                    'size_class'     => 'h-10 w-10 shrink-0',
-                ]);
-            ?>
-            <div class="relative flex flex-col rounded-2xl border border-border bg-gradient-to-br from-primary-softer via-white to-transparent p-6 shadow-xs transition-all hover:border-border hover:shadow-md">
-                <div class="flex items-center gap-3.5 mb-3">
-                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white border border-border shadow-xs">
-                        <?= $icon_html ?>
+        <ul class="space-y-10 lg:col-span-7">
+            <?php foreach ($items as $item) : ?>
+                <li class="flex gap-6 border-t border-border pt-10 first:border-t-0 first:pt-0">
+                    <span class="kmg-icon"><?php echo $item['icon']; ?></span>
+                    <span>
+                        <span class="block font-heading text-[1.375rem] font-bold tracking-tight text-ink"><?php echo esc_html($item['title']); ?></span>
+                        <?php if ($item['desc'] !== '') : ?><span class="kmg-body mt-2 block"><?php echo esc_html($item['desc']); ?></span><?php endif; ?>
                     </span>
-                    <?php if ($item_title !== ''): ?>
-                        <h3 class="font-heading font-bold text-base text-ink m-0"><?= esc_html($item_title) ?></h3>
-                    <?php endif; ?>
-                </div>
-                <?php if ($item_desc !== ''): ?>
-                    <p class="text-sm text-muted-foreground leading-relaxed m-0"><?= esc_html($item_desc) ?></p>
-                <?php endif; ?>
-            </div>
+                </li>
             <?php endforeach; ?>
-        </div>
-        <?php endif; ?>
+        </ul>
     </div>
 </section>

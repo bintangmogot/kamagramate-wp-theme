@@ -1,82 +1,42 @@
 <?php
 /**
- * Module: About Mission & Vision
- * Waklert Australia 2-tone Dashed & Patterned Theme
+ * Module: about_mission
+ * Fields: mission_heading, mission_desc, mission_icon_preset, mission_icon_image,
+ * vision_heading, vision_desc, vision_icon_preset, vision_icon_image.
  */
 
-$m_head   = get_sub_field('mission_heading') ?: 'Our Approach';
-$m_desc   = get_sub_field('mission_desc') ?: 'We organise armodafinil product information so customers can compare brands, strengths and batch details with clarity.';
-$m_preset = (string) (get_sub_field('mission_icon_preset') ?: 'browse_catalogue');
-$m_image  = get_sub_field('mission_icon_image');
-
-$v_head   = get_sub_field('vision_heading') ?: 'Information First';
-$v_desc   = get_sub_field('vision_desc') ?: 'We use plain English, state clearly that armodafinil is prescription-only in Australia, and encourage customers to speak to a doctor before ordering.';
-$v_preset = (string) (get_sub_field('vision_icon_preset') ?: 'medical_rx_clarity');
-$v_image  = get_sub_field('vision_icon_image');
-
-if (!$m_head && !$m_desc && !$v_head && !$v_desc) {
+$cards = [];
+foreach (['mission', 'vision'] as $key) {
+    $heading = trim((string) get_sub_field($key . '_heading'));
+    if ($heading === '') {
+        continue;
+    }
+    $cards[] = [
+        'heading' => $heading,
+        'desc'    => trim((string) get_sub_field($key . '_desc')),
+        'icon'    => waklert_render_card_icon([
+            'icon_image'  => get_sub_field($key . '_icon_image'),
+            'icon_preset' => (string) (get_sub_field($key . '_icon_preset') ?: 'auto'),
+            'title'       => $heading,
+            'desc'        => (string) get_sub_field($key . '_desc'),
+            'size_class'  => 'h-7 w-7',
+        ]),
+    ];
+}
+if (!$cards) {
     return;
 }
-
-$m_icon = waklert_render_card_icon([
-    'icon_image'     => $m_image,
-    'icon_preset'    => $m_preset,
-    'title'          => $m_head,
-    'desc'           => $m_desc,
-    'default_preset' => 'browse_catalogue',
-    'size_class'     => 'h-10 w-10 shrink-0',
-]);
-
-$v_icon = waklert_render_card_icon([
-    'icon_image'     => $v_image,
-    'icon_preset'    => $v_preset,
-    'title'          => $v_head,
-    'desc'           => $v_desc,
-    'default_preset' => 'medical_rx_clarity',
-    'size_class'     => 'h-10 w-10 shrink-0',
-]);
 ?>
-
-<section class="py-6 md:py-10 bg-white">
-    <div class="container-site max-w-5xl">
-        <div class="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-            
-            <!-- Mission / Approach Card -->
-            <div class="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary-softer via-white to-primary-softer p-6 sm:p-8 shadow-xs hover:border-border hover:shadow-md transition-all">
-                <div class="flex items-center gap-3.5 mb-4">
-                    <span class="flex h-13 w-13 shrink-0 items-center justify-center rounded-xl bg-white border border-border shadow-xs">
-                        <?= $m_icon ?>
-                    </span>
-                    <div>
-                        <span class="text-[11px] font-black uppercase tracking-widest text-ink">Core Purpose</span>
-                        <h2 class="font-heading font-black text-xl sm:text-2xl text-ink m-0"><?= esc_html($m_head) ?></h2>
-                    </div>
-                </div>
-                <?php if ($m_desc): ?>
-                    <p class="text-muted-foreground text-sm sm:text-base leading-relaxed whitespace-pre-line m-0">
-                        <?= esc_html($m_desc) ?>
-                    </p>
+<section class="kmg-section" data-testid="about-mission">
+    <div class="kmg-container grid gap-6 md:grid-cols-2 md:gap-8">
+        <?php foreach ($cards as $i => $card) : ?>
+            <div class="flex flex-col rounded-[2rem] p-10 md:p-14 <?php echo $i === 0 ? 'bg-ink text-white' : 'bg-primary-soft'; ?>">
+                <span class="kmg-icon <?php echo $i === 0 ? '!bg-white/10 !text-primary-light' : '!bg-white'; ?>"><?php echo $card['icon']; ?></span>
+                <h2 class="mt-10 font-heading text-[clamp(1.75rem,1.4rem+1.4vw,2.5rem)] font-bold leading-tight tracking-tight <?php echo $i === 0 ? 'text-white' : 'text-ink'; ?>"><?php echo esc_html($card['heading']); ?></h2>
+                <?php if ($card['desc'] !== '') : ?>
+                    <p class="mt-5 text-[18px] leading-relaxed <?php echo $i === 0 ? 'text-white/70' : 'text-muted-foreground'; ?>"><?php echo esc_html($card['desc']); ?></p>
                 <?php endif; ?>
             </div>
-
-            <!-- Vision / Information First Card -->
-            <div class="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary via-white to-primary p-6 sm:p-8 shadow-xs hover:border-border hover:shadow-md transition-all">
-                <div class="flex items-center gap-3.5 mb-4">
-                    <span class="flex h-13 w-13 shrink-0 items-center justify-center rounded-xl bg-white border border-border shadow-xs">
-                        <?= $v_icon ?>
-                    </span>
-                    <div>
-                        <span class="text-[11px] font-black uppercase tracking-widest text-primary">Medical Clarity</span>
-                        <h2 class="font-heading font-black text-xl sm:text-2xl text-ink m-0"><?= esc_html($v_head) ?></h2>
-                    </div>
-                </div>
-                <?php if ($v_desc): ?>
-                    <p class="text-muted-foreground text-sm sm:text-base leading-relaxed whitespace-pre-line m-0">
-                        <?= esc_html($v_desc) ?>
-                    </p>
-                <?php endif; ?>
-            </div>
-
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>

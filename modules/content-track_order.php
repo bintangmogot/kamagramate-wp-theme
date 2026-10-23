@@ -1,304 +1,103 @@
 <?php
 /**
- * Module: Track Order
- * Displays the complete Australia Post Order Tracking section.
- * All content, headlines, steps, and cards are 100% editable from WP Admin.
+ * Module: track_order
+ * Fields: badge_text, heading, description, intro_callout_p1/p2, form_heading,
+ * form_instructions, input_placeholder, track_btn_text, redirect_notice,
+ * how_works_heading, how_works_steps (title, description), help_heading,
+ * help_description, help_btn_text, help_btn_url, trust_cards (card_type, icon_image, title, description).
+ * The form opens the official Australia Post tracking page for the entered number.
  */
 
-// Optional prefilled tracking number from query string
-$tracking_param = isset($_GET['tracking']) ? sanitize_text_field(wp_unslash($_GET['tracking'])) : '';
-if (!$tracking_param && isset($_GET['order_id'])) {
-    $tracking_param = sanitize_text_field(wp_unslash($_GET['order_id']));
-}
-
-// 1. Hero & Intro Fields
-$badge_text = get_sub_field('badge_text') ?: 'Live Australia Post Tracking';
-$page_title = get_sub_field('heading') ?: get_the_title() ?: 'Track Your Parcel';
-$page_desc  = get_sub_field('description') ?: 'Follow your Waklert Australia delivery from our warehouse to your doorstep with real-time Australia Post tracking.';
-$intro_p1   = get_sub_field('intro_callout_p1') ?: 'Welcome to the Waklert Australia order tracking page. Every parcel we dispatch is shipped with Australia Post and comes with a unique tracking number, so you can follow your delivery from our warehouse to your door.';
-$intro_p2   = get_sub_field('intro_callout_p2') ?: "Your tracking number was emailed to you when your order was dispatched. Enter it below and we'll take you straight to the live Australia Post tracking results for your parcel.";
-
-// 2. Tracking Form Fields
-$form_heading        = get_sub_field('form_heading') ?: 'Enter Your Tracking Number';
-$form_instructions   = get_sub_field('form_instructions') ?: 'Tracking numbers are usually 10–23 characters long, e.g. 33ABC1234567. You can find yours in your dispatch confirmation email.';
-$input_placeholder   = get_sub_field('input_placeholder') ?: 'e.g. 33ABC1234567';
-$button_text         = get_sub_field('track_btn_text') ?: 'Track My Order';
-$redirect_notice     = get_sub_field('redirect_notice') ?: "You'll be redirected to the official Australia Post tracking page (auspost.com.au), where your parcel's latest scan events are shown automatically.";
-
-// 3. How Order Tracking Works Steps Repeater
-$how_heading = get_sub_field('how_works_heading') ?: 'How Order Tracking Works';
-$how_steps   = get_sub_field('how_works_steps');
-if (empty($how_steps) || !is_array($how_steps)) {
-    $how_steps = [
-        [
-            'title' => '1. Order Dispatched',
-            'description' => 'Once your order leaves our facility, we email you a dispatch confirmation containing your Australia Post tracking number.'
-        ],
-        [
-            'title' => '2. Enter Your Number',
-            'description' => 'Paste the tracking number into the field above and select "Track My Order". We\'ll open your parcel\'s results on the Australia Post website.'
-        ],
-        [
-            'title' => '3. Follow Your Parcel',
-            'description' => 'Australia Post updates scan events at each stage — accepted, in transit, onboard for delivery, and delivered.'
-        ]
-    ];
-}
-
-// 4. Need Help & Support Fields
-$help_title    = get_sub_field('help_heading') ?: 'Need Help?';
-$help_desc     = get_sub_field('help_description') ?: "Can't find your tracking number or no scans after 3 business days? Contact our support team and we'll look into it.";
-$help_btn_text = get_sub_field('help_btn_text') ?: 'Contact Support';
-$help_btn_url  = get_sub_field('help_btn_url') ?: home_url('/contact/');
-
-// 5. Trust Cards Repeater
-$trust_cards = get_sub_field('trust_cards');
-if (empty($trust_cards) || !is_array($trust_cards)) {
-    $trust_cards = [
-        [
-            'card_type'   => 'shipping',
-            'title'       => 'Free Shipping',
-            'description' => 'On orders over $200 AUD — enjoy fast, secure, and discreet delivery right to your doorstep.'
-        ],
-        [
-            'card_type'   => 'support',
-            'title'       => '24/7 Support',
-            'description' => 'We’re here to help anytime — day or night, our team is ready to assist you with your orders and inquiries.'
-        ],
-        [
-            'card_type'   => 'payment',
-            'title'       => 'Secure Payment',
-            'description' => 'Shop with confidence — all transactions are 100% safe, encrypted, and protected for your peace of mind.'
-        ]
-    ];
-}
+$f = static function ($name) {
+    return trim((string) get_sub_field($name));
+};
+$heading  = $f('heading') ?: get_the_title();
+$tracking = isset($_GET['id']) ? sanitize_text_field(wp_unslash($_GET['id'])) : '';
+$steps    = array_values(array_filter((array) get_sub_field('how_works_steps'), static function ($row) {
+    return trim((string) ($row['title'] ?? '')) !== '';
+}));
+$cards    = array_values(array_filter((array) get_sub_field('trust_cards'), static function ($row) {
+    return trim((string) ($row['title'] ?? '')) !== '';
+}));
+$card_icons = ['shipping' => 'express_shipping', 'support' => 'live_chat_support', 'payment' => 'secure_lock'];
 ?>
+<section class="border-b border-border bg-primary-softer" data-testid="track-order">
+    <div class="kmg-container pb-16 pt-12 md:pb-20 md:pt-16">
+        <?php get_template_part('template-parts/breadcrumbs'); ?>
+        <div class="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div class="lg:col-span-6">
+                <?php if ($f('badge_text') !== '') : ?><p class="kmg-eyebrow"><?php echo esc_html($f('badge_text')); ?></p><?php endif; ?>
+                <h1 class="kmg-display mt-4"><?php echo esc_html($heading); ?></h1>
+                <?php if ($f('description') !== '') : ?><p class="kmg-lead mt-6"><?php echo esc_html($f('description')); ?></p><?php endif; ?>
+                <?php foreach (array_filter([$f('intro_callout_p1'), $f('intro_callout_p2')]) as $para) : ?>
+                    <p class="kmg-body mt-4"><?php echo esc_html($para); ?></p>
+                <?php endforeach; ?>
+            </div>
 
-<!-- 2-Tone Patterned Header -->
-<header class="relative overflow-hidden border-b border-border bg-gradient-to-b from-primary-softer via-primary-softer to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9" data-testid="track-order-hero">
-    <div class="container-site max-w-5xl mx-auto px-4 relative z-10">
-        <!-- Breadcrumbs -->
-        <div class="mb-3">
-            <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-border bg-white/90 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-xs backdrop-blur">
-                <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-muted-foreground transition-colors hover:text-ink">Home</a>
-                <span class="text-primary-light font-normal">/</span>
-                <span aria-current="page" class="font-extrabold text-ink"><?= esc_html($page_title) ?></span>
-            </nav>
-        </div>
-
-        <!-- Eyebrow Badge -->
-        <div class="mb-2.5">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink shadow-xs">
-                <span class="h-1.5 w-1.5 rounded-full bg-primary-soft0 animate-pulse" aria-hidden="true"></span>
-                <?= esc_html($badge_text) ?>
-            </span>
-        </div>
-
-        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-ink">
-            <?= esc_html($page_title) ?>
-        </h1>
-        <p class="mx-auto mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-muted-foreground">
-            <?= esc_html($page_desc) ?>
-        </p>
-    </div>
-</header>
-
-<!-- Main Content Area -->
-<div class="container-site max-w-5xl mx-auto px-4 py-6 sm:py-8 space-y-7 sm:space-y-9">
-
-    <!-- Intro Callout Box (Yellow/Amber Accent Line) -->
-    <div class="rounded-2xl border border-border border-l-[6px] border-l-amber-500 bg-gradient-to-r from-primary via-white to-white p-5 sm:p-7 shadow-xs">
-        <div class="text-sm sm:text-base leading-relaxed text-muted-foreground m-0 space-y-3 prose-a:text-ink prose-a:font-bold prose-a:underline hover:prose-a:text-primary">
-            <p class="m-0"><?= wp_kses_post(wpautop($intro_p1)) ?></p>
-            <?php if ($intro_p2): ?>
-                <p class="mt-3 m-0"><?= wp_kses_post(wpautop($intro_p2)) ?></p>
-            <?php endif; ?>
+            <div class="lg:col-span-6">
+                <div class="rounded-[2rem] bg-white p-8 ring-1 ring-border md:p-10">
+                    <?php if ($f('form_heading') !== '') : ?><h2 class="kmg-h3"><?php echo esc_html($f('form_heading')); ?></h2><?php endif; ?>
+                    <?php if ($f('form_instructions') !== '') : ?><p class="kmg-body mt-3"><?php echo esc_html($f('form_instructions')); ?></p><?php endif; ?>
+                    <form id="auspost-tracking-form" action="https://auspost.com.au/mypost/track/search" method="GET" target="_blank" rel="noopener noreferrer" class="mt-8 space-y-3">
+                        <label for="auspost-tracking-input" class="sr-only"><?php echo esc_html($f('form_heading')); ?></label>
+                        <input type="text" id="auspost-tracking-input" name="id" value="<?php echo esc_attr($tracking); ?>" placeholder="<?php echo esc_attr($f('input_placeholder')); ?>" autocomplete="off" spellcheck="false" class="kmg-input font-mono tracking-wider">
+                        <button type="submit" id="auspost-tracking-btn" class="kmg-btn kmg-btn-primary w-full"><?php echo esc_html($f('track_btn_text')); ?><?php echo kmg_glyph('arrow-up-right'); ?></button>
+                    </form>
+                    <?php if ($f('redirect_notice') !== '') : ?><p class="mt-5 text-[14px] text-muted-foreground"><?php echo esc_html($f('redirect_notice')); ?></p><?php endif; ?>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
-    <!-- Main Australia Post Tracking Tool Card (Clean, Focused Single Card) -->
-    <section class="rounded-3xl border border-border bg-white p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden" aria-label="Australia Post Order Tracking">
-        <div class="max-w-3xl mx-auto space-y-6">
-            <div class="text-center sm:text-left">
-                <div class="inline-flex items-center gap-2 rounded-full bg-primary-soft border border-border px-3 py-1 text-xs font-black uppercase tracking-wider text-ink mb-2.5">
-                    <svg class="w-3.5 h-3.5 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
-                    <span><?= esc_html($form_heading) ?></span>
-                </div>
-                <h2 class="font-heading text-2xl sm:text-3xl font-black text-ink tracking-tight">
-                    <?= esc_html($form_heading) ?>
-                </h2>
-                <p class="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    <?= wp_kses_post($form_instructions) ?>
-                </p>
-            </div>
-
-            <!-- Interactive Tracking Form with Pill / Capsule Styling -->
-            <form id="auspost-tracking-form" action="https://auspost.com.au/mypost/track/search" method="GET" target="_blank" rel="noopener noreferrer" class="space-y-3">
-                <div class="flex flex-col sm:flex-row gap-3 items-stretch">
-                    <div class="relative flex-1">
-                        <label for="auspost-tracking-input" class="sr-only"><?= esc_html($form_heading) ?></label>
-                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 sm:pl-5 text-primary">
-                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </div>
-                        <input 
-                            type="text" 
-                            id="auspost-tracking-input" 
-                            name="id" 
-                            value="<?= esc_attr($tracking_param) ?>" 
-                            placeholder="<?= esc_attr($input_placeholder) ?>" 
-                            autocomplete="off"
-                            spellcheck="false"
-                            class="w-full rounded-full border border-border bg-muted pl-12 pr-5 py-3.5 sm:py-4 text-base sm:text-lg font-mono tracking-wider text-ink placeholder:text-muted-foreground focus:border-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary transition-all shadow-inner"
-                        >
-                    </div>
-                    <button 
-                        type="submit" 
-                        id="auspost-tracking-btn"
-                        class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary via-primary to-primary hover:from-primary hover:to-primary active:scale-[0.98] text-white px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-black uppercase tracking-wider shadow-md hover:shadow-none hover:shadow-amber-500/25 transition-all shrink-0 cursor-pointer"
-                    >
-                        <span><?= esc_html($button_text) ?></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button>
-                </div>
-                <div id="tracking-error-msg" class="hidden text-xs font-semibold text-rose-600 pl-4" role="alert"></div>
-            </form>
-
-            <!-- Info Alert Box (Soft Yellow/Amber) -->
-            <div class="rounded-2xl border border-border bg-primary-soft p-4 flex items-start gap-3">
-                <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
-                </svg>
-                <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed m-0">
-                    <?= wp_kses_post($redirect_notice) ?>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- "How Order Tracking Works" Section -->
-    <?php if (!empty($how_steps)): ?>
-    <section class="space-y-6 pt-2" aria-labelledby="how-tracking-works-heading">
-        <div class="border-b border-border pb-3">
-            <h2 id="how-tracking-works-heading" class="font-heading text-2xl sm:text-3xl font-black text-ink tracking-tight">
-                <?= esc_html($how_heading) ?>
-            </h2>
-        </div>
-
-        <div class="space-y-4">
-            <?php foreach ($how_steps as $step): 
-                $stitle = $step['title'] ?? '';
-                $sdesc  = $step['description'] ?? '';
-                if (!$stitle) continue;
-            ?>
-            <div class="rounded-2xl border border-border bg-white border-t-[4px] border-t-amber-500 p-5 sm:p-6 shadow-xs hover:border-border transition-all">
-                <h3 class="font-heading text-base sm:text-lg font-black text-ink mb-2">
-                    <?= esc_html($stitle) ?>
-                </h3>
-                <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed m-0">
-                    <?= esc_html($sdesc) ?>
-                </p>
-            </div>
+<?php if ($steps) : ?>
+<section class="kmg-section">
+    <div class="kmg-container">
+        <?php kmg_section_head(['title' => $f('how_works_heading')]); ?>
+        <ol class="grid gap-6 md:grid-cols-3 md:gap-8">
+            <?php foreach ($steps as $i => $step) : ?>
+                <li class="kmg-card">
+                    <p class="kmg-num text-[2.5rem] leading-none opacity-25"><?php echo esc_html(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT)); ?></p>
+                    <h3 class="kmg-h3 mt-8"><?php echo esc_html(preg_replace('/^\d+\.\s*/', '', $step['title'])); ?></h3>
+                    <?php if (!empty($step['description'])) : ?><p class="kmg-body mt-3"><?php echo esc_html($step['description']); ?></p><?php endif; ?>
+                </li>
             <?php endforeach; ?>
-        </div>
-    </section>
-    <?php endif; ?>
+        </ol>
+    </div>
+</section>
+<?php endif; ?>
 
-    <!-- "Need Help?" Card -->
-    <section class="rounded-2xl border border-border bg-gradient-to-r from-primary-softer via-white to-primary-softer p-6 sm:p-7 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5" aria-labelledby="need-help-heading">
-        <div class="space-y-1.5 max-w-xl">
-            <h3 id="need-help-heading" class="font-heading text-lg sm:text-xl font-extrabold text-ink">
-                <?= esc_html($help_title) ?>
-            </h3>
-            <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed m-0">
-                <?= wp_kses_post($help_desc) ?>
-            </p>
-        </div>
-        <div class="flex items-center gap-3 shrink-0">
-            <a href="<?= esc_url($help_btn_url) ?>" class="inline-flex items-center gap-2 rounded-xl bg-primary hover:bg-[#082a40] text-white px-5 py-2.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-sm transition-all">
-                <span><?= esc_html($help_btn_text) ?></span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-            </a>
-        </div>
-    </section>
-
-    <!-- 3-Column Value Proposition / Trust Features -->
-    <?php if (!empty($trust_cards)): ?>
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 pt-2 pb-6" aria-label="Key Benefits">
-        <?php foreach ($trust_cards as $card): 
-            $ctype = $card['card_type'] ?? 'shipping';
-            $ctitle = $card['title'] ?? '';
-            $cdesc = $card['description'] ?? '';
-            $cimage = $card['icon_image'] ?? null;
-            if (!$ctitle) continue;
-
-            $legacy_map = [
-                'shipping' => 'express_shipping',
-                'support'  => 'live_chat_support',
-                'payment'  => 'aud_checkout',
-            ];
-            $resolved_preset = $legacy_map[$ctype] ?? $ctype;
-            $card_icon_html = waklert_render_card_icon([
-                'icon_image'     => $cimage,
-                'icon_preset'    => $resolved_preset,
-                'title'          => $ctitle,
-                'desc'           => $cdesc,
-                'default_preset' => 'express_shipping',
-                'size_class'     => 'w-10 h-10 shrink-0',
-            ]);
-        ?>
-        <div class="rounded-2xl border border-border bg-white p-6 shadow-xs hover:border-border hover:shadow-md transition-all flex flex-col items-center text-center">
-            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white p-2 shadow-none shadow-black/10 border border-border mb-4 shrink-0">
-                <?= $card_icon_html ?>
+<?php if ($cards || $f('help_heading') !== '') : ?>
+<section class="kmg-section kmg-section-tint">
+    <div class="kmg-container grid gap-6 lg:grid-cols-4">
+        <?php foreach ($cards as $card) : ?>
+            <div class="kmg-card">
+                <span class="kmg-icon"><?php echo waklert_render_card_icon(['icon_image' => $card['icon_image'] ?? null, 'icon_preset' => $card_icons[$card['card_type'] ?? ''] ?? 'auto', 'title' => $card['title'], 'size_class' => 'h-7 w-7']); ?></span>
+                <h3 class="kmg-h3 mt-6"><?php echo esc_html($card['title']); ?></h3>
+                <?php if (!empty($card['description'])) : ?><p class="kmg-body mt-3"><?php echo esc_html($card['description']); ?></p><?php endif; ?>
             </div>
-            <h3 class="font-heading font-extrabold text-ink text-base mb-2"><?= esc_html($ctitle) ?></h3>
-            <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed m-0">
-                <?= esc_html($cdesc) ?>
-            </p>
-        </div>
         <?php endforeach; ?>
-    </section>
-    <?php endif; ?>
+        <?php if ($f('help_heading') !== '') : ?>
+            <div class="flex flex-col rounded-[1.75rem] bg-ink p-8 md:p-10">
+                <h3 class="kmg-h3 !text-white"><?php echo esc_html($f('help_heading')); ?></h3>
+                <?php if ($f('help_description') !== '') : ?><p class="mt-3 text-[17px] leading-relaxed text-white/70"><?php echo esc_html($f('help_description')); ?></p><?php endif; ?>
+                <div class="mt-auto pt-8"><?php kmg_button($f('help_btn_text'), $f('help_btn_url'), 'light', 'kmg-btn-sm'); ?></div>
+            </div>
+        <?php endif; ?>
+    </div>
+</section>
+<?php endif; ?>
 
-</div>
-
-<!-- Client-side Tracker Redirection Script -->
 <script>
-(function() {
+(function () {
     const form = document.getElementById('auspost-tracking-form');
     const input = document.getElementById('auspost-tracking-input');
-    const errorMsg = document.getElementById('tracking-error-msg');
-
     if (!form || !input) return;
-
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
-        
-        const rawVal = input.value || '';
-        const cleanVal = rawVal.replace(/[\s\-]/g, '');
-
-        if (cleanVal) {
-            // When user enters a tracking number, open Australia Post details page which automatically fetches and displays the scan results
-            const targetUrl = 'https://auspost.com.au/mypost/track/details/' + encodeURIComponent(cleanVal);
-            window.open(targetUrl, '_blank', 'noopener,noreferrer');
-        } else {
-            // If input is empty, direct link to Australia Post tracking portal
-            const portalUrl = 'https://auspost.com.au/mypost/track/';
-            window.open(portalUrl, '_blank', 'noopener,noreferrer');
-        }
-    });
-
-    input.addEventListener('input', function() {
-        if (errorMsg && !errorMsg.classList.contains('hidden')) {
-            errorMsg.classList.add('hidden');
-        }
+        const clean = (input.value || '').replace(/[\s-]/g, '');
+        const url = clean ? 'https://auspost.com.au/mypost/track/details/' + encodeURIComponent(clean) : 'https://auspost.com.au/mypost/track/';
+        window.open(url, '_blank', 'noopener,noreferrer');
     });
 })();
 </script>

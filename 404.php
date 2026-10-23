@@ -1,25 +1,20 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
+ * 404. Copy from Theme Settings -> Interface Labels.
  */
 
 get_header();
+$label = static function ($name) {
+    return trim((string) get_field($name, 'option'));
+};
 ?>
-
-<div class="section-padding bg-background min-h-[70vh] flex flex-col justify-center items-center text-center">
-    <div class="container-site max-w-2xl">
-        <h1 class="font-heading text-6xl md:text-8xl font-black text-primary mb-6">404</h1>
-        <h2 class="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
-            <?= "Oops! Page not found" ?>
-        </h2>
-        <p class="text-muted-foreground mb-8">
-            <?= "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable." ?>
-        </p>
-        <a href="<?= home_url('/') ?>" class="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-pill transition-colors hover:bg-primary-dark">
-            <?= "Back to Homepage" ?>
-        </a>
+<main id="main" class="kmg-section">
+    <div class="kmg-container-narrow py-10 text-center">
+        <p class="kmg-num text-[clamp(6rem,4rem+10vw,12rem)] leading-none tracking-tight">404</p>
+        <?php if ($label('label_404_title') !== '') : ?><h1 class="kmg-h2 mt-6"><?php echo esc_html($label('label_404_title')); ?></h1><?php endif; ?>
+        <?php if ($label('label_404_text') !== '') : ?><p class="kmg-lead mx-auto mt-6 max-w-xl"><?php echo esc_html($label('label_404_text')); ?></p><?php endif; ?>
+        <div class="mt-10 flex justify-center"><?php kmg_button($label('label_404_button'), home_url('/'), 'primary'); ?></div>
     </div>
-</div>
-
+</main>
 <?php
 get_footer();
