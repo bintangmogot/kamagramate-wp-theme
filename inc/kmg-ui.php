@@ -84,7 +84,7 @@ function kmg_section_head(array $args): void {
     }
 
     $align   = ($args['align'] ?? 'center') === 'left' ? '' : ' kmg-head-center';
-    $tag     = in_array($args['tag'] ?? 'h2', ['h1', 'h2', 'h3'], true) ? $args['tag'] : 'h2';
+    $tag     = in_array($args['tag'] ?? 'h2', ['h1', 'h2', 'h3'], true) ? ($args['tag'] ?? 'h2') : 'h2';
     $size    = ($args['size'] ?? 'h2') === 'display' ? 'kmg-display' : 'kmg-h2';
     $dark    = !empty($args['dark']) ? ' text-white' : '';
     $class   = trim((string) ($args['class'] ?? ''));

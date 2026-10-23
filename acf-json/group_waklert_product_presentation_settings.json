@@ -105,6 +105,134 @@
             "name": "product_specs_delivery_label",
             "type": "text",
             "default_value": "Delivery Time"
+        },
+        {
+            "key": "field_kmg_card_tab",
+            "label": "Product Cards",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_kmg_card_in_stock",
+            "label": "In Stock Label",
+            "name": "card_in_stock_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_card_out_stock",
+            "label": "Out of Stock Label",
+            "name": "card_out_of_stock_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_card_cta",
+            "label": "Card Button Label",
+            "name": "card_cta_label",
+            "type": "text",
+            "instructions": "Button on product cards (e.g. Choose pack).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_card_pack_unit",
+            "label": "Pack Unit Label",
+            "name": "card_pack_unit_label",
+            "type": "text",
+            "instructions": "Appended to quantity pills when missing (e.g. Tabs).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_card_per_unit",
+            "label": "Per-Unit Price Suffix",
+            "name": "card_per_unit_suffix",
+            "type": "text",
+            "instructions": "Shown after the lowest per-unit price (e.g. /tab). Leave empty to hide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_card_from",
+            "label": "Per-Unit Price Prefix",
+            "name": "card_from_label",
+            "type": "text",
+            "instructions": "Word before the per-unit price (e.g. From).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_card_spot_link",
+            "label": "Spotlight Card Link Label",
+            "name": "card_spotlight_link_label",
+            "type": "text",
+            "instructions": "Link text on the large featured product cards (e.g. Shop now).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -125,5 +253,5 @@
     "active": true,
     "description": "Editable labels and shipping/trust messages used on WooCommerce product pages.",
     "show_in_rest": 0,
-    "modified": 1791190000
+    "modified": 1792763086
 }

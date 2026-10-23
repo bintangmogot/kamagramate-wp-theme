@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main>
+<main id="main">
     <?php
     // Check if the post uses ACF Flexible Content Modules (like the policy layout)
     if (have_rows('modules')) {

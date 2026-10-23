@@ -236,3 +236,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (label && toast.dataset.copied) label.textContent = toast.dataset.copied;
     });
 });
+
+// Product card pack-size pills: swap the displayed price
+document.addEventListener('click', (e) => {
+    const pill = e.target.closest('[data-kmg-pill]');
+    if (!pill) return;
+    const card = pill.closest('[data-kmg-card]');
+    if (!card) return;
+    card.querySelectorAll('[data-kmg-pill]').forEach((el) => el.setAttribute('aria-pressed', el === pill ? 'true' : 'false'));
+    const price = card.querySelector('.dynamic-price');
+    if (price) price.innerHTML = pill.dataset.price;
+});
+
+// Horizontal carousels: prev/next buttons scroll by one card
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-kmg-scroll]');
+    if (!btn) return;
+    const track = document.getElementById(btn.dataset.kmgScroll);
+    if (!track) return;
+    const card = track.firstElementChild;
+    const step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.8;
+    track.scrollBy({ left: step * Number(btn.dataset.dir || 1), behavior: 'smooth' });
+});

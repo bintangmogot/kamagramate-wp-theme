@@ -1,7 +1,8 @@
 <?php
 /**
- * The template for displaying product content in a horizontal layout
- * Inspired by kamagraaus.com
+ * Large spotlight product card (homepage "featured_products" module).
+ * Copy: product title, product_badge, shop_page_text / short description.
+ * Labels: Theme Settings -> Product Cards.
  */
 
 defined('ABSPATH') || exit;
@@ -11,81 +12,54 @@ global $product;
 if (!is_a($product, 'WC_Product')) {
     $product = wc_get_product(get_the_ID());
 }
-
 if (empty($product) || !$product->is_visible()) {
     return;
 }
 
-$title = $product->get_title();
-$link = $product->get_permalink();
-$image = wp_get_attachment_image_url($product->get_image_id(), 'medium_large') ?: wc_placeholder_img_src();
-
-// Use shop_page_text ACF field for excerpt, fallback to standard post excerpt
-$excerpt = get_field('shop_page_text', $product->get_id());
-if (empty($excerpt)) {
-    $excerpt = $product->get_short_description() ?: get_the_excerpt();
-}
-// Don't overly trim it in PHP so the JS toggle can reveal the rest
-$excerpt = wp_trim_words(strip_shortcodes(wp_strip_all_tags($excerpt)), 60, '...');
-
-// Custom price logic: change range to "From" for variable products
-if ( $product->is_type('variable') ) {
-    $min_price = $product->get_variation_price('min', true);
-    $price_html = 'From ' . wc_price($min_price);
-} else {
-    $price_html = $product->get_price_html();
-}
+$product_id = $product->get_id();
+$title      = $product->get_title();
+$link       = $product->get_permalink();
+$badge      = trim((string) get_field('product_badge', $product_id));
+$ingredient = trim((string) get_field('product_active_ingredient', $product_id));
+$excerpt    = trim(wp_strip_all_tags((string) (get_field('shop_page_text', $product_id) ?: $product->get_short_description())));
+$excerpt    = wp_trim_words($excerpt, 32, '...');
+$from_label = waklert_get_product_presentation_option('card_from_label');
+$link_label = waklert_get_product_presentation_option('card_spotlight_link_label');
+$min_price  = $product->is_type('variable') ? $product->get_variation_price('min', true) : $product->get_price();
 ?>
-<div class="group relative flex flex-col sm:flex-row bg-white border-2 border-dashed border-sky-300/80 hover:border-[#0c4161] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
-    
-    <!-- Image full width, no padding, object-contain so it never cuts -->
-    <a href="<?= esc_url($link) ?>" class="sm:w-2/5 md:w-[42%] relative block bg-radial-[at_center] from-sky-50 to-white shrink-0 overflow-hidden min-h-[220px] sm:min-h-[auto] border-b sm:border-b-0 sm:border-r-2 sm:border-dashed sm:border-sky-200/80 p-4 flex items-center justify-center">
-        <img src="<?= esc_url($image) ?>" alt="<?= esc_attr($title) ?>" class="w-full h-full max-h-[240px] object-contain transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1" loading="lazy" />
-        <div class="absolute top-3 left-3">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-amber-400 text-slate-950 border border-amber-500/30 shadow-xs">
-                ★ POPULAR
-            </span>
-        </div>
+<article class="group grid overflow-hidden rounded-[2rem] border border-border bg-white transition-shadow duration-300 hover:shadow-[var(--shadow-card-hover)] md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+    <a href="<?php echo esc_url($link); ?>" class="relative flex aspect-[4/3] items-center justify-center bg-primary-soft md:aspect-auto md:min-h-[320px]">
+        <?php
+        echo $product->get_image_id()
+            ? wp_get_attachment_image($product->get_image_id(), 'woocommerce_single', false, ['class' => 'h-full max-h-[300px] w-full object-contain p-8 transition-transform duration-500 ease-out group-hover:scale-105', 'loading' => 'lazy', 'alt' => $title])
+            : '';
+        ?>
     </a>
-    
-    <div class="p-6 sm:p-7 flex flex-col justify-between flex-1 bg-white">
-        <div>
-            <!-- Bestseller / Category Tag -->
-            <div class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-amber-600 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5 text-amber-500">
-                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
-                </svg>
-                AUSTRALIAN DISPATCH
-            </div>
 
-            <!-- Title -->
-            <a href="<?= esc_url($link) ?>" class="block font-heading text-xl md:text-2xl font-black text-slate-900 leading-tight hover:text-[#0c4161] transition-colors mb-2.5">
-                <?= esc_html($title) ?>
-            </a>
+    <div class="flex flex-col p-8 md:p-10">
+        <?php if ($badge !== '') : ?>
+            <p class="kmg-eyebrow"><?php echo esc_html($badge); ?></p>
+        <?php endif; ?>
+        <h3 class="mt-3 font-heading text-[clamp(1.75rem,1.4rem+1.2vw,2.375rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink">
+            <a href="<?php echo esc_url($link); ?>" class="hover:text-primary"><?php echo esc_html($title); ?></a>
+        </h3>
+        <?php if ($ingredient !== '') : ?>
+            <p class="mt-2 text-[15px] font-medium text-muted-foreground"><?php echo esc_html($ingredient); ?></p>
+        <?php endif; ?>
+        <?php if ($excerpt !== '') : ?>
+            <p class="mt-5 text-[17px] leading-relaxed text-muted-foreground"><?php echo esc_html($excerpt); ?></p>
+        <?php endif; ?>
 
-            <!-- Excerpt with Read More Toggle -->
-            <div class="mb-4">
-                <p class="text-sm text-slate-600 leading-relaxed line-clamp-2 transition-all duration-300">
-                    <?= esc_html($excerpt) ?>
+        <div class="mt-auto flex flex-wrap items-end justify-between gap-4 pt-8">
+            <?php if ($min_price !== '') : ?>
+                <p class="text-[15px] text-muted-foreground">
+                    <?php if ($from_label !== '') : ?><span class="mr-1"><?php echo esc_html($from_label); ?></span><?php endif; ?>
+                    <span class="font-heading text-[1.75rem] font-extrabold tracking-tight text-ink"><?php echo wp_kses_post(wc_price((float) $min_price)); ?></span>
                 </p>
-                <?php if (str_word_count($excerpt) > 15): ?>
-                <button type="button" onclick="let p = this.previousElementSibling; p.classList.toggle('line-clamp-2'); this.innerText = p.classList.contains('line-clamp-2') ? 'Read more' : 'Show less';" class="text-xs font-bold text-[#0c4161] hover:underline mt-1">Read more</button>
-                <?php endif; ?>
-            </div>
-        </div>
-
-        <div class="pt-4 border-t-2 border-dashed border-sky-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-auto">
-            <!-- Price -->
-            <div class="text-sm text-slate-600 font-medium">
-                <span class="block text-[11px] uppercase tracking-wider text-slate-400 font-bold">Price in AUD</span>
-                <span class="font-black text-slate-950 text-lg md:text-xl [&>span.amount]:!font-black [&>del]:opacity-50 [&>del]:font-normal [&>del]:text-sm [&>ins]:no-underline"><?= wp_kses_post($price_html) ?></span>
-            </div>
-            
-            <!-- Shop Now Link (Compact on Mobile) -->
-            <a href="<?= esc_url($link) ?>" class="inline-flex items-center justify-center gap-2 bg-[#0c4161] hover:bg-[#082c42] text-white font-extrabold text-xs sm:text-sm py-2 px-4 sm:py-2.5 sm:px-6 rounded-lg sm:rounded-xl group/btn shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                <span>Order Now</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover/btn:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+            <?php endif; ?>
+            <?php if ($link_label !== '') : ?>
+                <a href="<?php echo esc_url($link); ?>" class="kmg-btn kmg-btn-primary kmg-btn-sm"><?php echo esc_html($link_label); ?><?php echo kmg_glyph('arrow-right'); ?></a>
+            <?php endif; ?>
         </div>
     </div>
-</div>
+</article>

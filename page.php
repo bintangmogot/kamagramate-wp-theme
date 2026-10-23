@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-<main>
+<main id="main">
     <?php
     // If the page uses ACF Flexible Content Modules, render them:
     if (have_rows('modules')) {

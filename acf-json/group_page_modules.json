@@ -479,6 +479,29 @@
                                     "parent_repeater": "field_ts_badges"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_kmg_ts_style",
+                            "label": "Style",
+                            "name": "style",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "light": "Light row",
+                                "dark": "Dark band"
+                            },
+                            "default_value": "light",
+                            "return_format": "value",
+                            "ui": 0,
+                            "multiple": 0,
+                            "allow_null": 0
                         }
                     ],
                     "min": "",
@@ -558,6 +581,79 @@
                             "elements": [],
                             "return_format": "object",
                             "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_kmg_fp_desc",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_kmg_fp_btn",
+                            "label": "Button Text",
+                            "name": "button_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_fp_url",
+                            "label": "Button URL",
+                            "name": "button_url",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_fp_layout",
+                            "label": "Card Style",
+                            "name": "card_style",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "spotlight": "Large spotlight cards (2 per row)",
+                                "grid": "Product cards with pack sizes (3-4 per row)"
+                            },
+                            "default_value": "spotlight",
+                            "return_format": "value",
+                            "ui": 0,
+                            "multiple": 0,
+                            "allow_null": 0
                         }
                     ],
                     "min": "",
@@ -838,6 +934,72 @@
                             "elements": [],
                             "return_format": "object",
                             "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_kmg_rc_tag",
+                            "label": "Eyebrow",
+                            "name": "tag",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_rc_desc",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_kmg_rc_btn",
+                            "label": "Button Text",
+                            "name": "button_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_rc_url",
+                            "label": "Button URL",
+                            "name": "button_url",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -1031,6 +1193,24 @@
                             },
                             "default_value": "http://waklertaustralia.com.test/faq",
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_fq_desc",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "rows": 3,
+                            "new_lines": ""
                         }
                     ],
                     "min": "",
@@ -1275,6 +1455,102 @@
                                     "parent_repeater": "field_comp_rows"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_kmg_cmp_c0",
+                            "label": "Column Heading - Feature",
+                            "name": "col_feature_label",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cmp_c1",
+                            "label": "Column Heading - Highlighted",
+                            "name": "col_1_label",
+                            "type": "text",
+                            "instructions": "Maps to the modafinil value in each row.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cmp_c1b",
+                            "label": "Highlighted Column Badge",
+                            "name": "col_1_badge",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cmp_c2",
+                            "label": "Column Heading - Second",
+                            "name": "col_2_label",
+                            "type": "text",
+                            "instructions": "Maps to the coffee value.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cmp_c3",
+                            "label": "Column Heading - Third",
+                            "name": "col_3_label",
+                            "type": "text",
+                            "instructions": "Maps to the energy value.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cmp_note",
+                            "label": "Footnote",
+                            "name": "footnote",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "75",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -4450,6 +4726,54 @@
                             "max_height": 0,
                             "max_size": 0,
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_kmg_sc_sms",
+                            "label": "SMS Button Text",
+                            "name": "sms_btn_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_sc_tg",
+                            "label": "Telegram Button Text",
+                            "name": "telegram_btn_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_sc_tgu",
+                            "label": "Telegram URL or Number",
+                            "name": "telegram_btn_url",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -4725,6 +5049,880 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_kmg_marquee_strip": {
+                    "key": "layout_kmg_marquee_strip",
+                    "name": "marquee_strip",
+                    "label": "Scrolling Trust Ticker",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_kmg_mq_items",
+                            "label": "Items",
+                            "name": "items",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "sub_fields": [
+                                {
+                                    "key": "field_kmg_mq_icon",
+                                    "label": "Icon",
+                                    "name": "icon_preset",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "auto": "Auto-match",
+                                        "parcel_guarantee": "Parcel guarantee",
+                                        "live_chat_support": "Chat support",
+                                        "medical_rx_clarity": "Medicine information",
+                                        "aud_checkout": "Checkout",
+                                        "express_shipping": "Shipping",
+                                        "australia_delivery": "Australia delivery",
+                                        "browse_catalogue": "Catalogue",
+                                        "listing_details": "Search / details",
+                                        "returning_loyalty": "Star",
+                                        "discreet_sealed": "Discreet package",
+                                        "po_box_delivery": "PO Box",
+                                        "no_customs": "Check",
+                                        "affordable_value": "Price tag",
+                                        "secure_lock": "Lock",
+                                        "clock": "Clock",
+                                        "medicine": "Medicine",
+                                        "heart": "Heart",
+                                        "person": "Person",
+                                        "mail": "Email",
+                                        "phone": "Phone"
+                                    },
+                                    "default_value": "no_customs",
+                                    "return_format": "value",
+                                    "ui": 0,
+                                    "multiple": 0,
+                                    "allow_null": 0
+                                },
+                                {
+                                    "key": "field_kmg_mq_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "70",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "layout": "table",
+                            "button_label": "Add Item",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_kmg_category_grid": {
+                    "key": "layout_kmg_category_grid",
+                    "name": "category_grid",
+                    "label": "Shop by Category",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_kmg_cg_eb",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cg_ti",
+                            "label": "Heading",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cg_le",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_kmg_cg_terms",
+                            "label": "Categories",
+                            "name": "categories",
+                            "type": "taxonomy",
+                            "instructions": "Pick and order the product categories to show. Card image = category \"Top Image\" or thumbnail.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "product_cat",
+                            "field_type": "multi_select",
+                            "return_format": "id",
+                            "add_term": 0,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "multiple": 1,
+                            "allow_null": 1
+                        },
+                        {
+                            "key": "field_kmg_cg_count",
+                            "label": "Show Product Count",
+                            "name": "show_count",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_kmg_cg_suffix",
+                            "label": "Product Count Suffix",
+                            "name": "count_suffix",
+                            "type": "text",
+                            "instructions": "e.g. products",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_kmg_condition_links": {
+                    "key": "layout_kmg_condition_links",
+                    "name": "condition_links",
+                    "label": "Condition / Quick Links",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_kmg_cl_eb",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cl_ti",
+                            "label": "Heading",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cl_le",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_kmg_cl_btn",
+                            "label": "Link Text",
+                            "name": "link_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cl_url",
+                            "label": "Link URL",
+                            "name": "link_url",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_cl_items",
+                            "label": "Links",
+                            "name": "items",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "sub_fields": [
+                                {
+                                    "key": "field_kmg_cl_icon",
+                                    "label": "Icon",
+                                    "name": "icon_preset",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "20",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "auto": "Auto-match",
+                                        "parcel_guarantee": "Parcel guarantee",
+                                        "live_chat_support": "Chat support",
+                                        "medical_rx_clarity": "Medicine information",
+                                        "aud_checkout": "Checkout",
+                                        "express_shipping": "Shipping",
+                                        "australia_delivery": "Australia delivery",
+                                        "browse_catalogue": "Catalogue",
+                                        "listing_details": "Search / details",
+                                        "returning_loyalty": "Star",
+                                        "discreet_sealed": "Discreet package",
+                                        "po_box_delivery": "PO Box",
+                                        "no_customs": "Check",
+                                        "affordable_value": "Price tag",
+                                        "secure_lock": "Lock",
+                                        "clock": "Clock",
+                                        "medicine": "Medicine",
+                                        "heart": "Heart",
+                                        "person": "Person",
+                                        "mail": "Email",
+                                        "phone": "Phone"
+                                    },
+                                    "default_value": "medicine",
+                                    "return_format": "value",
+                                    "ui": 0,
+                                    "multiple": 0,
+                                    "allow_null": 0
+                                },
+                                {
+                                    "key": "field_kmg_cl_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_kmg_cl_sub",
+                                    "label": "Subtitle",
+                                    "name": "subtitle",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_kmg_cl_link",
+                                    "label": "URL",
+                                    "name": "url",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "layout": "table",
+                            "button_label": "Add Link",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_kmg_guarantees": {
+                    "key": "layout_kmg_guarantees",
+                    "name": "guarantees",
+                    "label": "Guarantees & Fact Check (Dark)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_kmg_gu_eb",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_gu_ti",
+                            "label": "Heading",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_gu_le",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_kmg_gu_items",
+                            "label": "Guarantees",
+                            "name": "items",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "sub_fields": [
+                                {
+                                    "key": "field_kmg_gu_icon",
+                                    "label": "Icon",
+                                    "name": "icon_preset",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "auto": "Auto-match",
+                                        "parcel_guarantee": "Parcel guarantee",
+                                        "live_chat_support": "Chat support",
+                                        "medical_rx_clarity": "Medicine information",
+                                        "aud_checkout": "Checkout",
+                                        "express_shipping": "Shipping",
+                                        "australia_delivery": "Australia delivery",
+                                        "browse_catalogue": "Catalogue",
+                                        "listing_details": "Search / details",
+                                        "returning_loyalty": "Star",
+                                        "discreet_sealed": "Discreet package",
+                                        "po_box_delivery": "PO Box",
+                                        "no_customs": "Check",
+                                        "affordable_value": "Price tag",
+                                        "secure_lock": "Lock",
+                                        "clock": "Clock",
+                                        "medicine": "Medicine",
+                                        "heart": "Heart",
+                                        "person": "Person",
+                                        "mail": "Email",
+                                        "phone": "Phone"
+                                    },
+                                    "default_value": "auto",
+                                    "return_format": "value",
+                                    "ui": 0,
+                                    "multiple": 0,
+                                    "allow_null": 0
+                                },
+                                {
+                                    "key": "field_kmg_gu_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "70",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_kmg_gu_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "rows": 3,
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_kmg_gu_ltext",
+                                    "label": "Link Text",
+                                    "name": "link_text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_kmg_gu_lurl",
+                                    "label": "Link URL",
+                                    "name": "link_url",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "layout": "block",
+                            "button_label": "Add Guarantee",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": ""
+                        },
+                        {
+                            "key": "field_kmg_gu_fh",
+                            "label": "Fact Check Heading",
+                            "name": "facts_heading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_gu_facts",
+                            "label": "Fact Check Links",
+                            "name": "facts",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "sub_fields": [
+                                {
+                                    "key": "field_kmg_gu_ft",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_kmg_gu_fu",
+                                    "label": "URL",
+                                    "name": "url",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "layout": "table",
+                            "button_label": "Add Link",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_kmg_audience_grid": {
+                    "key": "layout_kmg_audience_grid",
+                    "name": "audience_grid",
+                    "label": "Used By / Audience Grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_kmg_au_eb",
+                            "label": "Eyebrow",
+                            "name": "eyebrow",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_au_ti",
+                            "label": "Heading",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_au_le",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_kmg_au_items",
+                            "label": "Audiences",
+                            "name": "items",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "sub_fields": [
+                                {
+                                    "key": "field_kmg_au_img",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all"
+                                },
+                                {
+                                    "key": "field_kmg_au_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "35",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_kmg_au_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "35",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "layout": "table",
+                            "button_label": "Add Audience",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_kmg_popular_searches": {
+                    "key": "layout_kmg_popular_searches",
+                    "name": "popular_searches",
+                    "label": "Popular Searches",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_kmg_ps_ti",
+                            "label": "Heading",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_kmg_ps_items",
+                            "label": "Links",
+                            "name": "items",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "sub_fields": [
+                                {
+                                    "key": "field_kmg_ps_label",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_kmg_ps_url",
+                                    "label": "URL",
+                                    "name": "url",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "layout": "table",
+                            "button_label": "Add Link",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -4767,6 +5965,6 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792586495,
+    "modified": 1792770449,
     "local_file": "C:laragonwwwwaklertaustralia.com/wp-content/themes/waklertaustralia.com-wp/acf-json/group_page_modules.json"
 }
