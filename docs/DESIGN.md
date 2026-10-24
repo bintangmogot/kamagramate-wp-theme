@@ -89,3 +89,5 @@ Australia outline filled with the Australian flag, then "KAMAGRA" (#7C3AED) over
 Sources in `docs/brand/`: `make_map.py` generates `australia-flag-map.svg`;
 `logo-dark.html` / `logo-light.html` are rendered to transparent PNG at 4x and uploaded
 to the Media Library, then set in Theme Settings (Site Logo, Footer Logo).
+Favicon: `favicon.html` renders the flag map alone at 512x512; uploaded and set as the
+WordPress Site Icon (Appearance -> Customize -> Site Identity).
