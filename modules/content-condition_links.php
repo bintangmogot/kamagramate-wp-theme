@@ -30,7 +30,7 @@ $link_url  = trim((string) get_sub_field('link_url'));
 
         <ul class="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <?php foreach ($items as $item) : ?>
-                <li>
+                <li class="min-w-0">
                     <a href="<?php echo esc_url($item['url']); ?>" class="group flex items-center gap-4 rounded-2xl border border-border bg-white p-5 transition-colors hover:border-primary">
                         <span class="kmg-icon !h-12 !w-12 !rounded-xl"><?php echo waklert_render_card_icon(['icon_preset' => $item['icon_preset'] ?? 'medicine', 'title' => $item['title'], 'size_class' => 'h-6 w-6']); ?></span>
                         <span class="min-w-0 flex-1">

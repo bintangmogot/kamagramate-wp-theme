@@ -57,13 +57,13 @@ $img_html = kmg_image(get_sub_field('background_image'), 'full', [
             <?php endif; ?>
 
             <?php if ($stats) : ?>
-                <dl class="mt-12 grid max-w-2xl grid-cols-3 gap-3">
+                <dl class="mt-12 flex max-w-2xl flex-wrap gap-3">
                     <?php foreach ($stats as $stat) : ?>
-                        <div class="rounded-2xl bg-white px-4 py-4 text-center shadow-[0_10px_30px_-18px_rgba(34,18,79,0.35)] sm:px-5">
+                        <div class="min-w-[10rem] flex-1 rounded-2xl bg-white px-5 py-4 text-center shadow-[0_10px_30px_-18px_rgba(34,18,79,0.35)]">
                             <dt class="sr-only"><?php echo esc_html($stat['label'] ?? ''); ?></dt>
-                            <dd class="font-heading text-[1.5rem] font-bold leading-none text-ink sm:text-[1.875rem]"><?php echo esc_html($stat['value']); ?></dd>
+                            <dd class="whitespace-nowrap font-heading text-[1.75rem] font-bold leading-none text-ink sm:text-[1.875rem]"><?php echo esc_html($stat['value']); ?></dd>
                             <?php if (!empty($stat['label'])) : ?>
-                                <dd class="mt-1.5 text-[14px] leading-snug text-muted-foreground sm:text-[16px]"><?php echo esc_html($stat['label']); ?></dd>
+                                <dd class="mt-1.5 text-[15px] leading-snug text-muted-foreground sm:text-[16px]"><?php echo esc_html($stat['label']); ?></dd>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
@@ -72,7 +72,7 @@ $img_html = kmg_image(get_sub_field('background_image'), 'full', [
         </div>
 
         <?php if ($img_html) : ?>
-            <div class="lg:col-span-5">
+            <div class="hidden lg:col-span-5 lg:block">
                 <div class="relative mx-auto aspect-square max-w-[20rem] sm:max-w-[26rem] lg:max-w-[34rem] <?php echo $cover ? 'overflow-hidden rounded-[2rem]' : ''; ?>">
                     <?php echo $img_html; ?>
                 </div>
