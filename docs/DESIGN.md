@@ -84,8 +84,8 @@ lift `-translate-y-1`. Marquee strip pauses on hover and respects
 
 ## Logo
 
-Australia outline filled with the Australian flag, then "KAMAGRA" (purple) over "MATE"
-(ink) in Afacad Bold uppercase, matching the structure of the Modafinil Australia logo.
+Australia outline filled with the Australian flag, then "KAMAGRA" (#7C3AED) over "MATE"
+(#4C1D95) in Afacad Bold uppercase (footer: #C4B5FD over #EDE4FF), matching the structure of the Modafinil Australia logo.
 Sources in `docs/brand/`: `make_map.py` generates `australia-flag-map.svg`;
 `logo-dark.html` / `logo-light.html` are rendered to transparent PNG at 4x and uploaded
 to the Media Library, then set in Theme Settings (Site Logo, Footer Logo).
