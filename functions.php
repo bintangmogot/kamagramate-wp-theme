@@ -14,6 +14,7 @@ function waklert_output_pattern_rings($extra_class = '') {
 
 // 1. Theme setup (menus, supports, image sizes) and shared UI helpers
 require_once MODMY_THEME_DIR . '/inc/kmg-ui.php';
+require_once MODMY_THEME_DIR . '/inc/security.php';
 require_once MODMY_THEME_DIR . '/inc/theme-setup.php';
 require_once MODMY_THEME_DIR . '/inc/nav-walkers.php';
 require_once MODMY_THEME_DIR . '/inc/icon-library.php';
