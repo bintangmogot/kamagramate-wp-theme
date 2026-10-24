@@ -10,3 +10,6 @@ Thumbs.db
 *.tmp
 *.sql
 *.csv
+
+# Local-only admin login (never commit)
+local-admin-login.txt
