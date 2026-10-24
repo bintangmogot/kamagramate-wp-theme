@@ -25,17 +25,22 @@ foreach ($sections as $i => $section) {
 }
 ?>
 <section class="border-b border-border bg-primary-softer">
-    <div class="kmg-container pb-16 pt-12 md:pb-20 md:pt-16">
+    <div class="kmg-container <?php echo $is_post ? 'pb-10 pt-8 md:pb-12 md:pt-10' : 'pb-16 pt-12 md:pb-20 md:pt-16'; ?>">
         <?php get_template_part('template-parts/breadcrumbs'); ?>
-        <div class="mt-8 max-w-4xl">
+        <div class="<?php echo $is_post ? 'mt-6' : 'mt-8'; ?> max-w-4xl">
             <?php if (!empty($args['eyebrow'])) : ?><p class="kmg-eyebrow"><?php echo esc_html($args['eyebrow']); ?></p><?php endif; ?>
-            <h1 class="kmg-display mt-4"><?php echo esc_html($title); ?></h1>
-            <?php if (!empty($args['intro'])) : ?><p class="kmg-lead mt-6 max-w-2xl"><?php echo esc_html($args['intro']); ?></p><?php endif; ?>
+            <?php if ($is_post) : ?>
+                <h1 class="font-heading text-[clamp(2rem,1.6rem+1.6vw,3rem)] font-bold leading-[1.12] text-ink"><?php echo esc_html($title); ?></h1>
+                <?php if (!empty($args['intro'])) : ?><p class="mt-5 max-w-3xl text-[18px] leading-relaxed text-muted-foreground"><?php echo esc_html($args['intro']); ?></p><?php endif; ?>
+            <?php else : ?>
+                <h1 class="kmg-display mt-4"><?php echo esc_html($title); ?></h1>
+                <?php if (!empty($args['intro'])) : ?><p class="kmg-lead mt-6 max-w-2xl"><?php echo esc_html($args['intro']); ?></p><?php endif; ?>
+            <?php endif; ?>
             <?php if ($is_post) :
                 $category = modmy_get_post_category(get_the_ID());
                 $words    = str_word_count(wp_strip_all_tags(implode(' ', array_column($sections, 'content'))));
                 ?>
-                <p class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-[16px] text-muted-foreground">
+                <p class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] text-muted-foreground">
                     <?php if ($category !== '') : ?><span class="font-semibold text-primary"><?php echo esc_html($category); ?></span><span aria-hidden="true">/</span><?php endif; ?>
                     <time datetime="<?php echo esc_attr(get_the_date('c')); ?>"><?php echo esc_html(get_the_date('j F Y')); ?></time>
                     <?php if ($reading_label !== '') : ?><span aria-hidden="true">/</span><span><?php echo esc_html(max(1, (int) ceil($words / 220)) . ' ' . $reading_label); ?></span><?php endif; ?>
@@ -52,7 +57,7 @@ foreach ($sections as $i => $section) {
 </section>
 
 <?php if ($sections) : ?>
-<section class="kmg-section">
+<section class="<?php echo $is_post ? 'py-12 md:py-16' : 'kmg-section'; ?>">
     <div class="kmg-container grid gap-14 lg:grid-cols-12 lg:gap-20">
         <aside class="hidden lg:col-span-4 lg:block">
             <div class="sticky top-36">
