@@ -318,6 +318,29 @@
                                     "required": 1
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_kmg_hero_fit",
+                            "label": "Image Fit",
+                            "name": "image_fit",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "contain": "Show whole image (illustrations, product shots)",
+                                "cover": "Fill the frame (photos)"
+                            },
+                            "default_value": "contain",
+                            "return_format": "value",
+                            "ui": 0,
+                            "multiple": 0,
+                            "allow_null": 0
                         }
                     ],
                     "min": "",
@@ -653,10 +676,11 @@
                                 "id": ""
                             },
                             "choices": {
-                                "spotlight": "Large spotlight cards (2 per row)",
-                                "grid": "Product cards with pack sizes (3-4 per row)"
+                                "carousel": "Product cards in a scrolling carousel",
+                                "grid": "Product cards in a grid",
+                                "spotlight": "Large spotlight cards (2 per row)"
                             },
-                            "default_value": "spotlight",
+                            "default_value": "carousel",
                             "return_format": "value",
                             "ui": 0,
                             "multiple": 0,
@@ -6315,6 +6339,6 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792773371,
+    "modified": 1792805952,
     "local_file": "C:laragonwwwwaklertaustralia.com/wp-content/themes/waklertaustralia.com-wp/acf-json/group_page_modules.json"
 }

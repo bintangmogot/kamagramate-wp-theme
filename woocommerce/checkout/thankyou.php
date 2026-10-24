@@ -43,7 +43,7 @@ $bacs_acc      = '48880531';
                 <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-destructive/10 text-destructive mb-6 ring-8 ring-destructive/5">
                     <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </div>
-                <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-foreground mb-3"><?php esc_html_e( 'Order Payment Failed', 'woocommerce' ); ?></h1>
+                <h1 class="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-3"><?php esc_html_e( 'Order Payment Failed', 'woocommerce' ); ?></h1>
                 <p class="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto mb-8"><?php esc_html_e( 'Unfortunately your order payment could not be completed. Please re-attempt your payment or select direct bank transfer.', 'woocommerce' ); ?></p>
                 
                 <div class="flex flex-wrap items-center justify-center gap-4">
@@ -74,7 +74,7 @@ $bacs_acc      = '48880531';
                     <?php echo $is_bacs ? 'Order Placed • Awaiting Bank Transfer' : 'Order Placed Successfully'; ?>
                 </div>
                 
-                <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight mb-3">
+                <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-normal mb-3">
                     Thank You for Your Order!
                 </h1>
                 
@@ -102,7 +102,7 @@ $bacs_acc      = '48880531';
 
                     <div class="flex flex-col pt-3 md:pt-0 md:pl-6">
                         <span class="text-xs uppercase tracking-wider font-semibold text-muted-foreground mb-1">Total Due</span>
-                        <strong class="text-primary text-xl sm:text-2xl font-extrabold"><?php echo wp_kses_post( $order_total ); ?></strong>
+                        <strong class="text-primary text-xl sm:text-2xl font-bold"><?php echo wp_kses_post( $order_total ); ?></strong>
                     </div>
 
                     <div class="flex flex-col pt-3 md:pt-0 md:pl-6">
@@ -139,7 +139,7 @@ $bacs_acc      = '48880531';
                             </div>
                             <div>
                                 <div class="flex items-center gap-2">
-                                    <h2 class="font-heading text-lg sm:text-xl font-extrabold text-[#1A1A1A] leading-tight">Commonwealth Bank</h2>
+                                    <h2 class="font-heading text-lg sm:text-xl font-bold text-[#1A1A1A] leading-tight">Commonwealth Bank</h2>
                                     <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-[#FFCC00]/40 text-[#854D0E] border border-[#EAB308]/40">Verified</span>
                                 </div>
                                 <p class="text-xs text-muted-foreground">Official Direct Bank Transfer (EFT / NetBank / PayID)</p>
@@ -147,7 +147,7 @@ $bacs_acc      = '48880531';
                         </div>
                         <div class="text-right">
                             <span class="text-xs font-semibold text-muted-foreground uppercase tracking-wider block">Amount to Transfer</span>
-                            <span class="text-2xl sm:text-3xl font-extrabold text-foreground font-heading"><?php echo wp_kses_post( $order_total ); ?></span>
+                            <span class="text-2xl sm:text-3xl font-bold text-foreground font-heading"><?php echo wp_kses_post( $order_total ); ?></span>
                         </div>
                     </div>
 
@@ -179,7 +179,7 @@ $bacs_acc      = '48880531';
                         <div class="bg-white/90 border border-border/80 rounded-2xl p-4 flex items-center justify-between gap-3 shadow-xs hover:border-primary/50 transition-colors">
                             <div>
                                 <span class="text-[11px] uppercase tracking-wider font-bold text-muted-foreground block mb-0.5">BSB Code</span>
-                                <span class="text-xl sm:text-2xl font-mono font-extrabold text-foreground tracking-wider select-all"><?php echo esc_html( $bacs_bsb ); ?></span>
+                                <span class="text-xl sm:text-2xl font-mono font-bold text-foreground tracking-wider select-all"><?php echo esc_html( $bacs_bsb ); ?></span>
                             </div>
                             <button type="button" onclick="copyValue('<?php echo esc_js( str_replace(' ', '', $bacs_bsb) ); ?>', this)" class="copy-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border text-xs font-bold text-foreground bg-muted/40 hover:bg-muted transition-all active:scale-95 cursor-pointer">
                                 <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
@@ -191,7 +191,7 @@ $bacs_acc      = '48880531';
                         <div class="bg-white/90 border border-border/80 rounded-2xl p-4 flex items-center justify-between gap-3 shadow-xs hover:border-primary/50 transition-colors">
                             <div>
                                 <span class="text-[11px] uppercase tracking-wider font-bold text-muted-foreground block mb-0.5">Account Number</span>
-                                <span class="text-xl sm:text-2xl font-mono font-extrabold text-foreground tracking-wider select-all"><?php echo esc_html( $bacs_acc ); ?></span>
+                                <span class="text-xl sm:text-2xl font-mono font-bold text-foreground tracking-wider select-all"><?php echo esc_html( $bacs_acc ); ?></span>
                             </div>
                             <button type="button" onclick="copyValue('<?php echo esc_js( $bacs_acc ); ?>', this)" class="copy-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border text-xs font-bold text-foreground bg-muted/40 hover:bg-muted transition-all active:scale-95 cursor-pointer">
                                 <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
@@ -208,9 +208,9 @@ $bacs_acc      = '48880531';
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                             </div>
                             <div>
-                                <span class="text-xs uppercase tracking-wider font-extrabold text-foreground block">Transfer Reference / Description:</span>
+                                <span class="text-xs uppercase tracking-wider font-bold text-foreground block">Transfer Reference / Description:</span>
                                 <p class="text-sm text-foreground mb-0">
-                                    Please enter only: <strong class="text-primary font-mono text-base font-extrabold">Order #<?php echo esc_html( $order_num ); ?></strong>
+                                    Please enter only: <strong class="text-primary font-mono text-base font-bold">Order #<?php echo esc_html( $order_num ); ?></strong>
                                     <span class="block text-xs text-muted-foreground mt-0.5">Do NOT reference medicine or website names to prevent bank delays.</span>
                                 </p>
                             </div>
@@ -224,7 +224,7 @@ $bacs_acc      = '48880531';
 
                 <!-- 3-Step Next Steps Guide & Instant Send CTAs -->
                 <div class="bg-[#F0F7FF] border border-[#BDE0FF] rounded-3xl p-6 sm:p-8 shadow-xs mb-8">
-                    <h3 class="font-heading text-lg sm:text-xl font-extrabold text-foreground mb-4 flex items-center gap-2">
+                    <h3 class="font-heading text-lg sm:text-xl font-bold text-foreground mb-4 flex items-center gap-2">
                         <span class="w-7 h-7 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold">!</span>
                         Payment Instructions & Dispatch Steps
                     </h3>
@@ -271,7 +271,7 @@ $bacs_acc      = '48880531';
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                     </div>
                     <div class="flex-1 text-center sm:text-left">
-                        <h4 class="font-heading font-extrabold text-foreground text-sm sm:text-base mb-1">Domestic Australia Post Express Dispatch</h4>
+                        <h4 class="font-heading font-bold text-foreground text-sm sm:text-base mb-1">Domestic Australia Post Express Dispatch</h4>
                         <p class="text-xs sm:text-sm text-muted-foreground mb-0">Shipped domestically in discreet plain packaging. No medicine or website names appear on the parcel. Delivery typically within 1-3 business days once payment clears.</p>
                     </div>
                     <div class="shrink-0 text-center sm:text-right">

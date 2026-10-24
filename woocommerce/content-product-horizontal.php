@@ -40,7 +40,7 @@ $min_price  = $product->is_type('variable') ? $product->get_variation_price('min
         <?php if ($badge !== '') : ?>
             <p class="kmg-eyebrow"><?php echo esc_html($badge); ?></p>
         <?php endif; ?>
-        <h3 class="mt-3 font-heading text-[clamp(1.75rem,1.4rem+1.2vw,2.375rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink">
+        <h3 class="mt-3 font-heading text-[clamp(1.75rem,1.4rem+1.2vw,2.375rem)] font-bold leading-[1.05] tracking-normal text-ink">
             <a href="<?php echo esc_url($link); ?>" class="hover:text-primary"><?php echo esc_html($title); ?></a>
         </h3>
         <?php if ($ingredient !== '') : ?>
@@ -54,7 +54,7 @@ $min_price  = $product->is_type('variable') ? $product->get_variation_price('min
             <?php if ($min_price !== '') : ?>
                 <p class="text-[15px] text-muted-foreground">
                     <?php if ($from_label !== '') : ?><span class="mr-1"><?php echo esc_html($from_label); ?></span><?php endif; ?>
-                    <span class="font-heading text-[1.75rem] font-extrabold tracking-tight text-ink"><?php echo wp_kses_post(wc_price((float) $min_price)); ?></span>
+                    <span class="font-heading text-[1.75rem] font-bold tracking-normal text-ink"><?php echo wp_kses_post(wc_price((float) $min_price)); ?></span>
                 </p>
             <?php endif; ?>
             <?php if ($link_label !== '') : ?>

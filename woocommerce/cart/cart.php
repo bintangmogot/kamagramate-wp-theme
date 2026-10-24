@@ -19,7 +19,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                 </svg>
                 <?php esc_html_e( 'Back to shop', 'woocommerce' ); ?>
             </a>
-            <h1 class="text-2xl md:text-3xl font-black font-heading text-ink"><?php esc_html_e( 'Shopping Cart', 'woocommerce' ); ?></h1>
+            <h1 class="text-2xl md:text-3xl font-bold font-heading text-ink"><?php esc_html_e( 'Shopping Cart', 'woocommerce' ); ?></h1>
         </div>
         
         <form class="woocommerce-cart-form bg-white rounded-xl border border-stone-200 overflow-hidden" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">

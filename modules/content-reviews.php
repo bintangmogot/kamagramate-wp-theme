@@ -37,7 +37,7 @@ $heading  = trim((string) get_sub_field('heading')) ?: get_the_title();
             </div>
             <?php if ($total) : ?>
                 <div class="lg:col-span-4 lg:text-right">
-                    <p class="font-heading text-[4.5rem] font-extrabold leading-none tracking-tight text-ink"><?php echo esc_html(number_format($average, 1)); ?></p>
+                    <p class="font-heading text-[4.5rem] font-bold leading-none tracking-normal text-ink"><?php echo esc_html(number_format($average, 1)); ?></p>
                     <div class="mt-3 lg:flex lg:justify-end"><?php echo kmg_stars((int) round($average), 'h-6 w-6'); ?></div>
                     <?php if ($summary !== '') : ?><p class="mt-2 text-[15px] text-muted-foreground"><?php echo esc_html(sprintf($summary, $total)); ?></p><?php endif; ?>
                 </div>
@@ -60,7 +60,7 @@ $heading  = trim((string) get_sub_field('heading')) ?: get_the_title();
                             <?php echo kmg_stars($rating); ?>
                             <?php if ($verified !== '') : ?><span class="inline-flex items-center gap-1 text-[13px] font-semibold text-success" data-testid="badge-verified-buyer"><?php echo kmg_glyph('check', 'h-3.5 w-3.5'); ?><?php echo esc_html($verified); ?></span><?php endif; ?>
                         </div>
-                        <p class="mt-5 font-heading text-xl font-bold tracking-tight text-ink"><?php the_title(); ?></p>
+                        <p class="mt-5 font-heading text-xl font-bold tracking-normal text-ink"><?php the_title(); ?></p>
                         <blockquote class="mt-3 text-[17px] leading-relaxed text-muted-foreground"><?php echo esc_html(wp_strip_all_tags(get_the_content())); ?></blockquote>
                         <figcaption class="mt-6 flex items-center gap-3 border-t border-border pt-5 text-[15px]">
                             <span class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-soft font-heading font-bold uppercase text-primary"><?php echo esc_html(mb_substr($name, 0, 1)); ?></span>

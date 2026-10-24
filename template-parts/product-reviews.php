@@ -68,7 +68,7 @@ if ($average_rating !== null) {
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-accent" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.2 6.8 1-4.9 4.8L18 21l-6-3.2L5.9 21l1.2-7-5-4.8 6.9-1L12 2Z"/></svg>
                 Verified reviews
             </span>
-            <h2 class="mb-2 font-heading text-3xl font-extrabold tracking-tight text-ink md:text-4xl">What our customers say</h2>
+            <h2 class="mb-2 font-heading text-3xl font-bold tracking-normal text-ink md:text-4xl">What our customers say</h2>
             <p class="text-sm font-medium text-muted-foreground md:text-base">Real experiences from verified buyers</p>
         </header>
 
@@ -76,7 +76,7 @@ if ($average_rating !== null) {
             <div class="mb-8 flex flex-col gap-8 rounded-3xl border border-border bg-white p-6 shadow-sm md:flex-row md:gap-16 md:p-10">
                 <div class="flex shrink-0 flex-col justify-center">
                     <div class="mb-2 text-sm font-semibold text-muted-foreground">Customer rating</div>
-                    <div class="mb-3 text-5xl font-extrabold text-ink"><?= esc_html(number_format((float) $average_rating, 1)) ?></div>
+                    <div class="mb-3 text-5xl font-bold text-ink"><?= esc_html(number_format((float) $average_rating, 1)) ?></div>
                     <div class="mb-3 flex gap-0.5" aria-label="<?= esc_attr(number_format((float) $average_rating, 1)) ?> out of 5 stars">
                         <?php for ($star = 1; $star <= 5; $star++): ?>
                             <span class="flex h-6 w-6 items-center justify-center rounded-sm <?= $star <= $rounded_rating ? 'bg-primary' : 'bg-slate-200' ?>">

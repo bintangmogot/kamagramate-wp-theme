@@ -29,7 +29,6 @@ if (have_rows('steps')) {
 if (!$steps) {
     return;
 }
-$cols = ['', 'md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'md:grid-cols-2 lg:grid-cols-4'][min(4, count($steps))];
 ?>
 <section class="kmg-section kmg-section-tint" data-testid="how-to-order">
     <div class="kmg-container">
@@ -39,16 +38,14 @@ $cols = ['', 'md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'md:grid-cols
             'lead'    => get_sub_field('description'),
         ]); ?>
 
-        <ol class="grid gap-6 <?php echo esc_attr($cols); ?> md:gap-8">
+        <ol class="mx-auto grid max-w-5xl gap-5 <?php echo count($steps) >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'; ?>">
             <?php foreach ($steps as $i => $step) : ?>
-                <li class="kmg-card flex flex-col">
-                    <div class="flex items-center justify-between">
-                        <span class="kmg-icon"><?php echo $step['icon']; ?></span>
-                        <span class="kmg-num text-[2.5rem] leading-none opacity-25"><?php echo esc_html(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT)); ?></span>
-                    </div>
-                    <h3 class="kmg-h3 mt-8"><?php echo esc_html($step['title']); ?></h3>
+                <li class="relative rounded-2xl bg-white p-8 text-center shadow-[0_14px_28px_-20px_rgba(34,18,79,0.45)]">
+                    <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-full border-2 border-primary font-heading text-[1.375rem] font-bold text-primary"><?php echo esc_html(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT)); ?></span>
+                    <span class="kmg-icon mx-auto mt-6 !h-12 !w-12 !rounded-xl"><?php echo $step['icon']; ?></span>
+                    <h3 class="mt-5 font-heading text-[1.5rem] font-bold leading-tight text-ink"><?php echo esc_html($step['title']); ?></h3>
                     <?php if ($step['desc'] !== '') : ?>
-                        <p class="kmg-body mt-3"><?php echo esc_html($step['desc']); ?></p>
+                        <p class="kmg-body mt-2"><?php echo esc_html($step['desc']); ?></p>
                     <?php endif; ?>
                 </li>
             <?php endforeach; ?>

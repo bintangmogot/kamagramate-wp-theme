@@ -143,12 +143,12 @@ $initial_price = $variations
                 </p>
             <?php endif; ?>
 
-            <h1 class="mt-4 font-heading text-[clamp(2.25rem,1.7rem+2.4vw,3.75rem)] font-extrabold leading-[1.04] tracking-[-0.035em] text-ink" data-testid="text-product-title"><?php echo esc_html($product->get_name()); ?></h1>
+            <h1 class="mt-4 font-heading text-[clamp(2.25rem,1.7rem+2.4vw,3.75rem)] font-bold leading-[1.04] tracking-normal text-ink" data-testid="text-product-title"><?php echo esc_html($product->get_name()); ?></h1>
             <?php if ($ingredient !== '') : ?>
                 <p class="mt-3 text-[18px] text-muted-foreground"><?php echo esc_html($ingredient); ?></p>
             <?php endif; ?>
 
-            <p class="mt-8 font-heading text-[2.5rem] font-extrabold leading-none tracking-tight text-ink" data-testid="text-product-price">
+            <p class="mt-8 font-heading text-[2.5rem] font-bold leading-none tracking-normal text-ink" data-testid="text-product-price">
                 <?php echo $variations ? wp_kses_post(wc_price($initial_price)) : wp_kses_post($product->get_price_html()); ?>
             </p>
 

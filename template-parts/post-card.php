@@ -28,7 +28,7 @@ $excerpt    = has_excerpt($post_id) ? get_the_excerpt($post_id) : wp_trim_words(
             <?php if ($category !== '') : ?><span class="font-semibold text-primary"><?php echo esc_html($category); ?></span><span aria-hidden="true">/</span><?php endif; ?>
             <time datetime="<?php echo esc_attr(get_the_date('c', $post_id)); ?>"><?php echo esc_html(get_the_date('j M Y', $post_id)); ?></time>
         </p>
-        <h3 class="mt-3 font-heading text-[1.5rem] font-bold leading-tight tracking-tight text-ink">
+        <h3 class="mt-3 font-heading text-[1.5rem] font-bold leading-tight tracking-normal text-ink">
             <a href="<?php echo esc_url($permalink); ?>" class="hover:text-primary"><?php echo esc_html(get_the_title($post_id)); ?></a>
         </h3>
         <?php if ($excerpt !== '') : ?>

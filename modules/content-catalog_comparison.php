@@ -108,7 +108,7 @@ $get_variations = static function ($product) {
     <div class="container-site relative z-10">
         <header class="mx-auto mb-8 max-w-3xl text-center md:mb-10">
             <span class="mb-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary-foreground">Product comparison</span>
-            <h2 class="font-heading text-2xl font-black text-primary-foreground md:text-4xl">Compare our products</h2>
+            <h2 class="font-heading text-2xl font-bold text-primary-foreground md:text-4xl">Compare our products</h2>
             <p class="mt-3 text-base leading-relaxed text-primary-foreground/80">
                 Compare listed product details, pack sizes and current prices. Prices and availability come from the product listings.
             </p>

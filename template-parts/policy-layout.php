@@ -60,7 +60,7 @@ foreach ($sections as $i => $section) {
                 <article id="<?php echo esc_attr($ids[$i]); ?>" class="scroll-mt-36 border-t border-border py-12 first:border-t-0 first:pt-0">
                     <?php if (!empty($section['title'])) : ?>
                         <p class="kmg-num text-[15px]"><?php echo esc_html(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT)); ?></p>
-                        <h2 class="mt-2 font-heading text-[clamp(1.625rem,1.4rem+0.8vw,2.125rem)] font-bold leading-tight tracking-tight text-ink"><?php echo esc_html($section['title']); ?></h2>
+                        <h2 class="mt-2 font-heading text-[clamp(1.625rem,1.4rem+0.8vw,2.125rem)] font-bold leading-tight tracking-normal text-ink"><?php echo esc_html($section['title']); ?></h2>
                     <?php endif; ?>
                     <div class="prose mt-6 max-w-none text-[18px]"><?php echo wp_kses_post(wpautop((string) ($section['content'] ?? ''))); ?></div>
                 </article>

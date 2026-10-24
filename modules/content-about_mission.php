@@ -32,7 +32,7 @@ if (!$cards) {
         <?php foreach ($cards as $i => $card) : ?>
             <div class="flex flex-col rounded-[2rem] p-10 md:p-14 <?php echo $i === 0 ? 'bg-ink text-white' : 'bg-primary-soft'; ?>">
                 <span class="kmg-icon <?php echo $i === 0 ? '!bg-white/10 !text-primary-light' : '!bg-white'; ?>"><?php echo $card['icon']; ?></span>
-                <h2 class="mt-10 font-heading text-[clamp(1.75rem,1.4rem+1.4vw,2.5rem)] font-bold leading-tight tracking-tight <?php echo $i === 0 ? 'text-white' : 'text-ink'; ?>"><?php echo esc_html($card['heading']); ?></h2>
+                <h2 class="mt-10 font-heading text-[clamp(1.75rem,1.4rem+1.4vw,2.5rem)] font-bold leading-tight tracking-normal <?php echo $i === 0 ? 'text-white' : 'text-ink'; ?>"><?php echo esc_html($card['heading']); ?></h2>
                 <?php if ($card['desc'] !== '') : ?>
                     <p class="mt-5 text-[18px] leading-relaxed <?php echo $i === 0 ? 'text-white/70' : 'text-muted-foreground'; ?>"><?php echo esc_html($card['desc']); ?></p>
                 <?php endif; ?>

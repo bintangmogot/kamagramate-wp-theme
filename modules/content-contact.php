@@ -55,7 +55,7 @@ if ($f('email_title') !== '' && $email !== '') {
                     <span class="kmg-icon"><?php echo kmg_glyph($c['icon'], 'h-6 w-6'); ?></span>
                     <span class="min-w-0">
                         <span class="block text-[14px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"><?php echo esc_html($c['title']); ?></span>
-                        <span class="mt-1 block font-heading text-[1.5rem] font-bold tracking-tight text-ink [overflow-wrap:anywhere] group-hover:text-primary"><?php echo esc_html($c['value']); ?></span>
+                        <span class="mt-1 block font-heading text-[1.5rem] font-bold tracking-normal text-ink [overflow-wrap:anywhere] group-hover:text-primary"><?php echo esc_html($c['value']); ?></span>
                         <?php if ($c['sub'] !== '') : ?><span class="mt-1 block text-[15px] text-muted-foreground"><?php echo esc_html($c['sub']); ?></span><?php endif; ?>
                     </span>
                 </a>

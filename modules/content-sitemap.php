@@ -60,19 +60,19 @@ $cities = get_posts([
             <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-border bg-white/90 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-xs backdrop-blur">
                 <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-muted-foreground transition-colors hover:text-ink">Home</a>
                 <span class="text-primary-light font-normal">/</span>
-                <span aria-current="page" class="font-extrabold text-ink">Sitemap</span>
+                <span aria-current="page" class="font-bold text-ink">Sitemap</span>
             </nav>
         </div>
 
         <!-- Eyebrow Badge -->
         <div class="mb-2.5">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink shadow-xs">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-ink shadow-xs">
                 <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" aria-hidden="true"></span>
                 Site Directory
             </span>
         </div>
 
-        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-ink">
+        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-normal text-ink">
             <?= esc_html($title) ?>
         </h1>
 
@@ -94,7 +94,7 @@ $cities = get_posts([
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                         </svg>
                     </span>
-                    <h2 class="font-heading text-base font-black text-ink uppercase tracking-wider">
+                    <h2 class="font-heading text-base font-bold text-ink uppercase tracking-wider">
                         Main Pages
                     </h2>
                 </div>
@@ -118,7 +118,7 @@ $cities = get_posts([
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                         </svg>
                     </span>
-                    <h2 class="font-heading text-base font-black text-ink uppercase tracking-wider">
+                    <h2 class="font-heading text-base font-bold text-ink uppercase tracking-wider">
                         Products
                     </h2>
                 </div>
@@ -147,7 +147,7 @@ $cities = get_posts([
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </span>
-                    <h2 class="font-heading text-base font-black text-ink uppercase tracking-wider">
+                    <h2 class="font-heading text-base font-bold text-ink uppercase tracking-wider">
                         Australia Delivery
                     </h2>
                 </div>
@@ -175,7 +175,7 @@ $cities = get_posts([
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                         </svg>
                     </span>
-                    <h2 class="font-heading text-base font-black text-ink uppercase tracking-wider">
+                    <h2 class="font-heading text-base font-bold text-ink uppercase tracking-wider">
                         Policies &amp; Legal
                     </h2>
                 </div>

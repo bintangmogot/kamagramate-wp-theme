@@ -37,7 +37,7 @@ if (!$items && !get_sub_field('heading')) {
                 <li class="flex gap-6 border-t border-border pt-10 first:border-t-0 first:pt-0">
                     <span class="kmg-icon"><?php echo $item['icon']; ?></span>
                     <span>
-                        <span class="block font-heading text-[1.375rem] font-bold tracking-tight text-ink"><?php echo esc_html($item['title']); ?></span>
+                        <span class="block font-heading text-[1.375rem] font-bold tracking-normal text-ink"><?php echo esc_html($item['title']); ?></span>
                         <?php if ($item['desc'] !== '') : ?><span class="kmg-body mt-2 block"><?php echo esc_html($item['desc']); ?></span><?php endif; ?>
                     </span>
                 </li>

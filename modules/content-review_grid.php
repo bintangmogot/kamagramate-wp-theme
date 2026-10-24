@@ -35,7 +35,7 @@ $reviews = get_posts([
             <span class="inline-block bg-primary-soft text-primary-dark text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
                 <?= $tag ?>
             </span>
-            <h1 class="font-heading text-4xl md:text-5xl font-black text-ink mb-4">
+            <h1 class="font-heading text-4xl md:text-5xl font-bold text-ink mb-4">
                 <?= $heading ?>
             </h1>
             <p class="text-muted-foreground max-w-xl mx-auto">
@@ -48,7 +48,7 @@ $reviews = get_posts([
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                     <?php endfor; ?>
                 </div>
-                <span class="font-heading font-black text-2xl text-ink">4.9</span>
+                <span class="font-heading font-bold text-2xl text-ink">4.9</span>
                 <span class="text-muted-foreground text-sm">
                     <?= "(10+ verified reviews)" ?>
                 </span>

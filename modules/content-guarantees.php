@@ -29,7 +29,7 @@ $facts = array_values(array_filter((array) get_sub_field('facts'), static functi
             <?php foreach ($items as $item) : ?>
                 <div class="flex flex-col bg-ink p-8 md:p-12">
                     <span class="kmg-icon"><?php echo waklert_render_card_icon(['icon_preset' => $item['icon_preset'] ?? 'auto', 'title' => $item['title'], 'desc' => $item['text'] ?? '', 'size_class' => 'h-7 w-7']); ?></span>
-                    <h3 class="mt-8 font-heading text-[1.625rem] font-bold leading-tight tracking-tight text-white"><?php echo esc_html($item['title']); ?></h3>
+                    <h3 class="mt-8 font-heading text-[1.625rem] font-bold leading-tight tracking-normal text-white"><?php echo esc_html($item['title']); ?></h3>
                     <?php if (!empty($item['text'])) : ?>
                         <p class="mt-4 text-[17px] leading-relaxed text-white/65"><?php echo esc_html($item['text']); ?></p>
                     <?php endif; ?>

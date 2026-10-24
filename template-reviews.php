@@ -33,11 +33,11 @@ get_header();
             <!-- Header & Aggregate Summary Card -->
             <div class="mb-12">
                 <div class="text-center max-w-2xl mx-auto mb-8">
-                    <span class="inline-flex items-center gap-2 rounded-full bg-primary-soft border border-border px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-ink shadow-sm mb-4">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-primary-soft border border-border px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-ink shadow-sm mb-4">
                         <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
                         Verified Customer Experiences
                     </span>
-                    <h1 class="font-heading text-3xl md:text-5xl font-extrabold text-ink tracking-tight mb-4">
+                    <h1 class="font-heading text-3xl md:text-5xl font-bold text-ink tracking-normal mb-4">
                         <?= "Real Reviews from Real Australians" ?>
                     </h1>
                     <p class="text-muted-foreground text-base md:text-lg leading-relaxed">
@@ -64,7 +64,7 @@ get_header();
                                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                                     </svg>
                                 <?php endfor; ?>
-                                <span class="ml-1 text-lg font-black text-ink">4.8 / 5.0</span>
+                                <span class="ml-1 text-lg font-bold text-ink">4.8 / 5.0</span>
                             </div>
                             <p class="text-xs sm:text-sm font-semibold text-muted-foreground">
                                 <?= sprintf("Based on %d verified customer ratings Australia-wide", $review_count) ?>
@@ -134,7 +134,7 @@ get_header();
                             <div class="bg-primary hover:bg-primary-dark p-4 sm:p-5 flex items-center justify-between gap-3 text-white">
                                 <div class="flex items-center gap-3">
                                     <!-- Vibrant Amber Reviewer Avatar -->
-                                    <div class="w-9 h-9 rounded-full bg-primary hover:bg-primary-dark text-white flex items-center justify-center font-extrabold text-sm uppercase shadow-sm shrink-0">
+                                    <div class="w-9 h-9 rounded-full bg-primary hover:bg-primary-dark text-white flex items-center justify-center font-bold text-sm uppercase shadow-sm shrink-0">
                                         <?= substr($reviewer, 0, 1) ?>
                                     </div>
                                     <div>

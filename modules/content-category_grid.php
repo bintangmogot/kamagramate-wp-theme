@@ -33,7 +33,7 @@ $suffix     = trim((string) get_sub_field('count_suffix'));
                     <span class="block aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-white"><?php echo $img; ?></span>
                     <span class="flex items-center justify-between gap-3 px-3 pb-3 pt-5">
                         <span>
-                            <span class="block font-heading text-[1.25rem] font-bold tracking-tight text-ink md:text-[1.5rem]"><?php echo esc_html($term->name); ?></span>
+                            <span class="block font-heading text-[1.25rem] font-bold tracking-normal text-ink md:text-[1.5rem]"><?php echo esc_html($term->name); ?></span>
                             <?php if ($show_count) : ?>
                                 <span class="mt-1 block text-[14px] text-muted-foreground"><?php echo esc_html(trim($term->count . ' ' . $suffix)); ?></span>
                             <?php endif; ?>

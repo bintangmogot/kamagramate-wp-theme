@@ -27,7 +27,7 @@ if (!$items) {
                     <div class="aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-primary-soft">
                         <?php echo $img ?: '<span class="flex h-full items-center justify-center text-primary">' . waklert_render_card_icon(['icon_preset' => 'person', 'size_class' => 'h-12 w-12']) . '</span>'; ?>
                     </div>
-                    <h3 class="mt-5 font-heading text-[1.25rem] font-bold tracking-tight text-ink"><?php echo esc_html($item['title']); ?></h3>
+                    <h3 class="mt-5 font-heading text-[1.25rem] font-bold tracking-normal text-ink"><?php echo esc_html($item['title']); ?></h3>
                     <?php if (!empty($item['text'])) : ?><p class="mt-1 text-[15px] text-muted-foreground"><?php echo esc_html($item['text']); ?></p><?php endif; ?>
                 </li>
             <?php endforeach; ?>

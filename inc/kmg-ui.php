@@ -120,7 +120,9 @@ function kmg_button(string $label, string $url, string $variant = 'primary', str
         $extra !== '' ? ' ' . esc_attr($extra) : '',
         $external ? ' target="_blank" rel="noopener"' : '',
         esc_html($label),
-        $arrow ? kmg_glyph('arrow-right') : ''
+        $arrow ? ($variant === 'primary'
+            ? '<span class="-mr-3 flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary">' . kmg_glyph('arrow-right', 'h-4 w-4') . '</span>'
+            : kmg_glyph('arrow-right')) : ''
     );
 }
 

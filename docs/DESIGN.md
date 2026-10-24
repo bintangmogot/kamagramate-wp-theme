@@ -1,6 +1,9 @@
 # Kamagramate Design System
 
-Direction: **clinical minimal, purple base**. Reference layout rhythm from
+Direction: **clinical minimal, purple base**, modelled closely on
+modafinilaustraliadirect.com (same client): announcement bar, navy trust bar, logo
+left with nav right, left-aligned hero, tinted product cards in a carousel, dark icon
+strip, centred section titles and a two-column FAQ. Reference layout rhythm from
 modafinilaustraliadirect.com (centred section titles, product cards, trust strip,
 delivery block, how-to-order steps, audience grid, blog, two-column FAQ), with
 the calmer, airier spacing and extra commerce sections of kamagraaus.com.
@@ -30,7 +33,7 @@ Principles
 | `--primary-light` | `#8B5CF6` | Icons on dark surfaces |
 | `--primary-soft` | `#F3EEFE` | Tinted panels, chips, image wells |
 | `--primary-softer` | `#FAF8FF` | Alternate section background |
-| `--ink` | `#1A1030` | Headings, dark bands, footer |
+| `--ink` | `#22124F` | Headings, dark bands, footer (deep navy-purple) |
 | `--foreground` | `#2A2340` | Body text |
 | `--muted-foreground` | `#6B6580` | Secondary text |
 | `--border` | `#E9E4F3` | Hairlines |
@@ -43,8 +46,9 @@ Never write raw hex in templates.
 
 ## Typography
 
-- Display / headings: **Manrope** 700-800, tracking `-0.03em`.
-- Body: **Inter** 400-600.
+- Everything: **Afacad** 400-700 (Google Fonts), the same family as
+  modafinilaustraliadirect.com. Headings 600-700 with near-normal tracking; body 18px
+  because Afacad has a small x-height.
 - Scale (fluid, defined as component classes):
   - `.kmg-display` hero H1: `clamp(2.75rem, 2rem + 4vw, 5.25rem)` / 1.02
   - `.kmg-h2` section title: `clamp(2.25rem, 1.6rem + 2.6vw, 3.75rem)` / 1.05
@@ -62,7 +66,8 @@ Never write raw hex in templates.
 
 ## Components
 
-- Buttons: `.kmg-btn` (pill, 56px tall, 17px semibold) + `.kmg-btn-primary`,
+- Buttons: `.kmg-btn` (12px radius, 56px tall, 19px semibold; primary buttons carry the
+  arrow in a white circle like the reference CTA) + `.kmg-btn-primary`,
   `.kmg-btn-outline`, `.kmg-btn-light` (on dark), `.kmg-btn-sm`.
 - Card: `.kmg-card` white, 1px border, `rounded-[28px]`, `p-8 md:p-10`.
 - Chip: `.kmg-chip` rounded-full lavender pill for badges and quick links.
@@ -76,3 +81,11 @@ Never write raw hex in templates.
 Only `transform`/`opacity`/colour transitions, 200ms ease-out. Product card hover
 lift `-translate-y-1`. Marquee strip pauses on hover and respects
 `prefers-reduced-motion`.
+
+## Logo
+
+Australia outline filled with the Australian flag, then "KAMAGRA" (purple) over "MATE"
+(ink) in Afacad Bold uppercase, matching the structure of the Modafinil Australia logo.
+Sources in `docs/brand/`: `make_map.py` generates `australia-flag-map.svg`;
+`logo-dark.html` / `logo-light.html` are rendered to transparent PNG at 4x and uploaded
+to the Media Library, then set in Theme Settings (Site Logo, Footer Logo).

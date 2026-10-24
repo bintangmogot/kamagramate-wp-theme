@@ -37,7 +37,7 @@ $track_id = 'kmg-reviews-' . wp_unique_id();
                 ?>
                 <figure class="kmg-card flex w-[85%] flex-col sm:w-[420px]">
                     <?php echo kmg_stars($rating); ?>
-                    <p class="mt-5 font-heading text-xl font-bold tracking-tight text-ink"><?php echo esc_html(get_the_title($post_id)); ?></p>
+                    <p class="mt-5 font-heading text-xl font-bold tracking-normal text-ink"><?php echo esc_html(get_the_title($post_id)); ?></p>
                     <?php if ($body !== '') : ?>
                         <blockquote class="mt-3 text-[17px] leading-relaxed text-muted-foreground"><?php echo esc_html(wp_trim_words($body, 48, '...')); ?></blockquote>
                     <?php endif; ?>

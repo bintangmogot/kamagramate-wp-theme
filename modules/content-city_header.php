@@ -15,7 +15,7 @@ $desc = get_sub_field('description') ?: "Fast, discreet delivery of genuine Moda
         <span class="inline-block rounded-full bg-primary-softer px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary">
             <?= "Local Delivery" ?>
         </span>
-        <h1 class="mt-4 font-heading text-4xl font-extrabold tracking-tight md:text-5xl">
+        <h1 class="mt-4 font-heading text-4xl font-bold tracking-normal md:text-5xl">
             <?= $heading ?>
         </h1>
         <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">

@@ -65,58 +65,56 @@ if ($product->is_type('variable')) {
 }
 $first_price = $pills ? $pills[0]['price'] : $product->get_price_html();
 ?>
-<article class="group flex h-full flex-col" data-kmg-card>
-    <a href="<?php echo esc_url($link); ?>" class="relative block aspect-square overflow-hidden rounded-[1.75rem] bg-primary-soft">
+<article class="group flex h-full flex-col rounded-2xl bg-primary-soft p-2.5 shadow-[0_14px_28px_-18px_rgba(34,18,79,0.45)] transition-transform duration-200 hover:-translate-y-1" data-kmg-card>
+    <a href="<?php echo esc_url($link); ?>" class="relative block aspect-[4/3] overflow-hidden rounded-xl bg-white">
         <?php if ($badge !== '') : ?>
-            <span class="absolute left-4 top-4 z-10 rounded-full bg-white px-3 py-1 text-[12px] font-bold text-ink"><?php echo esc_html($badge); ?></span>
+            <span class="absolute left-3 top-3 z-10 rounded-md bg-primary px-2.5 py-1 text-[13px] font-semibold text-white"><?php echo esc_html($badge); ?></span>
         <?php endif; ?>
         <?php
         echo $product->get_image_id()
-            ? wp_get_attachment_image($product->get_image_id(), 'woocommerce_single', false, ['class' => 'h-full w-full object-contain p-8 mix-blend-multiply transition-transform duration-500 ease-out group-hover:scale-105', 'loading' => 'lazy', 'alt' => $title])
-            : '<img src="' . esc_url(wc_placeholder_img_src()) . '" alt="" class="h-full w-full object-contain p-8">';
+            ? wp_get_attachment_image($product->get_image_id(), 'woocommerce_single', false, ['class' => 'h-full w-full object-contain p-5 transition-transform duration-500 ease-out group-hover:scale-105', 'loading' => 'lazy', 'alt' => $title])
+            : '<img src="' . esc_url(wc_placeholder_img_src()) . '" alt="" class="h-full w-full object-contain p-5">';
         ?>
     </a>
 
-    <div class="flex flex-1 flex-col pt-6">
+    <div class="flex flex-1 flex-col px-3 pb-3 pt-4 text-center">
         <?php if ($reviews['review_count'] > 0) : ?>
-            <a href="<?php echo esc_url($link . '#product-reviews'); ?>" class="mb-2 inline-flex w-fit items-center gap-2 text-[13px] text-muted-foreground hover:text-ink">
+            <a href="<?php echo esc_url($link . '#product-reviews'); ?>" class="mx-auto mb-1.5 inline-flex items-center gap-2 text-[14px] font-semibold uppercase tracking-wide text-ink">
                 <?php echo kmg_stars((int) round($reviews['average_rating'] ?: 5), 'h-3.5 w-3.5'); ?>
                 <span>(<?php echo esc_html($reviews['review_count']); ?>)</span>
             </a>
         <?php endif; ?>
 
-        <h3 class="font-heading text-[1.375rem] font-bold leading-tight tracking-tight text-ink">
+        <h3 class="font-heading text-[1.5rem] font-bold leading-tight text-ink">
             <a href="<?php echo esc_url($link); ?>" class="hover:text-primary"><?php echo esc_html($title); ?></a>
         </h3>
         <?php if ($ingredient !== '') : ?>
-            <p class="mt-1 text-[15px] text-muted-foreground"><?php echo esc_html($ingredient); ?></p>
+            <p class="text-[16px] text-muted-foreground"><?php echo esc_html($ingredient); ?></p>
         <?php endif; ?>
 
         <?php if ($pills) : ?>
-        <div class="mt-5 grid grid-cols-2 gap-2" role="group" aria-label="<?php echo esc_attr($title); ?>">
+        <div class="mt-4 grid grid-cols-2 gap-1.5" role="group" aria-label="<?php echo esc_attr($title); ?>">
             <?php foreach ($pills as $index => $pill) : ?>
                 <button type="button" data-kmg-pill data-price="<?php echo esc_attr($pill['price']); ?>" aria-pressed="<?php echo $index === 0 ? 'true' : 'false'; ?>"
-                    class="truncate rounded-lg border px-2 py-2.5 text-[14px] font-semibold transition-colors aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-white border-border bg-white text-ink hover:border-primary">
+                    class="truncate rounded-lg border border-primary/25 bg-white px-2 py-2 text-[15px] font-semibold text-primary transition-colors hover:border-primary aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-white">
                     <?php echo esc_html($pill['label']); ?>
                 </button>
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
 
-        <div class="mt-5 flex items-end justify-between gap-3">
-            <p class="dynamic-price font-heading text-[1.75rem] font-extrabold leading-none tracking-tight text-ink [&_del]:mr-2 [&_del]:text-base [&_del]:font-medium [&_del]:text-muted-foreground [&_ins]:no-underline"><?php echo wp_kses_post($first_price); ?></p>
-            <?php if ($unit_price !== null && $label_per !== '') : ?>
-                <p class="text-[13px] text-muted-foreground"><?php echo esc_html(trim($label_from . ' ' . waklert_format_product_unit_price($unit_price) . $label_per)); ?></p>
-            <?php endif; ?>
-        </div>
+        <p class="dynamic-price mt-4 font-heading text-[1.875rem] font-bold leading-none text-ink [&_del]:mr-2 [&_del]:text-base [&_del]:font-medium [&_del]:text-muted-foreground [&_ins]:no-underline"><?php echo wp_kses_post($first_price); ?></p>
+        <?php if ($unit_price !== null && $label_per !== '') : ?>
+            <p class="mt-1 text-[14px] text-muted-foreground"><?php echo esc_html(trim($label_from . ' ' . waklert_format_product_unit_price($unit_price) . $label_per)); ?></p>
+        <?php endif; ?>
 
-        <div class="mt-auto pt-6">
+        <div class="mt-auto pt-4">
             <?php if ($in_stock) : ?>
                 <?php if ($label_in !== '') : ?>
-                    <p class="mb-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-success"><?php echo kmg_glyph('check', 'h-4 w-4'); ?><?php echo esc_html($label_in); ?></p>
+                    <p class="mb-2.5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-success"><?php echo kmg_glyph('check', 'h-4 w-4'); ?><?php echo esc_html($label_in); ?></p>
                 <?php endif; ?>
                 <?php if ($label_cta !== '') : ?>
-                    <a href="<?php echo esc_url($link); ?>" class="kmg-btn kmg-btn-primary kmg-btn-sm w-full"><?php echo esc_html($label_cta); ?><?php echo kmg_glyph('arrow-right'); ?></a>
+                    <a href="<?php echo esc_url($link); ?>" class="kmg-btn kmg-btn-primary kmg-btn-sm w-full"><?php echo esc_html($label_cta); ?></a>
                 <?php endif; ?>
             <?php elseif ($label_out !== '') : ?>
                 <span class="kmg-btn kmg-btn-sm w-full cursor-not-allowed bg-muted text-muted-foreground"><?php echo esc_html($label_out); ?></span>

@@ -88,7 +88,7 @@ class Waklert_Desktop_Nav_Walker extends Walker_Nav_Menu {
             $this->parent_item = $has_children ? $item : null;
             $active = kmg_menu_item_is_active($item);
             $output .= '<li class="' . esc_attr('relative list-none group ' . implode(' ', $classes)) . '">';
-            $output .= '<a href="' . esc_url($url) . '" class="' . ($active ? 'text-primary' : 'text-ink hover:text-primary') . ' inline-flex items-center gap-1.5 px-3.5 py-2 text-[16px] font-semibold transition-colors"' . ($active ? ' aria-current="page"' : '') . '>';
+            $output .= '<a href="' . esc_url($url) . '" class="' . ($active ? 'text-primary' : 'text-ink hover:text-primary') . ' inline-flex items-center gap-1.5 px-3 py-2 text-[18px] font-semibold transition-colors"' . ($active ? ' aria-current="page"' : '') . '>';
             $output .= '<span>' . esc_html($title) . '</span>';
             if ($has_children) {
                 $output .= kmg_glyph('chevron-down', 'h-4 w-4 opacity-60 transition-transform duration-200 group-hover:rotate-180');
@@ -143,7 +143,7 @@ class Waklert_Mobile_Nav_Walker extends Walker_Nav_Menu {
         if ($depth === 0) {
             $output .= '<li class="' . esc_attr('list-none border-b border-border ' . implode(' ', $classes)) . '">';
             $output .= '<div class="flex items-center justify-between gap-2">';
-            $output .= '<a href="' . esc_url($url) . '" class="flex-1 py-4 font-heading text-2xl font-bold tracking-tight ' . ($active ? 'text-primary' : 'text-ink') . '">' . esc_html($item->title) . '</a>';
+            $output .= '<a href="' . esc_url($url) . '" class="flex-1 py-4 font-heading text-2xl font-bold tracking-normal ' . ($active ? 'text-primary' : 'text-ink') . '">' . esc_html($item->title) . '</a>';
             if ($has_children) {
                 $output .= '<button type="button" class="mobile-submenu-toggle is-active flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-primary-soft" aria-expanded="true" aria-label="' . esc_attr($item->title) . '">';
                 $output .= kmg_glyph('chevron-down', 'h-5 w-5 transition-transform duration-200');

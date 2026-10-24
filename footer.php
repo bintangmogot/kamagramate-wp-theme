@@ -121,9 +121,9 @@ $badge_icon_map     = [
 
         <div class="grid gap-10 border-b border-white/10 pb-16 lg:grid-cols-12 lg:gap-16">
             <div class="lg:col-span-7">
-                <?php waklert_the_logo('h-10 w-auto max-w-[220px] object-contain', 'footer'); ?>
+                <?php waklert_the_logo('w-auto', 'footer'); ?>
                 <?php if ($footer_tagline !== '') : ?>
-                    <p class="mt-10 max-w-2xl font-heading text-[clamp(2rem,1.4rem+2.4vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.035em] text-white"><?php echo esc_html($footer_tagline); ?></p>
+                    <p class="mt-10 max-w-2xl font-heading text-[clamp(2rem,1.4rem+2.4vw,3.25rem)] font-bold leading-[1.08] tracking-normal text-white"><?php echo esc_html($footer_tagline); ?></p>
                 <?php endif; ?>
                 <?php if ($footer_desc !== '') : ?>
                     <p class="mt-6 max-w-xl text-[16px] leading-relaxed text-white/65"><?php echo esc_html($footer_desc); ?></p>
@@ -136,7 +136,7 @@ $badge_icon_map     = [
                 <?php endif; ?>
                 <ul class="mt-6 space-y-4 text-[16px]">
                     <?php if ($phone_raw !== '') : ?>
-                        <li><a href="<?php echo esc_attr(kmg_phone_href($phone_raw)); ?>" class="inline-flex items-center gap-3 font-heading text-2xl font-bold tracking-tight text-white hover:text-primary-light"><?php echo kmg_glyph('phone', 'h-5 w-5 text-primary-light'); ?><?php echo esc_html(kmg_phone_display($phone_raw)); ?></a></li>
+                        <li><a href="<?php echo esc_attr(kmg_phone_href($phone_raw)); ?>" class="inline-flex items-center gap-3 font-heading text-2xl font-bold tracking-normal text-white hover:text-primary-light"><?php echo kmg_glyph('phone', 'h-5 w-5 text-primary-light'); ?><?php echo esc_html(kmg_phone_display($phone_raw)); ?></a></li>
                     <?php endif; ?>
                     <?php if ($footer_email !== '') : ?>
                         <li><a href="mailto:<?php echo esc_attr($footer_email); ?>" class="inline-flex items-center gap-3 text-white hover:text-primary-light"><?php echo kmg_glyph('mail', 'h-5 w-5 text-primary-light'); ?><?php echo esc_html($footer_email); ?></a></li>

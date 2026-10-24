@@ -16,19 +16,19 @@ get_header();
                 <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-border bg-white/90 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-xs backdrop-blur">
                     <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-muted-foreground transition-colors hover:text-ink">Home</a>
                     <span class="text-primary-light font-normal">/</span>
-                    <span aria-current="page" class="font-extrabold text-ink">About Us</span>
+                    <span aria-current="page" class="font-bold text-ink">About Us</span>
                 </nav>
             </div>
 
             <!-- Eyebrow Badge -->
             <div class="mb-2.5">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink shadow-xs">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-ink shadow-xs">
                     <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" aria-hidden="true"></span>
                     Australia's Focus Destination
                 </span>
             </div>
 
-            <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-ink">
+            <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-normal text-ink">
                 Australia's Sharpest Minds.<br class="hidden md:block"> Your Reliable Supplier.
             </h1>
 
@@ -43,10 +43,10 @@ get_header();
         <div class="container-site max-w-5xl">
             <div class="grid md:grid-cols-5 gap-8 lg:gap-12 items-center">
                 <div class="md:col-span-3 space-y-4">
-                    <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3 py-0.5 text-[11px] font-black uppercase tracking-[0.16em] text-ink">
+                    <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3 py-0.5 text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
                         Our Origin
                     </span>
-                    <h2 class="font-heading text-2xl sm:text-3xl font-black text-ink">Born From Australia's Unique Working Demands</h2>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-bold text-ink">Born From Australia's Unique Working Demands</h2>
                     <p class="text-muted-foreground text-sm sm:text-base leading-relaxed">
                         Australia runs on high-intensity schedules: rotating FIFO rosters that flip circadian body clocks every fortnight, intense university exam periods, long interstate freight hauls, and hospital night shifts stretching well past sunrise.
                     </p>
@@ -59,15 +59,15 @@ get_header();
                 </div>
                 <div class="md:col-span-2 space-y-3.5">
                     <div class="rounded-2xl border border-border bg-gradient-to-br from-primary-softer to-white p-5 shadow-xs">
-                        <p class="font-heading text-3xl font-black text-ink">60,000+</p>
+                        <p class="font-heading text-3xl font-bold text-ink">60,000+</p>
                         <p class="text-xs sm:text-sm text-muted-foreground mt-1 font-medium">FIFO workers in Australia's mining sector</p>
                     </div>
                     <div class="rounded-2xl border border-border bg-gradient-to-br from-primary to-white p-5 shadow-xs">
-                        <p class="font-heading text-3xl font-black text-primary">A$300B+</p>
+                        <p class="font-heading text-3xl font-bold text-primary">A$300B+</p>
                         <p class="text-xs sm:text-sm text-muted-foreground mt-1 font-medium">Australian mining industry annual revenue</p>
                     </div>
                     <div class="rounded-2xl border border-border bg-gradient-to-br from-emerald-50/60 to-white p-5 shadow-xs">
-                        <p class="font-heading text-3xl font-black text-success">100%</p>
+                        <p class="font-heading text-3xl font-bold text-success">100%</p>
                         <p class="text-xs sm:text-sm text-muted-foreground mt-1 font-medium">Genuine pharmaceutical-grade tablets</p>
                     </div>
                 </div>
@@ -79,29 +79,29 @@ get_header();
     <section class="py-8 md:py-12 bg-gradient-to-b from-primary-softer via-white to-primary-softer" data-testid="about-principles">
         <div class="container-site max-w-5xl">
             <div class="text-center mb-10">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3 py-0.5 text-[11px] font-black uppercase tracking-[0.16em] text-ink">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3 py-0.5 text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
                     What We Stand For
                 </span>
-                <h2 class="mt-2 font-heading text-2xl sm:text-3xl md:text-4xl font-black text-ink">Four Principles That Guide Everything</h2>
+                <h2 class="mt-2 font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-ink">Four Principles That Guide Everything</h2>
             </div>
             <div class="grid sm:grid-cols-2 gap-5 lg:gap-6">
                 <div class="rounded-2xl border border-border bg-white p-6 shadow-xs hover:border-border hover:shadow-md transition-all">
-                    <span class="font-heading text-2xl font-black text-ink">01</span>
+                    <span class="font-heading text-2xl font-bold text-ink">01</span>
                     <h3 class="font-heading font-bold text-ink text-lg mt-2 mb-2">Authenticity First</h3>
                     <p class="text-sm text-muted-foreground leading-relaxed m-0">Every tablet comes in sealed blister packaging from WHO-GMP certified manufacturers - Sun Pharma and HAB Pharma. Zero unlabelled generics, zero fakes.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-white p-6 shadow-xs hover:border-border hover:shadow-md transition-all">
-                    <span class="font-heading text-2xl font-black text-ink">02</span>
+                    <span class="font-heading text-2xl font-bold text-ink">02</span>
                     <h3 class="font-heading font-bold text-ink text-lg mt-2 mb-2">Australian Logistics Speed</h3>
                     <p class="text-sm text-muted-foreground leading-relaxed m-0">We know Australia is vast. That is why shipments are handled via priority logistics. Metro addresses receive orders in 5-10 business days.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-white p-6 shadow-xs hover:border-border hover:shadow-md transition-all">
-                    <span class="font-heading text-2xl font-black text-ink">03</span>
+                    <span class="font-heading text-2xl font-bold text-ink">03</span>
                     <h3 class="font-heading font-bold text-ink text-lg mt-2 mb-2">Radical Honesty &amp; Transparency</h3>
                     <p class="text-sm text-muted-foreground leading-relaxed m-0">We do not market Armodafinil as a miracle cure. It is an effective focus tool for appropriate candidates. We actively recommend consulting your GP.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-white p-6 shadow-xs hover:border-border hover:shadow-md transition-all">
-                    <span class="font-heading text-2xl font-black text-ink">04</span>
+                    <span class="font-heading text-2xl font-bold text-ink">04</span>
                     <h3 class="font-heading font-bold text-ink text-lg mt-2 mb-2">Responsive Australian Support</h3>
                     <p class="text-sm text-muted-foreground leading-relaxed m-0">Reach us through WhatsApp or email and real team members answer your queries quickly. No automated deflection or lost emails.</p>
                 </div>
@@ -113,10 +113,10 @@ get_header();
     <section class="py-8 md:py-10 bg-white">
         <div class="container-site max-w-4xl text-center">
             <div class="rounded-3xl border border-border bg-gradient-to-br from-primary-softer via-white to-primary-softer p-8 sm:p-10 shadow-xs">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-ink">
                     Have Questions?
                 </span>
-                <h2 class="mt-3 font-heading text-2xl sm:text-3xl font-black text-ink">Need Help Choosing or Tracking?</h2>
+                <h2 class="mt-3 font-heading text-2xl sm:text-3xl font-bold text-ink">Need Help Choosing or Tracking?</h2>
                 <p class="mt-2 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">Our Australian support team is ready to answer questions about dosages, dispatch times, and order delivery.</p>
                 <div class="mt-6 flex flex-wrap justify-center gap-3">
                     <a href="<?= esc_url(home_url('/shop/')) ?>" class="inline-flex items-center gap-2 rounded-full bg-primary hover:bg-primary text-white px-6 py-3 text-sm font-bold shadow-sm transition-colors">

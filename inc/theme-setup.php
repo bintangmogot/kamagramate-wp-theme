@@ -221,16 +221,16 @@ function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:m
 
     if ($logo_src) {
         $logo_classes = trim($classes . ' site-logo-img site-logo-img--' . esc_attr($location));
-        $inline_styles = $location === 'mobile'
-            ? 'height: 43px; max-height: 43px; width: auto; max-width: 228px; object-fit: contain;'
-            : 'height: 53px; max-height: 53px; width: auto; max-width: 312px; object-fit: contain;';
+        $logo_id      = waklert_get_logo_id($location);
+        $meta         = $logo_id ? wp_get_attachment_metadata($logo_id) : [];
 
         $img_html = sprintf(
-            '<img src="%s" alt="%s" class="%s" style="%s" width="288" height="98" loading="%s" decoding="async" />',
+            '<img src="%s" alt="%s" class="%s" width="%d" height="%d" loading="%s" decoding="async" />',
             esc_url($logo_src),
             $site_name,
             esc_attr($logo_classes),
-            esc_attr($inline_styles),
+            (int) ($meta['width'] ?? 288),
+            (int) ($meta['height'] ?? 98),
             $location === 'header' ? 'eager' : 'lazy'
         );
 
@@ -239,7 +239,7 @@ function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:m
             $has_footer_specific = function_exists('get_field') && get_field('footer_logo', 'option');
             $wrapper_class = $has_footer_specific
                 ? 'inline-flex shrink-0 items-center'
-                : 'inline-flex shrink-0 items-center rounded-xl bg-white px-3.5 py-1.5 shadow-sm hover:opacity-95 transition-opacity';
+                : 'inline-flex shrink-0 items-center rounded-xl bg-white px-3.5 py-1.5';
             echo sprintf('<a href="%s" class="%s" aria-label="%s">%s</a>', $home_url, $wrapper_class, $site_name, $img_html);
         } else {
             echo sprintf('<a href="%s" class="flex shrink-0 items-center" aria-label="%s">%s</a>', $home_url, $site_name, $img_html);
@@ -251,7 +251,7 @@ function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:m
     if ($location === 'footer') {
         echo sprintf(
             '<a href="%s" class="flex shrink-0 items-center gap-2.5" aria-label="%s">
-                <span class="font-heading text-xl font-extrabold tracking-tight text-white">%s</span>
+                <span class="font-heading text-xl font-bold tracking-normal text-white">%s</span>
             </a>',
             $home_url,
             $site_name,
@@ -260,7 +260,7 @@ function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:m
     } else {
         echo sprintf(
             '<a href="%s" class="flex shrink-0 items-center gap-2.5" aria-label="%s">
-                <span class="font-heading text-[17px] font-extrabold tracking-[0.12em] text-foreground uppercase">%s</span>
+                <span class="font-heading text-[17px] font-bold tracking-[0.12em] text-foreground uppercase">%s</span>
             </a>',
             $home_url,
             $site_name,

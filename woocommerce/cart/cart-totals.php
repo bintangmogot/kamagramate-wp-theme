@@ -102,8 +102,8 @@ defined( 'ABSPATH' ) || exit;
 
 		<!-- Total -->
 		<div class="cart-totals-flex pt-6 pb-2 order-total">
-			<div class="text-lg font-black text-ink"><?php esc_html_e( 'Total', 'woocommerce' ); ?></div>
-			<div class="text-xl font-black text-ink" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></div>
+			<div class="text-lg font-bold text-ink"><?php esc_html_e( 'Total', 'woocommerce' ); ?></div>
+			<div class="text-xl font-bold text-ink" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></div>
 		</div>
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>

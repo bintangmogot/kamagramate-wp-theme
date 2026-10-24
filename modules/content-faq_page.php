@@ -45,7 +45,7 @@ $heading = trim((string) get_sub_field('heading')) ?: get_the_title();
                 <?php foreach ($cat['items'] as $item) : ?>
                     <details class="kmg-accordion group border-b border-border first-of-type:border-t">
                         <summary class="flex items-start justify-between gap-6 py-6">
-                            <h3 class="font-heading text-[1.25rem] font-bold leading-snug tracking-tight text-ink group-hover:text-primary"><?php echo esc_html($item['question']); ?></h3>
+                            <h3 class="font-heading text-[1.25rem] font-bold leading-snug tracking-normal text-ink group-hover:text-primary"><?php echo esc_html($item['question']); ?></h3>
                             <span class="kmg-accordion-icon mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary"><?php echo kmg_glyph('plus', 'h-4 w-4'); ?></span>
                         </summary>
                         <div class="faq-answer prose max-w-none pb-8 pr-14 text-[17px] text-muted-foreground"><?php echo wp_kses_post(wpautop((string) ($item['answer'] ?? ''))); ?></div>

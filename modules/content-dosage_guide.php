@@ -72,7 +72,7 @@ $title    = $f('page_title') ?: get_the_title();
             <?php foreach ($products as $p) : $link = trim((string) ($p['link'] ?? '')); ?>
                 <<?php echo $link ? 'a href="' . esc_url($link) . '"' : 'div'; ?> class="group flex items-start justify-between gap-6 rounded-[1.75rem] bg-white p-8 ring-1 ring-border transition-shadow hover:ring-primary">
                     <span>
-                        <span class="block font-heading text-[1.375rem] font-bold tracking-tight text-ink group-hover:text-primary"><?php echo esc_html($p['name']); ?></span>
+                        <span class="block font-heading text-[1.375rem] font-bold tracking-normal text-ink group-hover:text-primary"><?php echo esc_html($p['name']); ?></span>
                         <?php if (!empty($p['use'])) : ?><span class="kmg-body mt-2 block"><?php echo esc_html($p['use']); ?></span><?php endif; ?>
                         <span class="mt-4 flex flex-wrap gap-2">
                             <?php foreach (['dose', 'duration'] as $k) : if (!empty($p[$k])) : ?><span class="kmg-chip"><?php echo esc_html($p[$k]); ?></span><?php endif; endforeach; ?>

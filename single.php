@@ -27,7 +27,7 @@ get_header();
                     <div class="kmg-container-narrow pb-16 pt-12 md:pb-20 md:pt-16">
                         <?php get_template_part('template-parts/breadcrumbs'); ?>
                         <?php if ($category !== '') : ?><p class="kmg-eyebrow mt-10"><?php echo esc_html($category); ?></p><?php endif; ?>
-                        <h1 class="mt-4 font-heading text-[clamp(2.25rem,1.6rem+2.8vw,4rem)] font-extrabold leading-[1.05] tracking-[-0.035em] text-ink"><?php the_title(); ?></h1>
+                        <h1 class="mt-4 font-heading text-[clamp(2.25rem,1.6rem+2.8vw,4rem)] font-bold leading-[1.05] tracking-normal text-ink"><?php the_title(); ?></h1>
                         <p class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] text-muted-foreground">
                             <time datetime="<?php echo esc_attr(get_the_date('c')); ?>"><?php echo esc_html(get_the_date('j F Y')); ?></time>
                             <?php if ($author && strtolower($author) !== 'admin') : ?><span aria-hidden="true">/</span><span><?php echo esc_html($author); ?></span><?php endif; ?>

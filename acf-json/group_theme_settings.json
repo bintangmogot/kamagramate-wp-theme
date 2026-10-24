@@ -162,6 +162,85 @@
             "placeholder": ""
         },
         {
+            "key": "field_kmg_topbar_trust_items",
+            "label": "Trust Bar Items",
+            "name": "topbar_trust_items",
+            "type": "repeater",
+            "instructions": "Icons and short labels shown in the dark bar under the announcement bar (desktop). Mobile shows the Top Bar Left text instead.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add Item",
+            "min": 0,
+            "max": 6,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_kmg_tti_icon",
+                    "label": "Icon",
+                    "name": "icon_preset",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "auto": "Auto-match from title and description (recommended)",
+                        "parcel_guarantee": "Parcel guarantee / reship or refund",
+                        "live_chat_support": "Real people on chat / support",
+                        "medical_rx_clarity": "Medicine information / Schedule 4 clarity",
+                        "aud_checkout": "Simple AUD checkout / bank transfer",
+                        "express_shipping": "Fast domestic shipping",
+                        "australia_delivery": "Australia-wide tracked delivery",
+                        "browse_catalogue": "Browse the range / product catalogue",
+                        "listing_details": "Clear listing details / compare strengths",
+                        "returning_loyalty": "Returning customers / loyalty",
+                        "discreet_sealed": "Discreet plain packaging",
+                        "po_box_delivery": "PO Box and parcel locker delivery",
+                        "no_customs": "Smooth domestic dispatch",
+                        "affordable_value": "Affordable direct pricing",
+                        "secure_lock": "Secure and encrypted",
+                        "clock": "Hours / fast response",
+                        "medicine": "Genuine medicine",
+                        "heart": "Care / wellbeing",
+                        "person": "Person / audience",
+                        "mail": "Email",
+                        "phone": "Phone"
+                    },
+                    "default_value": "express_shipping",
+                    "return_format": "value",
+                    "ui": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_kmg_tti_text",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
             "key": "field_kmg_header_phone_label",
             "label": "Header Phone Label",
             "name": "header_phone_label",
@@ -1611,5 +1690,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792773371
+    "modified": 1792805829
 }

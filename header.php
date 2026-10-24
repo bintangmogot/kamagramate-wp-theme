@@ -80,42 +80,57 @@ $help = [
 <?php wp_body_open(); ?>
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100000] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-white"><?php echo esc_html(get_bloginfo('name')); ?></a>
 
-<?php if ($topbar_left !== '' || $topbar_center !== '' || $phone_display !== '') : ?>
-<div class="bg-ink text-white" data-testid="trust-bar">
-    <div class="kmg-container flex min-h-10 items-center justify-between gap-4 py-2 text-[13px] font-medium">
-        <p class="min-w-0 truncate text-white/75"><?php echo esc_html($topbar_left); ?></p>
-
-        <?php if ($topbar_center !== '' || $topbar_code !== '') : ?>
-        <p class="hidden items-center gap-2.5 md:flex">
-            <span><?php echo esc_html($topbar_center); ?></span>
-            <?php if ($topbar_code !== '') : ?>
-                <span class="rounded-md bg-white/10 px-2 py-0.5 font-mono text-[12px] font-semibold tracking-wider text-white"><?php echo esc_html($topbar_code); ?></span>
-            <?php endif; ?>
-        </p>
+<?php
+$trust_items = array_values(array_filter((array) (function_exists('get_field') ? get_field('topbar_trust_items', 'option') : []), static function ($row) {
+    return trim((string) ($row['text'] ?? '')) !== '';
+}));
+?>
+<?php if ($topbar_center !== '' || $topbar_code !== '') : ?>
+<div class="bg-primary text-white" data-testid="announcement-bar">
+    <p class="kmg-container flex min-h-9 items-center justify-center gap-2.5 py-1.5 text-center text-[15px] font-semibold">
+        <span><?php echo esc_html($topbar_center); ?></span>
+        <?php if ($topbar_code !== '') : ?>
+            <span class="rounded-md bg-white/15 px-2 py-0.5 text-[13px] font-semibold tracking-wider"><?php echo esc_html($topbar_code); ?></span>
         <?php endif; ?>
+    </p>
+</div>
+<?php endif; ?>
 
+<?php if ($trust_items || $topbar_left !== '' || $phone_display !== '') : ?>
+<div class="bg-ink text-white" data-testid="trust-bar">
+    <div class="kmg-container flex min-h-10 items-center justify-between gap-4 py-2 text-[15px] lg:justify-center">
+        <?php if ($trust_items) : ?>
+            <ul class="hidden items-center gap-x-12 lg:flex">
+                <?php foreach ($trust_items as $item) : ?>
+                    <li class="flex items-center gap-2.5 font-medium">
+                        <?php echo $item['text'] !== '' ? esc_html($item['text']) : ''; ?>
+                        <span class="text-primary-light"><?php echo waklert_render_card_icon(['icon_preset' => $item['icon_preset'] ?? 'auto', 'title' => $item['text'], 'size_class' => 'h-5 w-5']); ?></span>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+        <p class="min-w-0 truncate text-white/80 <?php echo $trust_items ? 'lg:hidden' : ''; ?>"><?php echo esc_html($topbar_left); ?></p>
         <?php if ($phone_display !== '') : ?>
-        <a href="<?php echo esc_attr(kmg_phone_href($raw_phone)); ?>" class="inline-flex shrink-0 items-center gap-2 text-white/75 transition-colors hover:text-white">
-            <?php echo kmg_glyph('phone', 'h-3.5 w-3.5'); ?>
-            <span class="whitespace-nowrap"><?php echo esc_html($phone_display); ?></span>
-        </a>
+            <a href="<?php echo esc_attr(kmg_phone_href($raw_phone)); ?>" class="inline-flex shrink-0 items-center gap-2 text-white/80 hover:text-white lg:hidden">
+                <?php echo kmg_glyph('phone', 'h-3.5 w-3.5'); ?><span class="whitespace-nowrap"><?php echo esc_html($phone_display); ?></span>
+            </a>
         <?php endif; ?>
     </div>
 </div>
 <?php endif; ?>
 
-<header class="sticky top-0 z-50 w-full border-b border-border bg-white/90 backdrop-blur-lg">
-    <div class="kmg-container flex h-[76px] items-center gap-4 lg:h-[88px] lg:gap-8">
+<header class="sticky top-0 z-50 w-full bg-white shadow-[0_6px_20px_-12px_rgb(34_18_79/0.25)]">
+    <div class="kmg-container flex h-[76px] items-center gap-4 lg:h-[96px] lg:gap-6">
 
         <button type="button" id="mobile-menu-open" aria-label="<?php echo esc_attr__('Open menu', 'kamagramate'); ?>" class="-ml-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-primary-soft lg:hidden">
             <?php echo kmg_glyph('menu', 'h-6 w-6'); ?>
         </button>
 
-        <div class="flex-1 lg:flex-none">
-            <?php waklert_the_logo('h-9 sm:h-10 w-auto max-w-[200px] object-contain', 'header'); ?>
+        <div class="flex-1">
+            <?php waklert_the_logo('w-auto', 'header'); ?>
         </div>
 
-        <nav class="desktop-nav hidden flex-1 justify-center lg:flex" aria-label="<?php echo esc_attr__('Primary', 'kamagramate'); ?>">
+        <nav class="desktop-nav hidden justify-end lg:flex" aria-label="<?php echo esc_attr__('Primary', 'kamagramate'); ?>">
             <?php
             wp_nav_menu([
                 'theme_location' => 'primary',
@@ -135,11 +150,11 @@ $help = [
             <?php endif; ?>
 
             <?php if ($phone_text !== '' && $phone_href !== '') : ?>
-            <a href="<?php echo esc_attr($phone_href); ?>" class="hidden items-center gap-3 rounded-full py-1.5 pl-1.5 pr-5 transition-colors hover:bg-primary-softer xl:inline-flex">
-                <span class="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-white"><?php echo kmg_glyph('phone', 'h-[18px] w-[18px]'); ?></span>
+            <a href="<?php echo esc_attr($phone_href); ?>" class="hidden items-center gap-3 rounded-xl py-1.5 pl-1.5 pr-4 transition-colors hover:bg-primary-softer xl:inline-flex">
+                <span class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-primary text-primary"><?php echo kmg_glyph('phone', 'h-[18px] w-[18px]'); ?></span>
                 <span class="leading-tight">
-                    <?php if ($phone_label !== '') : ?><span class="block text-[12px] font-medium text-muted-foreground"><?php echo esc_html($phone_label); ?></span><?php endif; ?>
-                    <span class="block font-heading text-[17px] font-bold tracking-tight text-ink"><?php echo esc_html($phone_text); ?></span>
+                    <?php if ($phone_label !== '') : ?><span class="block text-[14px] font-semibold text-primary"><?php echo esc_html($phone_label); ?></span><?php endif; ?>
+                    <span class="block font-heading text-[20px] font-bold leading-none text-ink"><?php echo esc_html($phone_text); ?></span>
                 </span>
             </a>
             <?php endif; ?>
@@ -183,7 +198,7 @@ $help = [
 
 <div id="mobile-menu-drawer" class="fixed inset-y-0 left-0 z-[99999] flex h-[100dvh] w-[90%] max-w-sm -translate-x-full flex-col overflow-y-auto bg-white transition-transform duration-300 ease-out lg:hidden">
     <div class="flex h-[76px] shrink-0 items-center justify-between border-b border-border px-6">
-        <?php waklert_the_logo('h-9 w-auto max-w-[180px] object-contain', 'mobile'); ?>
+        <?php waklert_the_logo('w-auto', 'mobile'); ?>
         <button type="button" id="mobile-menu-close" aria-label="<?php echo esc_attr__('Close menu', 'kamagramate'); ?>" class="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-primary-soft">
             <?php echo kmg_glyph('close', 'h-6 w-6'); ?>
         </button>

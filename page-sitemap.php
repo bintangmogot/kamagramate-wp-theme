@@ -97,19 +97,19 @@ if ($delivery_links) {
                 <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-border bg-white/90 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-xs backdrop-blur">
                     <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-muted-foreground transition-colors hover:text-ink">Home</a>
                     <span class="text-primary-light font-normal">/</span>
-                    <span aria-current="page" class="font-extrabold text-ink">Sitemap</span>
+                    <span aria-current="page" class="font-bold text-ink">Sitemap</span>
                 </nav>
             </div>
 
             <!-- Eyebrow Badge -->
             <div class="mb-2.5">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink shadow-xs">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-ink shadow-xs">
                     <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" aria-hidden="true"></span>
                     Site Directory
                 </span>
             </div>
 
-            <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-ink">
+            <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-normal text-ink">
                 <?= esc_html($sitemap_title) ?>
             </h1>
 
@@ -123,7 +123,7 @@ if ($delivery_links) {
         <div class="container-site grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             <?php foreach ($columns as $column): ?>
             <section class="rounded-2xl border border-border bg-white p-6 shadow-xs transition-all hover:border-border hover:shadow-md">
-                <h2 class="mb-4 border-b border-border pb-3 font-heading text-base font-black text-ink uppercase tracking-wider">
+                <h2 class="mb-4 border-b border-border pb-3 font-heading text-base font-bold text-ink uppercase tracking-wider">
                     <?= esc_html($column['title']) ?>
                 </h2>
                 <?php if (!empty($column['links'])): ?>

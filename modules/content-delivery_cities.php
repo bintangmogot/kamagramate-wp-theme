@@ -19,11 +19,11 @@ $cities_field = get_sub_field('cities');
     <div class="container-custom relative z-10">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-10 md:mb-12">
-            <span class="inline-flex items-center gap-2 bg-primary-soft text-ink border border-border text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-3 shadow-xs">
+            <span class="inline-flex items-center gap-2 bg-primary-soft text-ink border border-border text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3 shadow-xs">
                 <span class="w-2 h-2 rounded-full bg-primary animate-pulse-subtle"></span>
                 <?= esc_html($tag) ?>
             </span>
-            <h2 class="font-heading text-2xl md:text-4xl font-black text-ink tracking-tight mb-3">
+            <h2 class="font-heading text-2xl md:text-4xl font-bold text-ink tracking-normal mb-3">
                 <?= esc_html($heading) ?>
             </h2>
             <p class="text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
@@ -82,7 +82,7 @@ $cities_field = get_sub_field('cities');
                         </svg>
                     </div>
                     <div class="truncate">
-                        <h3 class="font-heading font-black text-ink text-base md:text-[17px] group-hover:text-ink transition-colors truncate">
+                        <h3 class="font-heading font-bold text-ink text-base md:text-[17px] group-hover:text-ink transition-colors truncate">
                             <?= esc_html($city_name) ?>
                         </h3>
                         <p class="text-xs text-muted-foreground flex items-center gap-1.5 mt-0.5">
@@ -108,7 +108,7 @@ $cities_field = get_sub_field('cities');
 
         <!-- Regional & Remote Towns Pill Grid -->
         <div class="text-center pt-2">
-            <span class="inline-block text-xs font-black uppercase tracking-wider text-muted-foreground mb-3">All Australian Metro & Regional Areas Covered</span>
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">All Australian Metro & Regional Areas Covered</span>
             <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
                 <?php 
                 $all_cities = get_posts([

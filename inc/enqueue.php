@@ -4,10 +4,10 @@
  */
 
 function modmy_enqueue_scripts() {
-    // 1. Google Fonts (Manrope, Inter & Caveat for cursive Best Seller notes)
+    // 1. Google Fonts: Afacad (same family as modafinilaustraliadirect.com)
     wp_enqueue_style(
         'modmy-fonts',
-        'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap',
         array(),
         null
     );
