@@ -5,6 +5,10 @@ modafinilaustraliadirect.com (centred section titles, product cards, trust strip
 delivery block, how-to-order steps, audience grid, blog, two-column FAQ), with
 the calmer, airier spacing and extra commerce sections of kamagraaus.com.
 
+Note: this site deliberately uses generous section spacing and large type, at the
+client's request for Kamagramate (October 2026). The compact-spacing rule in
+`.agents/persona.md` comes from the Waklert site and does not apply here.
+
 Principles
 
 1. **One accent.** Purple does the work (CTAs, links, active states). Everything
