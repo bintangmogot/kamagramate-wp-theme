@@ -227,7 +227,7 @@ $float_tg  = kmg_chat_url($txt('floating_telegram_number'), 'telegram');
 $float_wal = $txt('floating_whatsapp_label');
 $float_tgl = $txt('floating_telegram_label');
 if (!empty($float_on) && (($float_wa && $float_wal) || ($float_tg && $float_tgl))) : ?>
-<div class="kmg-float fixed bottom-24 right-4 z-[9990] flex flex-col items-end gap-2 sm:bottom-6 sm:right-24">
+<div class="kmg-float fixed bottom-[98px] right-[11px] z-[9990] flex flex-col items-end gap-2">
     <?php if ($float_wa && $float_wal) : ?>
         <a href="<?php echo esc_url($float_wa); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($float_wal); ?>" class="inline-flex h-12 w-12 items-center justify-center gap-2.5 rounded-full bg-ink sm:w-auto sm:px-5 text-[15px] font-semibold text-white shadow-[0_16px_32px_-12px_rgb(26_16_48/0.5)] transition-transform hover:-translate-y-0.5"><?php echo kmg_glyph('chat', 'h-[18px] w-[18px]'); ?><span class="hidden sm:inline"><?php echo esc_html($float_wal); ?></span></a>
     <?php endif; ?>
@@ -249,6 +249,26 @@ if (!empty($toast_on) && $toast_title !== '' && $toast_code !== '') : ?>
     <button type="button" data-kmg-copy="<?php echo esc_attr($toast_code); ?>" class="kmg-btn kmg-btn-primary kmg-btn-sm mt-5 w-full">
         <?php echo kmg_glyph('copy', 'h-4 w-4'); ?><span data-kmg-copy-label><?php echo esc_html($txt('promo_toast_button') ?: $toast_code); ?></span>
     </button>
+</div>
+<?php endif; ?>
+
+<?php
+$ct_on   = $opt('contact_toast_enabled');
+$ct_text = $txt('contact_toast_text');
+$ct_tg   = $opt('contact_toast_channel') === 'telegram';
+$ct_url  = kmg_chat_url($txt('contact_toast_number'), $ct_tg ? 'telegram' : 'whatsapp');
+if ($ct_url !== '' && $txt('contact_toast_message') !== '') {
+    $ct_url = add_query_arg('text', rawurlencode($txt('contact_toast_message')), $ct_url);
+}
+if (!empty($ct_on) && $ct_text !== '' && $ct_url !== '') : ?>
+<div id="kmg-contact-toast" class="pointer-events-none fixed inset-x-0 bottom-[160px] z-[9989] hidden justify-center px-4 sm:inset-x-auto sm:bottom-6 sm:left-6 sm:justify-start sm:px-0" data-delay="<?php echo esc_attr((int) ($opt('contact_toast_delay') ?: 6)); ?>">
+    <div class="pointer-events-auto relative flex w-full max-w-sm translate-y-4 items-center gap-3 rounded-xl border border-border bg-white/95 py-3 pl-3.5 pr-10 opacity-0 shadow-[0_18px_40px_-18px_rgba(34,18,79,0.45)] backdrop-blur transition duration-300 ease-out" data-kmg-toast-card>
+        <a href="<?php echo esc_url($ct_url); ?>" target="_blank" rel="noopener nofollow" class="flex flex-1 items-center gap-3">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary"><?php echo kmg_glyph($ct_tg ? 'send' : 'chat', 'h-[17px] w-[17px]'); ?></span>
+            <span class="text-[15px] font-medium leading-snug text-ink"><?php echo esc_html($ct_text); ?></span>
+        </a>
+        <button type="button" data-kmg-contact-close class="absolute right-2 top-2 rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-ink" aria-label="<?php echo esc_attr__('Dismiss', 'kamagramate'); ?>"><?php echo kmg_glyph('close', 'h-3.5 w-3.5'); ?></button>
+    </div>
 </div>
 <?php endif; ?>
 

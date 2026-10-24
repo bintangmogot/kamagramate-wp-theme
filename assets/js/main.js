@@ -308,3 +308,28 @@ document.addEventListener('DOMContentLoaded', () => {
     links.forEach((a) => a.addEventListener('click', () => setTimeout(() => setActive(a.getAttribute('href').slice(1)), 50)));
     update();
 });
+
+// Contact toast: slide in after a delay, hidden for the session once dismissed
+document.addEventListener('DOMContentLoaded', () => {
+    const toast = document.getElementById('kmg-contact-toast');
+    if (!toast) return;
+    let dismissed = false;
+    try { dismissed = sessionStorage.getItem('kmgContactDismissed') === '1'; } catch (e) {}
+    if (dismissed) return;
+    const card = toast.querySelector('[data-kmg-toast-card]');
+    setTimeout(() => {
+        // Do not stack on top of the coupon toast.
+        const promo = document.getElementById('kmg-promo-toast');
+        if (promo && !promo.classList.contains('hidden')) return;
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        requestAnimationFrame(() => card.classList.remove('translate-y-4', 'opacity-0'));
+    }, (Number(toast.dataset.delay) || 6) * 1000);
+    const close = () => {
+        card.classList.add('translate-y-4', 'opacity-0');
+        setTimeout(() => toast.classList.add('hidden'), 300);
+        try { sessionStorage.setItem('kmgContactDismissed', '1'); } catch (e) {}
+    };
+    toast.querySelector('[data-kmg-contact-close]').addEventListener('click', close);
+    toast.querySelector('a').addEventListener('click', close);
+});

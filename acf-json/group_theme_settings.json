@@ -1264,6 +1264,112 @@
             "placeholder": ""
         },
         {
+            "key": "field_kmg_ct_on",
+            "label": "Show Contact Toast",
+            "name": "contact_toast_enabled",
+            "type": "true_false",
+            "instructions": "Small dismissible message that slides in at the bottom and opens a chat.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_kmg_ct_ch",
+            "label": "Contact Toast Channel",
+            "name": "contact_toast_channel",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "whatsapp": "WhatsApp",
+                "telegram": "Telegram"
+            },
+            "default_value": "whatsapp",
+            "return_format": "value",
+            "ui": 0,
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_kmg_ct_num",
+            "label": "Contact Toast Number or URL",
+            "name": "contact_toast_number",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_ct_delay",
+            "label": "Show After (seconds)",
+            "name": "contact_toast_delay",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 120,
+            "step": 1
+        },
+        {
+            "key": "field_kmg_ct_txt",
+            "label": "Contact Toast Text",
+            "name": "contact_toast_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_kmg_ct_msg",
+            "label": "Pre-filled Chat Message",
+            "name": "contact_toast_message",
+            "type": "text",
+            "instructions": "Optional text placed in the chat box when it opens.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_kmg_promo_toast_enabled",
             "label": "Show Coupon Toast",
             "name": "promo_toast_enabled",
@@ -1690,5 +1796,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792805829
+    "modified": 1792885962
 }
