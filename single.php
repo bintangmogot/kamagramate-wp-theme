@@ -49,29 +49,28 @@ get_header();
                 </div>
             </article>
 
-            <?php
-            $related_heading = trim((string) get_field('label_related_posts', 'option'));
-            $cats = wp_get_post_categories(get_the_ID());
-            $related = $related_heading !== '' ? get_posts([
-                'post_type'      => 'post',
-                'posts_per_page' => 3,
-                'post__not_in'   => [get_the_ID()],
-                'category__in'   => $cats,
-                'ignore_sticky_posts' => true,
-            ]) : [];
-            if ($related) : ?>
-                <section class="kmg-section border-t border-border">
-                    <div class="kmg-container">
-                        <h2 class="kmg-h2 mb-14"><?php echo esc_html($related_heading); ?></h2>
-                        <div class="grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
-                            <?php foreach ($related as $rp) { get_template_part('template-parts/post-card', null, ['post' => $rp]); } ?>
-                        </div>
-                    </div>
-                </section>
-            <?php endif;
-        endwhile;
+        <?php endwhile;
     }
-    ?>
+
+    // Related articles from the same category, for module-built and classic posts alike.
+    $related_heading = trim((string) get_field('label_related_posts', 'option'));
+    $related = $related_heading !== '' ? get_posts([
+        'post_type'           => 'post',
+        'posts_per_page'      => 3,
+        'post__not_in'        => [get_the_ID()],
+        'category__in'        => wp_get_post_categories(get_the_ID()),
+        'ignore_sticky_posts' => true,
+    ]) : [];
+    if ($related) : ?>
+        <section class="kmg-section border-t border-border">
+            <div class="kmg-container">
+                <h2 class="kmg-h2 mb-14"><?php echo esc_html($related_heading); ?></h2>
+                <div class="grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+                    <?php foreach ($related as $rp) { get_template_part('template-parts/post-card', null, ['post' => $rp]); } ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
 </main>
 <?php
 get_footer();

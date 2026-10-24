@@ -16,6 +16,8 @@ $contact  = (array) ($args['contact'] ?? []);
 $toc_label     = trim((string) get_field('label_on_this_page', 'option'));
 $updated_label = trim((string) get_field('label_last_updated', 'option'));
 $updated       = trim((string) ($args['updated'] ?? ''));
+$is_post       = is_singular('post');
+$reading_label = trim((string) get_field('label_reading_time', 'option'));
 
 $ids = [];
 foreach ($sections as $i => $section) {
@@ -29,6 +31,16 @@ foreach ($sections as $i => $section) {
             <?php if (!empty($args['eyebrow'])) : ?><p class="kmg-eyebrow"><?php echo esc_html($args['eyebrow']); ?></p><?php endif; ?>
             <h1 class="kmg-display mt-4"><?php echo esc_html($title); ?></h1>
             <?php if (!empty($args['intro'])) : ?><p class="kmg-lead mt-6 max-w-2xl"><?php echo esc_html($args['intro']); ?></p><?php endif; ?>
+            <?php if ($is_post) :
+                $category = modmy_get_post_category(get_the_ID());
+                $words    = str_word_count(wp_strip_all_tags(implode(' ', array_column($sections, 'content'))));
+                ?>
+                <p class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-[16px] text-muted-foreground">
+                    <?php if ($category !== '') : ?><span class="font-semibold text-primary"><?php echo esc_html($category); ?></span><span aria-hidden="true">/</span><?php endif; ?>
+                    <time datetime="<?php echo esc_attr(get_the_date('c')); ?>"><?php echo esc_html(get_the_date('j F Y')); ?></time>
+                    <?php if ($reading_label !== '') : ?><span aria-hidden="true">/</span><span><?php echo esc_html(max(1, (int) ceil($words / 220)) . ' ' . $reading_label); ?></span><?php endif; ?>
+                </p>
+            <?php endif; ?>
             <?php if ($badges || $updated !== '') : ?>
                 <div class="mt-8 flex flex-wrap items-center gap-2">
                     <?php foreach ($badges as $badge) : ?><span class="kmg-chip kmg-chip-outline"><?php echo esc_html($badge); ?></span><?php endforeach; ?>
@@ -56,6 +68,11 @@ foreach ($sections as $i => $section) {
         </aside>
 
         <div class="min-w-0 lg:col-span-8">
+            <?php if ($is_post && has_post_thumbnail()) : ?>
+                <figure class="mb-12 overflow-hidden rounded-[2rem] bg-primary-soft">
+                    <?php the_post_thumbnail('large', ['class' => 'h-auto w-full object-cover', 'loading' => 'eager', 'fetchpriority' => 'high']); ?>
+                </figure>
+            <?php endif; ?>
             <?php foreach ($sections as $i => $section) : ?>
                 <article id="<?php echo esc_attr($ids[$i]); ?>" class="scroll-mt-36 border-t border-border py-12 first:border-t-0 first:pt-0">
                     <?php if (!empty($section['title'])) : ?>
