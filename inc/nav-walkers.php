@@ -57,7 +57,7 @@ class Waklert_Desktop_Nav_Walker extends Walker_Nav_Menu {
         $output .= '<div class="kmg-mega absolute left-1/2 top-full z-50 w-[640px] max-w-[92vw] -translate-x-1/2 pt-4 opacity-0 invisible translate-y-2 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">';
         $output .= '<div class="overflow-hidden rounded-3xl border border-border bg-white shadow-[0_32px_64px_-32px_rgb(26_16_48/0.35)]">';
         if ($intro !== '') {
-            $output .= '<p class="px-7 pt-6 text-sm text-muted-foreground">' . esc_html($intro) . '</p>';
+            $output .= '<p class="flex items-center gap-2.5 border-b border-border bg-primary-softer px-7 py-3.5 text-[15px] font-semibold text-ink">' . waklert_render_card_icon(['icon_preset' => 'affordable_value', 'size_class' => 'h-[18px] w-[18px] shrink-0 text-primary']) . esc_html($intro) . '</p>';
         }
         $output .= '<ul class="sub-menu grid grid-cols-2 gap-2 p-4">';
     }
@@ -126,8 +126,15 @@ class Waklert_Desktop_Nav_Walker extends Walker_Nav_Menu {
 }
 
 class Waklert_Mobile_Nav_Walker extends Walker_Nav_Menu {
+    /** @var WP_Post|null Current top-level parent, used for the submenu intro line. */
+    private $parent_item = null;
+
     public function start_lvl(&$output, $depth = 0, $args = null) {
         $output .= '<ul class="sub-menu is-open space-y-1 pb-3 pl-2">';
+        $intro = ($depth === 0 && $this->parent_item) ? trim((string) $this->parent_item->description) : '';
+        if ($intro !== '') {
+            $output .= '<li class="list-none"><p class="mb-1 flex items-center gap-2 rounded-xl bg-primary-softer px-3 py-2.5 text-[14px] font-semibold text-ink">' . waklert_render_card_icon(['icon_preset' => 'affordable_value', 'size_class' => 'h-4 w-4 shrink-0 text-primary']) . esc_html($intro) . '</p></li>';
+        }
     }
 
     public function end_lvl(&$output, $depth = 0, $args = null) {
@@ -141,6 +148,7 @@ class Waklert_Mobile_Nav_Walker extends Walker_Nav_Menu {
         $active       = kmg_menu_item_is_active($item);
 
         if ($depth === 0) {
+            $this->parent_item = $has_children ? $item : null;
             $output .= '<li class="' . esc_attr('list-none border-b border-border ' . implode(' ', $classes)) . '">';
             $output .= '<div class="flex items-center justify-between gap-2">';
             $output .= '<a href="' . esc_url($url) . '" class="flex-1 py-4 font-heading text-2xl font-bold tracking-normal ' . ($active ? 'text-primary' : 'text-ink') . '">' . esc_html($item->title) . '</a>';
