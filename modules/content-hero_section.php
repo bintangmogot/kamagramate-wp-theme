@@ -53,13 +53,13 @@ $has_img  = $img_html !== '';
             <?php endif; ?>
 
             <?php if ($stats) : ?>
-            <dl class="mt-14 grid max-w-xl grid-cols-2 gap-x-8 gap-y-8 border-t border-border pt-10 sm:grid-cols-3">
+            <dl class="mt-14 grid max-w-xl grid-cols-3 gap-x-4 gap-y-8 border-t border-border pt-10 sm:gap-x-8">
                 <?php foreach ($stats as $stat) : ?>
                     <div>
                         <dt class="sr-only"><?php echo esc_html($stat['label'] ?? ''); ?></dt>
-                        <dd class="font-heading text-[1.75rem] font-extrabold leading-none tracking-tight text-ink"><?php echo esc_html($stat['value']); ?></dd>
+                        <dd class="font-heading text-[1.375rem] font-extrabold leading-none sm:text-[1.75rem] tracking-tight text-ink"><?php echo esc_html($stat['value']); ?></dd>
                         <?php if (!empty($stat['label'])) : ?>
-                            <dd class="mt-2 text-[15px] leading-snug text-muted-foreground"><?php echo esc_html($stat['label']); ?></dd>
+                            <dd class="mt-2 text-[13px] leading-snug text-muted-foreground sm:text-[15px]"><?php echo esc_html($stat['label']); ?></dd>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>

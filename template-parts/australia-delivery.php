@@ -91,7 +91,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
 <!-- ============================================================
      1. HERO SECTION: 2-Tone Gradient + Ambient Rings + Dashed Delivery Glance Card
      ============================================================ -->
-<section class="relative isolate overflow-hidden bg-gradient-to-r from-primary via-primary to-primary bg-pattern-dots-dark text-white border-b border-border">
+<section class="relative isolate overflow-hidden bg-ink text-white border-b border-border">
     <?php waklert_output_pattern_rings(); ?>
 
     <div class="container-site relative z-10 grid items-center gap-10 py-8 sm:py-10 md:py-12 lg:py-14 lg:grid-cols-[1.15fr_.85fr] lg:gap-14">
@@ -128,7 +128,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
 
             <!-- Compact Action Buttons -->
             <div class="mt-7 sm:mt-8 flex flex-wrap items-center gap-3">
-                <a class="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary hover:from-primary hover:to-primary px-5 py-2.5 sm:px-7 sm:py-3.5 text-xs sm:text-sm font-black uppercase tracking-wide text-ink shadow-none shadow-amber-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-400" href="<?= esc_url($shop) ?>">
+                <a class="group inline-flex items-center justify-center gap-2 rounded-full bg-primary hover:bg-primary-dark px-5 py-2.5 sm:px-7 sm:py-3.5 text-xs sm:text-sm font-black uppercase tracking-wide text-white shadow-none shadow-amber-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-400" href="<?= esc_url($shop) ?>">
                     <span><?= esc_html($read('shop_button_label') ?: 'Shop now') ?></span>
                     <svg aria-hidden="true" class="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
@@ -139,9 +139,9 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
 
             <!-- Mini Trust Badges -->
             <div class="mt-6 pt-5 border-t border-white/15 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-primary-light font-medium">
-                <span class="inline-flex items-center gap-1.5"><span class="text-accent font-bold">✓</span> 100% Genuine Sun Pharma</span>
-                <span class="inline-flex items-center gap-1.5"><span class="text-success font-bold">✓</span> Domestic AusPost Dispatch</span>
-                <span class="inline-flex items-center gap-1.5"><span class="text-primary-light font-bold">✓</span> Plain Parcel Guarantee</span>
+                <span class="inline-flex items-center gap-1.5"><?= kmg_glyph('check', 'h-4 w-4 inline text-accent') ?> 100% Genuine Sun Pharma</span>
+                <span class="inline-flex items-center gap-1.5"><?= kmg_glyph('check', 'h-4 w-4 inline text-success') ?> Domestic AusPost Dispatch</span>
+                <span class="inline-flex items-center gap-1.5"><?= kmg_glyph('check', 'h-4 w-4 inline text-primary-light') ?> Plain Parcel Guarantee</span>
             </div>
         </div>
 
@@ -164,7 +164,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
                 </div>
                 <div>
                     <span class="inline-flex items-center gap-1 text-[11px] font-black uppercase tracking-widest text-ink">
-                        <span class="h-1.5 w-1.5 rounded-full bg-success-soft0"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-success"></span>
                         <?= esc_html($read('carrier') ?: 'Australia Delivery') ?>
                     </span>
                     <h2 class="font-heading text-lg sm:text-xl font-black text-ink leading-tight">
@@ -192,7 +192,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
 
             <!-- Card Action Footer -->
             <div class="mt-4 pt-4 border-t border-border">
-                <a class="group flex items-center justify-between w-full rounded-xl bg-gradient-to-r from-primary to-primary hover:from-primary hover:to-primary text-white px-4 py-3 text-xs sm:text-sm font-extrabold tracking-wide shadow-md transition-all duration-300" href="<?= esc_url($contact) ?>">
+                <a class="group flex items-center justify-between w-full rounded-xl bg-primary hover:bg-primary-dark text-white px-4 py-3 text-xs sm:text-sm font-extrabold tracking-wide shadow-md transition-all duration-300" href="<?= esc_url($contact) ?>">
                     <span><?= esc_html($read('delivery_link_label') ?: 'Check delivery for your postcode') ?></span>
                     <span class="transition-transform duration-300 group-hover:translate-x-1 font-bold">&rarr;</span>
                 </a>
@@ -351,7 +351,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
             <ul class="space-y-3.5">
                 <?php foreach ($features as $feature): if (empty($feature['feat'])) continue; ?>
                 <li class="flex items-start gap-3 rounded-xl border border-border bg-primary-soft p-3 transition-colors hover:bg-primary-soft">
-                    <span aria-hidden="true" class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-success-soft0 text-white font-black text-xs shadow-xs mt-0.5">✓</span>
+                    <span aria-hidden="true" class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-success text-white font-black text-xs shadow-xs mt-0.5"><?= kmg_glyph('check', 'h-3 w-3') ?></span>
                     <span class="text-xs sm:text-sm font-semibold text-muted-foreground leading-snug"><?= esc_html($feature['feat']) ?></span>
                 </li>
                 <?php endforeach; ?>
@@ -378,7 +378,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
     <div class="container-site">
         <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-widest text-primary mb-3 shadow-xs">
-                <span class="h-1.5 w-1.5 rounded-full bg-primary-soft0 animate-pulse"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
                 Why Choose Us
             </span>
             <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-black text-ink tracking-tight">
@@ -400,7 +400,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
                 1 => [
                     'border'   => 'border-border hover:border-border',
                     'bg_top'   => 'bg-gradient-to-br from-primary via-white to-primary',
-                    'num_bg'   => 'bg-primary-soft0 text-white',
+                    'num_bg'   => 'bg-primary text-white',
                     'icon_bg'  => 'bg-primary-soft border-border',
                     'icon_svg' => '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="6" width="14" height="11" rx="1.5" fill="#FEF3C7" stroke="#5420b0" stroke-width="1.8"/><path d="M15 9h4.5l3.5 4.5v3.5h-8V9z" fill="#DC2626" stroke="#B91C1C" stroke-width="1.8"/><circle cx="6" cy="19" r="2.2" fill="#1a1030"/><circle cx="18" cy="19" r="2.2" fill="#1a1030"/></svg>',
                 ],
@@ -456,7 +456,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
     <div class="container-site">
         <div class="mb-10 text-center max-w-2xl mx-auto">
             <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-extrabold uppercase tracking-widest text-ink mb-3 shadow-xs">
-                <span class="h-1.5 w-1.5 rounded-full bg-success-soft0 animate-pulse"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-success animate-pulse"></span>
                 <?= esc_html($read('products_label') ?: 'Direct Range') ?>
             </span>
             <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-black text-ink tracking-tight">
@@ -510,7 +510,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
     <div class="container-site">
         <div class="text-center max-w-2xl mx-auto mb-10">
             <span class="inline-flex items-center gap-1.5 rounded-full bg-success-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-widest text-success mb-3 shadow-xs">
-                <span class="h-1.5 w-1.5 rounded-full bg-success-soft0 animate-pulse"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-success animate-pulse"></span>
                 Verified Feedback
             </span>
             <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-black text-ink tracking-tight">
@@ -524,11 +524,11 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
                 <div class="flex items-center justify-between mb-3">
                     <?php if ($rating): ?>
                     <p aria-label="<?= esc_attr("{$rating} out of 5 stars") ?>" class="text-accent tracking-wider text-sm">
-                        <?= esc_html(str_repeat('★', $rating)) ?>
+                        <?= kmg_stars((int) $rating, 'h-4 w-4') ?>
                     </p>
                     <?php endif; ?>
                     <span class="inline-flex items-center gap-1 text-[11px] font-bold text-success bg-success-soft border border-border px-2 py-0.5 rounded-full">
-                        <span class="text-success font-bold">✓</span> Verified Buyer
+                        <?= kmg_glyph('check', 'h-4 w-4 inline text-success') ?> Verified Buyer
                     </span>
                 </div>
                 <blockquote class="text-xs sm:text-sm leading-relaxed text-muted-foreground mb-4">
@@ -598,7 +598,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
      ============================================================ -->
 <section class="section-padding bg-white">
     <div class="container-site max-w-4xl">
-        <div class="relative isolate overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-primary via-primary to-primary bg-pattern-dots-dark p-8 sm:p-12 md:p-14 text-white shadow-none border border-border text-center">
+        <div class="relative isolate overflow-hidden rounded-[2.5rem] bg-ink p-8 sm:p-12 md:p-14 text-white shadow-none border border-border text-center">
             <?php waklert_output_pattern_rings(); ?>
 
             <div class="relative z-10 max-w-2xl mx-auto">
@@ -616,7 +616,7 @@ $whatsapp     = function_exists('waklert_format_whatsapp_url') ? waklert_format_
                 </p>
 
                 <div class="flex flex-wrap items-center justify-center gap-3">
-                    <a class="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary hover:from-primary hover:to-primary px-5 py-2.5 sm:px-8 sm:py-3.5 text-xs sm:text-sm font-black uppercase tracking-wide text-ink shadow-none shadow-amber-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-none" href="<?= esc_url($shop) ?>">
+                    <a class="group inline-flex items-center gap-2 rounded-full bg-primary hover:bg-primary-dark px-5 py-2.5 sm:px-8 sm:py-3.5 text-xs sm:text-sm font-black uppercase tracking-wide text-white shadow-none shadow-amber-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-none" href="<?= esc_url($shop) ?>">
                         <span><?= esc_html($read('cta_button_label') ?: 'Explore products') ?></span>
                         <svg aria-hidden="true" class="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
                     </a>

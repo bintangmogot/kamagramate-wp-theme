@@ -142,7 +142,7 @@ $get_variations = static function ($product) {
                         <?php if ($review_summary['review_count'] > 0): ?>
                             <a href="<?= esc_url(get_permalink($product->get_id()) . '#product-reviews') ?>" class="mt-2 inline-flex w-fit items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-primary-dark" aria-label="Read <?= esc_attr($review_summary['review_count']) ?> product reviews">
                                 <?php if ($review_summary['rating_count'] > 0): ?>
-                                    <span class="text-accent" aria-hidden="true">★</span>
+                                    <?= kmg_stars(1, 'h-3.5 w-3.5') ?>
                                     <span class="font-semibold text-ink"><?= esc_html(number_format($review_summary['average_rating'], 1)) ?></span>
                                     <span aria-hidden="true">·</span>
                                 <?php endif; ?>

@@ -55,7 +55,7 @@ foreach ($sections as $i => $section) {
             </div>
         </aside>
 
-        <div class="lg:col-span-8">
+        <div class="min-w-0 lg:col-span-8">
             <?php foreach ($sections as $i => $section) : ?>
                 <article id="<?php echo esc_attr($ids[$i]); ?>" class="scroll-mt-36 border-t border-border py-12 first:border-t-0 first:pt-0">
                     <?php if (!empty($section['title'])) : ?>
@@ -73,7 +73,7 @@ foreach ($sections as $i => $section) {
                     <div class="mt-8 flex flex-wrap gap-3">
                         <?php kmg_button((string) ($contact['button_label'] ?? ''), (string) ($contact['button_url'] ?? ''), 'primary'); ?>
                         <?php if (!empty($contact['email'])) : ?>
-                            <a href="mailto:<?php echo esc_attr($contact['email']); ?>" class="kmg-btn kmg-btn-outline"><?php echo kmg_glyph('mail'); ?><?php echo esc_html($contact['email']); ?></a>
+                            <a href="mailto:<?php echo esc_attr($contact['email']); ?>" class="kmg-btn kmg-btn-outline max-w-full whitespace-normal py-3 text-left [overflow-wrap:anywhere]"><?php echo kmg_glyph('mail'); ?><?php echo esc_html($contact['email']); ?></a>
                         <?php endif; ?>
                     </div>
                 </div>

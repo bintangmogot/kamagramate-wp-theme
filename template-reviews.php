@@ -34,7 +34,7 @@ get_header();
             <div class="mb-12">
                 <div class="text-center max-w-2xl mx-auto mb-8">
                     <span class="inline-flex items-center gap-2 rounded-full bg-primary-soft border border-border px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-ink shadow-sm mb-4">
-                        <span class="w-2 h-2 rounded-full bg-success-soft0 animate-pulse"></span>
+                        <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
                         Verified Customer Experiences
                     </span>
                     <h1 class="font-heading text-3xl md:text-5xl font-extrabold text-ink tracking-tight mb-4">
@@ -49,7 +49,7 @@ get_header();
                 <!-- 2-Tone Dashed Rating Summary Card -->
                 <div class="rounded-3xl border border-border bg-white p-6 md:p-8 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6 hover:shadow-md transition-shadow">
                     <div class="flex items-center gap-4">
-                        <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary text-white shadow-md">
+                        <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary hover:bg-primary-dark text-white shadow-md">
                             <!-- Multi-color Shield SVG -->
                             <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2L3 6V12C3 17.5 7 21 12 22C17 21 21 17.5 21 12V6L12 2Z" fill="#FFFFFF" fill-opacity="0.3"/>
@@ -131,10 +131,10 @@ get_header();
                             </div>
 
                             <!-- Bottom 2-Tone Solid Navy Strip -->
-                            <div class="bg-gradient-to-r from-primary to-primary p-4 sm:p-5 flex items-center justify-between gap-3 text-white">
+                            <div class="bg-primary hover:bg-primary-dark p-4 sm:p-5 flex items-center justify-between gap-3 text-white">
                                 <div class="flex items-center gap-3">
                                     <!-- Vibrant Amber Reviewer Avatar -->
-                                    <div class="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary text-ink flex items-center justify-center font-extrabold text-sm uppercase shadow-sm shrink-0">
+                                    <div class="w-9 h-9 rounded-full bg-primary hover:bg-primary-dark text-white flex items-center justify-center font-extrabold text-sm uppercase shadow-sm shrink-0">
                                         <?= substr($reviewer, 0, 1) ?>
                                     </div>
                                     <div>
@@ -145,7 +145,7 @@ get_header();
                                     </div>
                                 </div>
 
-                                <span class="inline-flex items-center gap-1 text-[11px] font-bold text-success bg-success-soft0/20 border border-border px-2.5 py-1 rounded-full shrink-0" data-testid="badge-verified-buyer">
+                                <span class="inline-flex items-center gap-1 text-[11px] font-bold text-success bg-success/20 border border-border px-2.5 py-1 rounded-full shrink-0" data-testid="badge-verified-buyer">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
                                     </svg>

@@ -70,7 +70,7 @@ $bacs_acc      = '48880531';
             <!-- Hero Header Card -->
             <div class="text-center mb-8">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-success-soft border border-border text-success text-xs sm:text-sm font-semibold mb-4 shadow-xs">
-                    <span class="w-2 h-2 rounded-full bg-success-soft0 animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
                     <?php echo $is_bacs ? 'Order Placed • Awaiting Bank Transfer' : 'Order Placed Successfully'; ?>
                 </div>
                 

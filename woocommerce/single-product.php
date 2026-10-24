@@ -135,7 +135,7 @@ $initial_price = $variations
             <?php endif; ?>
         </div>
 
-        <div>
+        <div class="min-w-0">
             <?php if ($stock_badge !== '') : ?>
                 <p class="inline-flex items-center gap-2 text-[14px] font-semibold <?php echo $in_stock ? 'text-success' : 'text-destructive'; ?>">
                     <span class="h-2 w-2 rounded-full <?php echo $in_stock ? 'bg-success' : 'bg-destructive'; ?>" aria-hidden="true"></span>
@@ -203,9 +203,9 @@ $initial_price = $variations
                         </div>
                     </fieldset>
 
-                    <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-                        <div class="flex items-center justify-between gap-4 rounded-full border border-border px-2 sm:justify-start">
-                            <?php if ($qty_label !== '') : ?><span class="pl-4 text-[15px] font-semibold text-ink sm:hidden"><?php echo esc_html($qty_label); ?></span><?php endif; ?>
+                    <div class="mt-6 flex flex-col gap-3 lg:flex-row">
+                        <div class="flex items-center justify-between gap-4 rounded-full border border-border px-2 lg:justify-start">
+                            <?php if ($qty_label !== '') : ?><span class="pl-4 text-[15px] font-semibold text-ink lg:hidden"><?php echo esc_html($qty_label); ?></span><?php endif; ?>
                             <div class="flex items-center">
                                 <button type="button" id="qty-dec" class="flex h-12 w-12 items-center justify-center rounded-full text-ink hover:bg-muted" aria-label="<?php echo esc_attr__('Decrease quantity', 'kamagramate'); ?>"><?php echo kmg_glyph('minus'); ?></button>
                                 <span id="qty-val" class="w-8 text-center text-[17px] font-bold text-ink" aria-live="polite">1</span>

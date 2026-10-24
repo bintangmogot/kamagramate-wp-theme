@@ -258,7 +258,7 @@ html {
   padding-block: clamp(4.5rem, 3rem + 5vw, 8rem);
 }
 
-/* Alias — many components use section-padding instead of section-y */
+/* Alias - many components use section-padding instead of section-y */
 @utility section-padding {
   padding-block: clamp(4.5rem, 3rem + 5vw, 8rem);
 }
@@ -411,6 +411,7 @@ html {
  * ============================================================
  */
 .prose {
+  overflow-wrap: break-word;
   color: var(--color-foreground);
   line-height: 1.8;
   font-size: 1rem;
@@ -2226,23 +2227,7 @@ footer .site-logo-img,
   object-fit: contain !important;
 }
 
-.woocommerce footer .footer-payment-logo,
-.woocommerce-page footer .footer-payment-logo,
-.footer-payment-logo {
-  height: 2rem !important;
-  max-height: 2.25rem !important;
-  width: auto !important;
-  object-fit: contain !important;
-}
 
-.woocommerce footer .footer-shipping-logo,
-.woocommerce-page footer .footer-shipping-logo,
-.footer-shipping-logo {
-  height: 2.5rem !important;
-  max-height: 2.75rem !important;
-  width: auto !important;
-  object-fit: contain !important;
-}
 
 /*
  * ============================================================

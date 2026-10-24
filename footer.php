@@ -57,8 +57,18 @@ $logo_row = static function ($rows, $class) {
         if (!$src) {
             continue;
         }
-        $alt = $row['alt_text'] ?? (is_array($img) ? ($img['alt'] ?? '') : '');
-        printf('<img src="%s" alt="%s" class="%s" loading="lazy" decoding="async">', esc_url($src), esc_attr($alt), esc_attr($class));
+        $alt  = $row['alt_text'] ?? (is_array($img) ? ($img['alt'] ?? '') : '');
+        $id   = is_array($img) ? (int) ($img['ID'] ?? 0) : (int) $img;
+        $meta = $id ? wp_get_attachment_metadata($id) : [];
+        // Eager with intrinsic size: padded lazy images with no width never start loading in Chrome.
+        printf(
+            '<img src="%s" alt="%s" class="%s" width="%d" height="%d" decoding="async">',
+            esc_url($src),
+            esc_attr($alt),
+            esc_attr($class),
+            (int) ($meta['width'] ?? 120),
+            (int) ($meta['height'] ?? 48)
+        );
     }
 };
 
@@ -171,13 +181,13 @@ $badge_icon_map     = [
                 <?php if (!empty($payment_images)) : ?>
                 <div>
                     <?php if ($payments_heading !== '') : ?><p class="mb-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/50"><?php echo esc_html($payments_heading); ?></p><?php endif; ?>
-                    <div class="flex flex-wrap items-center gap-3"><?php $logo_row($payment_images, 'footer-payment-logo h-11 w-auto rounded-lg bg-white px-3 py-2 object-contain'); ?></div>
+                    <div class="flex flex-wrap items-center gap-3"><?php $logo_row($payment_images, 'footer-payment-logo h-11 w-auto max-w-none shrink-0 rounded-lg bg-white px-3 py-2 object-contain'); ?></div>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($shipping_images)) : ?>
                 <div>
                     <?php if ($shipping_heading !== '') : ?><p class="mb-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/50"><?php echo esc_html($shipping_heading); ?></p><?php endif; ?>
-                    <div class="flex flex-wrap items-center gap-3"><?php $logo_row($shipping_images, 'footer-shipping-logo h-11 w-auto rounded-lg bg-white px-3 py-2 object-contain'); ?></div>
+                    <div class="flex flex-wrap items-center gap-3"><?php $logo_row($shipping_images, 'footer-shipping-logo h-11 w-auto max-w-none shrink-0 rounded-lg bg-white px-3 py-2 object-contain'); ?></div>
                 </div>
                 <?php endif; ?>
             </div>
@@ -219,10 +229,10 @@ $float_tgl = $txt('floating_telegram_label');
 if (!empty($float_on) && (($float_wa && $float_wal) || ($float_tg && $float_tgl))) : ?>
 <div class="kmg-float fixed bottom-24 right-4 z-[9990] flex flex-col items-end gap-2 sm:bottom-6 sm:right-24">
     <?php if ($float_wa && $float_wal) : ?>
-        <a href="<?php echo esc_url($float_wa); ?>" target="_blank" rel="noopener" class="inline-flex h-12 items-center gap-2.5 rounded-full bg-ink px-5 text-[15px] font-semibold text-white shadow-[0_16px_32px_-12px_rgb(26_16_48/0.5)] transition-transform hover:-translate-y-0.5"><?php echo kmg_glyph('chat', 'h-[18px] w-[18px]'); ?><span><?php echo esc_html($float_wal); ?></span></a>
+        <a href="<?php echo esc_url($float_wa); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($float_wal); ?>" class="inline-flex h-12 w-12 items-center justify-center gap-2.5 rounded-full bg-ink sm:w-auto sm:px-5 text-[15px] font-semibold text-white shadow-[0_16px_32px_-12px_rgb(26_16_48/0.5)] transition-transform hover:-translate-y-0.5"><?php echo kmg_glyph('chat', 'h-[18px] w-[18px]'); ?><span class="hidden sm:inline"><?php echo esc_html($float_wal); ?></span></a>
     <?php endif; ?>
     <?php if ($float_tg && $float_tgl) : ?>
-        <a href="<?php echo esc_url($float_tg); ?>" target="_blank" rel="noopener" class="inline-flex h-12 items-center gap-2.5 rounded-full bg-white px-5 text-[15px] font-semibold text-ink shadow-[0_16px_32px_-12px_rgb(26_16_48/0.35)] ring-1 ring-border transition-transform hover:-translate-y-0.5"><?php echo kmg_glyph('send', 'h-[18px] w-[18px]'); ?><span><?php echo esc_html($float_tgl); ?></span></a>
+        <a href="<?php echo esc_url($float_tg); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($float_tgl); ?>" class="inline-flex h-12 w-12 items-center justify-center gap-2.5 rounded-full bg-white sm:w-auto sm:px-5 text-[15px] font-semibold text-ink shadow-[0_16px_32px_-12px_rgb(26_16_48/0.35)] ring-1 ring-border transition-transform hover:-translate-y-0.5"><?php echo kmg_glyph('send', 'h-[18px] w-[18px]'); ?><span class="hidden sm:inline"><?php echo esc_html($float_tgl); ?></span></a>
     <?php endif; ?>
 </div>
 <?php endif; ?>

@@ -33,7 +33,7 @@ if (!$items) {
 <section class="kmg-section" data-testid="why-choose-us">
     <div class="kmg-container">
         <div class="grid gap-14 lg:grid-cols-12 lg:gap-16">
-            <div class="lg:col-span-4">
+            <div class="lg:col-span-5">
                 <div class="lg:sticky lg:top-36">
                     <?php kmg_section_head([
                         'eyebrow' => get_sub_field('tag'),
@@ -45,7 +45,7 @@ if (!$items) {
                 </div>
             </div>
 
-            <div class="grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:col-span-8">
+            <div class="grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:col-span-7">
                 <?php foreach ($items as $item) : ?>
                     <div class="border-t border-border pt-8">
                         <span class="kmg-icon"><?php echo $item['icon']; ?></span>

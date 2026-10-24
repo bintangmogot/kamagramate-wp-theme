@@ -23,7 +23,7 @@ get_header();
             <!-- Eyebrow Badge -->
             <div class="mb-2.5">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink shadow-xs">
-                    <span class="h-1.5 w-1.5 rounded-full bg-primary-soft0 animate-pulse" aria-hidden="true"></span>
+                    <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" aria-hidden="true"></span>
                     Australia's Focus Destination
                 </span>
             </div>
@@ -51,7 +51,7 @@ get_header();
                         Australia runs on high-intensity schedules: rotating FIFO rosters that flip circadian body clocks every fortnight, intense university exam periods, long interstate freight hauls, and hospital night shifts stretching well past sunrise.
                     </p>
                     <p class="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                        We saw colleagues struggle with fatigue, order from questionable international dropshippers, and wait weeks for delayed parcels. So we established Waklert Australia — stocking solely genuine pharmaceutical-grade blister packs (Sun Pharma & HAB Pharma) with express delivery across Sydney, Melbourne, Brisbane, Perth, Adelaide, Hobart, and remote mining communities.
+                        We saw colleagues struggle with fatigue, order from questionable international dropshippers, and wait weeks for delayed parcels. So we established Waklert Australia - stocking solely genuine pharmaceutical-grade blister packs (Sun Pharma & HAB Pharma) with express delivery across Sydney, Melbourne, Brisbane, Perth, Adelaide, Hobart, and remote mining communities.
                     </p>
                     <p class="text-muted-foreground text-sm sm:text-base leading-relaxed">
                         Today, we have proudly supplied over <strong class="text-ink">4,000+ Australian customers</strong> with reliable, confidential logistics and direct customer support.
@@ -88,12 +88,12 @@ get_header();
                 <div class="rounded-2xl border border-border bg-white p-6 shadow-xs hover:border-border hover:shadow-md transition-all">
                     <span class="font-heading text-2xl font-black text-ink">01</span>
                     <h3 class="font-heading font-bold text-ink text-lg mt-2 mb-2">Authenticity First</h3>
-                    <p class="text-sm text-muted-foreground leading-relaxed m-0">Every tablet comes in sealed blister packaging from WHO-GMP certified manufacturers — Sun Pharma and HAB Pharma. Zero unlabelled generics, zero fakes.</p>
+                    <p class="text-sm text-muted-foreground leading-relaxed m-0">Every tablet comes in sealed blister packaging from WHO-GMP certified manufacturers - Sun Pharma and HAB Pharma. Zero unlabelled generics, zero fakes.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-white p-6 shadow-xs hover:border-border hover:shadow-md transition-all">
                     <span class="font-heading text-2xl font-black text-ink">02</span>
                     <h3 class="font-heading font-bold text-ink text-lg mt-2 mb-2">Australian Logistics Speed</h3>
-                    <p class="text-sm text-muted-foreground leading-relaxed m-0">We know Australia is vast. That is why shipments are handled via priority logistics. Metro addresses receive orders in 5–10 business days.</p>
+                    <p class="text-sm text-muted-foreground leading-relaxed m-0">We know Australia is vast. That is why shipments are handled via priority logistics. Metro addresses receive orders in 5-10 business days.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-white p-6 shadow-xs hover:border-border hover:shadow-md transition-all">
                     <span class="font-heading text-2xl font-black text-ink">03</span>

@@ -89,7 +89,7 @@ $cities_field = get_sub_field('cities');
                             <span class="font-semibold text-muted-foreground"><?= esc_html($region) ?></span>
                             <span class="text-slate-300">&middot;</span>
                             <span class="inline-flex items-center gap-1 font-bold text-success bg-success-soft px-2 py-0.5 rounded-full text-[10px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-success-soft0"></span>
+                                <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
                                 <?= esc_html($days) ?> days
                             </span>
                         </p>
@@ -125,7 +125,7 @@ $cities_field = get_sub_field('cities');
                     }
                 ?>
                 <a href="<?= get_permalink($c->ID) ?>" class="text-xs border border-border bg-white text-muted-foreground font-bold px-3.5 py-1.5 rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-200 shadow-2xs hover:-translate-y-0.5">
-                    <?= esc_html($city_name) ?> ✓
+                    <?= esc_html($city_name) ?> <?= kmg_glyph('check', 'inline h-4 w-4 text-primary') ?>
                 </a>
                 <?php endforeach; ?>
                 <span class="text-xs border border-border bg-primary-soft text-primary font-bold px-3.5 py-1.5 rounded-full shadow-2xs">

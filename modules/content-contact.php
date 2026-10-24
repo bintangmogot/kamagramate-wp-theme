@@ -49,13 +49,13 @@ if ($f('email_title') !== '' && $email !== '') {
 
 <section class="kmg-section">
     <div class="kmg-container grid gap-14 lg:grid-cols-12 lg:gap-20">
-        <div class="space-y-10 lg:col-span-5">
+        <div class="min-w-0 space-y-10 lg:col-span-5">
             <?php foreach ($channels as $c) : ?>
                 <a href="<?php echo esc_url($c['url'], ['http', 'https', 'mailto']); ?>" class="group flex gap-5"<?php echo $c['external'] ? ' target="_blank" rel="noopener"' : ''; ?>>
                     <span class="kmg-icon"><?php echo kmg_glyph($c['icon'], 'h-6 w-6'); ?></span>
-                    <span>
+                    <span class="min-w-0">
                         <span class="block text-[14px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"><?php echo esc_html($c['title']); ?></span>
-                        <span class="mt-1 block font-heading text-[1.5rem] font-bold tracking-tight text-ink group-hover:text-primary"><?php echo esc_html($c['value']); ?></span>
+                        <span class="mt-1 block font-heading text-[1.5rem] font-bold tracking-tight text-ink [overflow-wrap:anywhere] group-hover:text-primary"><?php echo esc_html($c['value']); ?></span>
                         <?php if ($c['sub'] !== '') : ?><span class="mt-1 block text-[15px] text-muted-foreground"><?php echo esc_html($c['sub']); ?></span><?php endif; ?>
                     </span>
                 </a>
@@ -92,7 +92,7 @@ if ($f('email_title') !== '' && $email !== '') {
         </div>
 
         <?php if ($f('form_shortcode') !== '') : ?>
-        <div class="lg:col-span-7">
+        <div class="min-w-0 lg:col-span-7">
             <div class="rounded-[2rem] bg-primary-softer p-8 md:p-12">
                 <?php if ($f('form_eyebrow') !== '') : ?><p class="kmg-eyebrow"><?php echo esc_html($f('form_eyebrow')); ?></p><?php endif; ?>
                 <?php if ($f('form_heading') !== '') : ?><h2 class="kmg-h2 mt-3 !text-[clamp(2rem,1.6rem+1.4vw,2.75rem)]"><?php echo esc_html($f('form_heading')); ?></h2><?php endif; ?>

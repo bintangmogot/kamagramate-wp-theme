@@ -104,7 +104,7 @@ if ($delivery_links) {
             <!-- Eyebrow Badge -->
             <div class="mb-2.5">
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-soft border border-border px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-ink shadow-xs">
-                    <span class="h-1.5 w-1.5 rounded-full bg-primary-soft0 animate-pulse" aria-hidden="true"></span>
+                    <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" aria-hidden="true"></span>
                     Site Directory
                 </span>
             </div>

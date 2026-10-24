@@ -206,7 +206,7 @@ function waklert_auto_sync_delivery_cities() {
                             ['city_name' => 'Hobart', 'has_checkmark' => true],
                             ['city_name' => 'Canberra', 'has_checkmark' => true],
                         ];
-                        $mod['quick_cities'] = "Sydney ✓\nMelbourne ✓\nAdelaide ✓\nDarwin ✓\nBrisbane ✓\nGold Coast ✓\nHobart ✓\nCanberra ✓";
+                        $mod['quick_cities'] = "Sydney \nMelbourne \nAdelaide \nDarwin \nBrisbane \nGold Coast \nHobart \nCanberra";
                         $updated = true;
                     }
                 }
@@ -405,7 +405,7 @@ function waklert_sync_track_order_page_module() {
         'intro_callout_p1'     => 'Welcome to the Waklert Australia order tracking page. Every parcel we dispatch is shipped with Australia Post and comes with a unique tracking number, so you can follow your delivery from our warehouse to your door.',
         'intro_callout_p2'     => "Your tracking number was emailed to you when your order was dispatched. Enter it below and we'll take you straight to the live Australia Post tracking results for your parcel.",
         'form_heading'         => 'Enter Your Tracking Number',
-        'form_instructions'    => 'Tracking numbers are usually 10–23 characters long, e.g. 33ABC1234567. You can find yours in your dispatch confirmation email.',
+        'form_instructions'    => 'Tracking numbers are usually 10-23 characters long, e.g. 33ABC1234567. You can find yours in your dispatch confirmation email.',
         'input_placeholder'    => 'e.g. 33ABC1234567',
         'track_btn_text'       => 'Track My Order',
         'redirect_notice'      => "You'll be redirected to the official Australia Post tracking page (auspost.com.au), where your parcel's latest scan events are shown automatically.",
@@ -421,7 +421,7 @@ function waklert_sync_track_order_page_module() {
             ],
             [
                 'title'       => '3. Follow Your Parcel',
-                'description' => 'Australia Post updates scan events at each stage — accepted, in transit, onboard for delivery, and delivered.',
+                'description' => 'Australia Post updates scan events at each stage - accepted, in transit, onboard for delivery, and delivered.',
             ],
         ],
         'help_heading'         => 'Need Help?',
@@ -432,17 +432,17 @@ function waklert_sync_track_order_page_module() {
             [
                 'card_type'   => 'shipping',
                 'title'       => 'Free Shipping',
-                'description' => 'On orders over $200 AUD — enjoy fast, secure, and discreet delivery right to your doorstep.',
+                'description' => 'On orders over $200 AUD - enjoy fast, secure, and discreet delivery right to your doorstep.',
             ],
             [
                 'card_type'   => 'support',
                 'title'       => '24/7 Support',
-                'description' => 'We’re here to help anytime — day or night, our team is ready to assist you with your orders and inquiries.',
+                'description' => 'We’re here to help anytime - day or night, our team is ready to assist you with your orders and inquiries.',
             ],
             [
                 'card_type'   => 'payment',
                 'title'       => 'Secure Payment',
-                'description' => 'Shop with confidence — all transactions are 100% safe, encrypted, and protected for your peace of mind.',
+                'description' => 'Shop with confidence - all transactions are 100% safe, encrypted, and protected for your peace of mind.',
             ],
         ],
     ];
