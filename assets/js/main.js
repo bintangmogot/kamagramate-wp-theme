@@ -270,3 +270,41 @@ document.addEventListener('click', (e) => {
     });
     if (!active) chip.setAttribute('aria-pressed', 'true');
 });
+
+// Table of contents scrollspy: mark the link for the section currently being read
+document.addEventListener('DOMContentLoaded', () => {
+    const toc = document.querySelector('[data-kmg-toc]');
+    if (!toc) return;
+    const links = [...toc.querySelectorAll('a[href^="#"]')];
+    const sections = links.map((a) => document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)))).filter(Boolean);
+    if (!sections.length) return;
+
+    let current = null;
+    const setActive = (id) => {
+        if (id === current) return;
+        current = id;
+        links.forEach((a) => {
+            if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true');
+            else a.removeAttribute('aria-current');
+        });
+    };
+
+    let frame = 0;
+    const update = () => {
+        frame = 0;
+        // Reading line sits just below the sticky header.
+        const line = (document.querySelector('header.sticky')?.offsetHeight || 0) + 120;
+        let active = sections[0];
+        for (const section of sections) {
+            if (section.getBoundingClientRect().top <= line) active = section;
+        }
+        // At the very bottom the last short section may never reach the line.
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) active = sections[sections.length - 1];
+        setActive(active.id);
+    };
+    const queue = () => { if (!frame) frame = requestAnimationFrame(update); };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    links.forEach((a) => a.addEventListener('click', () => setTimeout(() => setActive(a.getAttribute('href').slice(1)), 50)));
+    update();
+});

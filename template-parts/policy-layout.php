@@ -45,9 +45,9 @@ foreach ($sections as $i => $section) {
         <aside class="hidden lg:col-span-4 lg:block">
             <div class="sticky top-36">
                 <?php if ($toc_label !== '') : ?><p class="kmg-eyebrow"><?php echo esc_html($toc_label); ?></p><?php endif; ?>
-                <ol class="mt-5 space-y-1 border-l border-border">
+                <ol class="mt-5 space-y-1 border-l border-border" data-kmg-toc>
                     <?php foreach ($sections as $i => $section) : if (empty($section['title'])) { continue; } ?>
-                        <li><a href="#<?php echo esc_attr($ids[$i]); ?>" class="-ml-px flex gap-3 border-l border-transparent py-2 pl-5 text-[15px] text-muted-foreground hover:border-primary hover:text-ink">
+                        <li><a href="#<?php echo esc_attr($ids[$i]); ?>" class="-ml-px flex gap-3 rounded-r-lg border-l-2 border-transparent py-2 pl-5 pr-3 text-[16px] text-muted-foreground transition-colors hover:border-primary/40 hover:text-ink aria-[current=true]:border-primary aria-[current=true]:bg-primary-softer aria-[current=true]:font-semibold aria-[current=true]:text-primary">
                             <span class="kmg-num text-[13px]"><?php echo esc_html(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT)); ?></span><?php echo esc_html($section['title']); ?>
                         </a></li>
                     <?php endforeach; ?>
