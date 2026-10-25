@@ -265,7 +265,7 @@ if ($ct_url !== '' && $txt('contact_toast_message') !== '') {
     $ct_url = add_query_arg('text', rawurlencode($txt('contact_toast_message')), $ct_url);
 }
 if (!empty($ct_on) && $ct_text !== '' && $ct_url !== '') : ?>
-<div id="kmg-contact-toast" class="pointer-events-none fixed inset-x-0 bottom-[160px] z-[9989] hidden justify-center px-4 sm:inset-x-auto sm:bottom-6 sm:left-6 sm:justify-start sm:px-0" data-delay="<?php echo esc_attr((int) ($opt('contact_toast_delay') ?: 6)); ?>">
+<div id="kmg-contact-toast" class="pointer-events-none fixed bottom-4 left-4 right-[92px] z-[9989] hidden justify-start sm:bottom-6 sm:left-6 sm:right-auto" data-delay="<?php echo esc_attr((int) ($opt('contact_toast_delay') ?: 6)); ?>">
     <div class="pointer-events-auto relative flex w-full max-w-sm translate-y-4 items-center gap-3 rounded-xl border border-border bg-white/95 py-3 pl-3.5 pr-10 opacity-0 shadow-[0_18px_40px_-18px_rgba(34,18,79,0.45)] backdrop-blur transition duration-300 ease-out" data-kmg-toast-card>
         <a href="<?php echo esc_url($ct_url); ?>" target="_blank" rel="noopener nofollow" class="flex flex-1 items-center gap-3">
             <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary"><?php echo kmg_glyph($ct_tg ? 'send' : 'chat', 'h-[17px] w-[17px]'); ?></span>
