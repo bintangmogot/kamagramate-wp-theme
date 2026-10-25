@@ -1409,7 +1409,7 @@
             "label": "Coupon Code",
             "name": "promo_toast_code",
             "type": "text",
-            "instructions": "",
+            "instructions": "The code that is copied. It also fills every {code} in the text and button label.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1425,7 +1425,7 @@
             "label": "Coupon Toast Text",
             "name": "promo_toast_text",
             "type": "textarea",
-            "instructions": "",
+            "instructions": "Write {code} where the coupon code should appear, e.g. Use code {code} at checkout.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1443,7 +1443,7 @@
             "label": "Copy Button Label",
             "name": "promo_toast_button",
             "type": "text",
-            "instructions": "",
+            "instructions": "Write {code} to include the coupon code, e.g. Copy code {code}.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1796,5 +1796,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792885962
+    "modified": 1792886555
 }

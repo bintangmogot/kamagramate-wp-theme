@@ -241,13 +241,17 @@ if (!empty($float_on) && (($float_wa && $float_wal) || ($float_tg && $float_tgl)
 $toast_on    = $opt('promo_toast_enabled');
 $toast_title = $txt('promo_toast_title');
 $toast_code  = $txt('promo_toast_code');
+// {code} in the text and button label is replaced with the Coupon Code field, so the code is typed once.
+$toast_text = str_replace('{code}', $toast_code, $txt('promo_toast_text'));
+$toast_btn  = $txt('promo_toast_button');
+$toast_btn  = $toast_btn === '' ? $toast_code : (strpos($toast_btn, '{code}') !== false ? str_replace('{code}', $toast_code, $toast_btn) : $toast_btn);
 if (!empty($toast_on) && $toast_title !== '' && $toast_code !== '') : ?>
 <div id="kmg-promo-toast" class="fixed bottom-4 left-4 z-[9991] hidden w-[calc(100%-2rem)] max-w-sm rounded-3xl bg-white p-6 shadow-[0_32px_64px_-24px_rgb(26_16_48/0.4)] ring-1 ring-border" role="dialog" aria-labelledby="kmg-promo-title" data-copied="<?php echo esc_attr($txt('promo_toast_copied')); ?>">
     <button type="button" data-kmg-toast-close class="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground hover:bg-muted" aria-label="<?php echo esc_attr__('Close', 'kamagramate'); ?>"><?php echo kmg_glyph('close', 'h-4 w-4'); ?></button>
     <p id="kmg-promo-title" class="pr-8 font-heading text-xl font-bold text-ink"><?php echo esc_html($toast_title); ?></p>
-    <?php if ($txt('promo_toast_text') !== '') : ?><p class="mt-2 text-[15px] leading-relaxed text-muted-foreground"><?php echo esc_html($txt('promo_toast_text')); ?></p><?php endif; ?>
+    <?php if ($toast_text !== '') : ?><p class="mt-2 text-[15px] leading-relaxed text-muted-foreground"><?php echo esc_html($toast_text); ?></p><?php endif; ?>
     <button type="button" data-kmg-copy="<?php echo esc_attr($toast_code); ?>" class="kmg-btn kmg-btn-primary kmg-btn-sm mt-5 w-full">
-        <?php echo kmg_glyph('copy', 'h-4 w-4'); ?><span data-kmg-copy-label><?php echo esc_html($txt('promo_toast_button') ?: $toast_code); ?></span>
+        <?php echo kmg_glyph('copy', 'h-4 w-4'); ?><span data-kmg-copy-label><?php echo esc_html($toast_btn); ?></span>
     </button>
 </div>
 <?php endif; ?>

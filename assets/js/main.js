@@ -230,10 +230,26 @@ document.addEventListener('DOMContentLoaded', () => {
         try { sessionStorage.setItem('kmgPromoDismissed', '1'); } catch (e) {}
     });
     const copyBtn = toast.querySelector('[data-kmg-copy]');
+    // Clipboard API needs HTTPS; fall back to a hidden textarea on plain HTTP.
+    const copyText = async (text) => {
+        if (navigator.clipboard && window.isSecureContext) {
+            try { await navigator.clipboard.writeText(text); return true; } catch (e) {}
+        }
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+        document.body.appendChild(area);
+        area.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+        area.remove();
+        return ok;
+    };
     copyBtn?.addEventListener('click', async () => {
         const label = copyBtn.querySelector('[data-kmg-copy-label]');
-        try { await navigator.clipboard.writeText(copyBtn.dataset.kmgCopy); } catch (e) {}
-        if (label && toast.dataset.copied) label.textContent = toast.dataset.copied;
+        const ok = await copyText(copyBtn.dataset.kmgCopy);
+        if (ok && label && toast.dataset.copied) label.textContent = toast.dataset.copied;
     });
 });
 
