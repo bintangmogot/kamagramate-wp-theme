@@ -5065,7 +5065,7 @@
                             "name": "email_btn_url",
                             "aria-label": "",
                             "type": "text",
-                            "instructions": "Enter email address (e.g. support@waklertaustralia.com), mailto link, or page link (e.g. /contact/)",
+                            "instructions": "Enter email address (e.g. orders@kamagramate.com.au), mailto link, or page link (e.g. /contact/)",
                             "required": false,
                             "conditional_logic": false,
                             "wrapper": {
@@ -5074,7 +5074,7 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "mailto:support@waklertaustralia.com"
+                            "placeholder": "mailto:orders@kamagramate.com.au"
                         },
                         {
                             "key": "field_scta_image",

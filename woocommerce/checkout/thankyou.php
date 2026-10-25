@@ -11,13 +11,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// Dynamic options with rock-solid Australian defaults
-$contact_email = function_exists( 'get_field' ) ? get_field( 'contact_email', 'option' ) : '';
-if ( empty( $contact_email ) || strpos( $contact_email, 'support@' ) !== false || strpos( $contact_email, 'modafinil' ) !== false ) {
-    $contact_email = 'orders@waklertaustralia.com.au';
-} else {
-    $contact_email = sanitize_email( $contact_email );
-}
+// Contact email from Theme Settings (contact_email, then support_email).
+$contact_email = function_exists( 'get_field' ) ? sanitize_email( (string) ( get_field( 'contact_email', 'option' ) ?: get_field( 'support_email', 'option' ) ) ) : '';
 
 $phone_display = function_exists( 'get_field' ) ? ( get_field( 'whatsapp_button_text', 'option' ) ?: '0488 841 833' ) : '0488 841 833';
 $phone_raw     = preg_replace( '/[^0-9]/', '', $phone_display );
