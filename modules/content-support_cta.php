@@ -39,20 +39,20 @@ $img   = kmg_image($image, 'large', ['class' => 'h-full w-full object-cover', 'l
 ?>
 <section class="kmg-section-sm" data-testid="support-cta">
     <div class="kmg-container">
-        <div class="grid overflow-hidden rounded-[2.5rem] bg-primary text-white <?php echo $img ? 'lg:grid-cols-12' : ''; ?>">
-            <div class="p-10 md:p-16 lg:p-20 <?php echo $img ? 'lg:col-span-7' : 'text-center'; ?>">
+        <div class="grid overflow-hidden rounded-[1.75rem] bg-primary text-white sm:rounded-[2.5rem] <?php echo $img ? 'lg:grid-cols-12' : ''; ?>">
+            <div class="px-6 py-10 sm:p-10 md:p-16 lg:p-20 <?php echo $img ? 'lg:col-span-7' : 'text-center'; ?>">
                 <?php if (get_sub_field('eyebrow')) : ?>
                     <p class="kmg-eyebrow !text-white/70"><?php echo esc_html(get_sub_field('eyebrow')); ?></p>
                 <?php endif; ?>
-                <h2 class="kmg-h2 mt-4 !text-white <?php echo $img ? '' : 'mx-auto max-w-3xl'; ?>"><?php echo esc_html($title); ?></h2>
+                <h2 class="kmg-h2 mt-3 !text-white max-sm:!text-[1.875rem] <?php echo $img ? '' : 'mx-auto max-w-3xl'; ?>"><?php echo esc_html($title); ?></h2>
                 <?php if (get_sub_field('desc')) : ?>
-                    <p class="kmg-lead mt-6 max-w-xl !text-white/80 <?php echo $img ? '' : 'mx-auto'; ?>"><?php echo esc_html(get_sub_field('desc')); ?></p>
+                    <p class="kmg-lead mt-4 max-w-xl !text-white/80 max-sm:!text-[16px] sm:mt-6 <?php echo $img ? '' : 'mx-auto'; ?>"><?php echo esc_html(get_sub_field('desc')); ?></p>
                 <?php endif; ?>
                 <?php if ($buttons) : ?>
-                    <div class="mt-10 flex flex-wrap gap-3 <?php echo $img ? '' : 'justify-center'; ?>">
+                    <div class="mt-8 grid gap-2.5 sm:mt-10 sm:flex sm:flex-wrap sm:gap-3 <?php echo $img ? '' : 'justify-center'; ?>">
                         <?php foreach ($buttons as $b) :
                             $ext = preg_match('#^https?://#i', $b['url']); ?>
-                            <a href="<?php echo esc_url($b['url'], ['http', 'https', 'mailto', 'sms', 'tel']); ?>" class="kmg-btn <?php echo $b['primary'] ? 'kmg-btn-light' : 'kmg-btn-ghost-light'; ?>"<?php echo $ext ? ' target="_blank" rel="noopener"' : ''; ?>>
+                            <a href="<?php echo esc_url($b['url'], ['http', 'https', 'mailto', 'sms', 'tel']); ?>" class="kmg-btn max-sm:w-full <?php echo $b['primary'] ? 'kmg-btn-light' : 'kmg-btn-ghost-light'; ?>"<?php echo $ext ? ' target="_blank" rel="noopener"' : ''; ?>>
                                 <?php echo kmg_glyph($b['icon']); ?><span><?php echo esc_html($b['text']); ?></span>
                             </a>
                         <?php endforeach; ?>

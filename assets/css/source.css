@@ -2567,3 +2567,10 @@ body.has-sticky-product-bar #kmg-contact-toast {
     font-size: 12px !important;
   }
 }
+
+/* Footer payment/shipping logos: keep h-11 on WooCommerce pages, where `.woocommerce img { height: auto }` would win. */
+body img.footer-payment-logo,
+body img.footer-shipping-logo {
+  height: 2.75rem;
+  max-width: none;
+}
