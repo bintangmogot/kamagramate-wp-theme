@@ -2501,7 +2501,7 @@ footer .site-logo-img { height: 3.75rem !important; }
 body.has-sticky-product-bar .xoo-wsc-basket,
 body.has-sticky-product-bar .kmg-float,
 body.has-sticky-product-bar #kmg-contact-toast {
-  transform: translateY(-78px);
+  transform: translateY(-62px);
 }
 
 /*
