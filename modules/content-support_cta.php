@@ -49,10 +49,10 @@ $img   = kmg_image($image, 'large', ['class' => 'h-full w-full object-cover', 'l
                     <p class="kmg-lead mt-4 max-w-xl !text-white/80 max-sm:!text-[16px] sm:mt-6 <?php echo $img ? '' : 'mx-auto'; ?>"><?php echo esc_html(get_sub_field('desc')); ?></p>
                 <?php endif; ?>
                 <?php if ($buttons) : ?>
-                    <div class="mt-8 grid gap-2.5 sm:mt-10 sm:flex sm:flex-wrap sm:gap-3 <?php echo $img ? '' : 'justify-center'; ?>">
+                    <div class="mt-8 grid grid-cols-2 gap-2.5 sm:mt-10 sm:flex sm:flex-wrap sm:gap-3 <?php echo $img ? '' : 'justify-center'; ?>">
                         <?php foreach ($buttons as $b) :
                             $ext = preg_match('#^https?://#i', $b['url']); ?>
-                            <a href="<?php echo esc_url($b['url'], ['http', 'https', 'mailto', 'sms', 'tel']); ?>" class="kmg-btn max-sm:w-full <?php echo $b['primary'] ? 'kmg-btn-light' : 'kmg-btn-ghost-light'; ?>"<?php echo $ext ? ' target="_blank" rel="noopener"' : ''; ?>>
+                            <a href="<?php echo esc_url($b['url'], ['http', 'https', 'mailto', 'sms', 'tel']); ?>" class="kmg-btn max-sm:w-full max-sm:px-3 max-sm:gap-2 max-sm:text-[15px] max-sm:odd:last:col-span-2 <?php echo $b['primary'] ? 'kmg-btn-light' : 'kmg-btn-ghost-light'; ?>"<?php echo $ext ? ' target="_blank" rel="noopener"' : ''; ?>>
                                 <?php echo kmg_glyph($b['icon']); ?><span><?php echo esc_html($b['text']); ?></span>
                             </a>
                         <?php endforeach; ?>
