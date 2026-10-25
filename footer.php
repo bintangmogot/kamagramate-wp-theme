@@ -227,12 +227,12 @@ $float_tg  = kmg_chat_url($txt('floating_telegram_number'), 'telegram');
 $float_wal = $txt('floating_whatsapp_label');
 $float_tgl = $txt('floating_telegram_label');
 if (!empty($float_on) && (($float_wa && $float_wal) || ($float_tg && $float_tgl))) : ?>
-<div class="kmg-float fixed bottom-[98px] right-[11px] z-[9990] flex flex-col items-end gap-2">
+<div class="kmg-float fixed bottom-[84px] right-[13px] sm:bottom-[98px] sm:right-[11px] z-[9990] flex flex-col items-end gap-2">
     <?php if ($float_wa && $float_wal) : ?>
-        <a href="<?php echo esc_url($float_wa); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($float_wal); ?>" class="inline-flex h-12 w-12 items-center justify-center gap-2.5 rounded-full bg-ink sm:w-auto sm:px-5 text-[15px] font-semibold text-white shadow-[0_16px_32px_-12px_rgb(26_16_48/0.5)] transition-transform hover:-translate-y-0.5"><?php echo kmg_glyph('chat', 'h-[18px] w-[18px]'); ?><span class="hidden sm:inline"><?php echo esc_html($float_wal); ?></span></a>
+        <a href="<?php echo esc_url($float_wa); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($float_wal); ?>" class="inline-flex h-11 w-11 sm:h-12 items-center justify-center gap-2.5 rounded-full bg-ink sm:w-auto sm:px-5 text-[15px] font-semibold text-white shadow-[0_16px_32px_-12px_rgb(26_16_48/0.5)] transition-transform hover:-translate-y-0.5"><?php echo kmg_glyph('chat', 'h-[18px] w-[18px]'); ?><span class="hidden sm:inline"><?php echo esc_html($float_wal); ?></span></a>
     <?php endif; ?>
     <?php if ($float_tg && $float_tgl) : ?>
-        <a href="<?php echo esc_url($float_tg); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($float_tgl); ?>" class="inline-flex h-12 w-12 items-center justify-center gap-2.5 rounded-full bg-white sm:w-auto sm:px-5 text-[15px] font-semibold text-ink shadow-[0_16px_32px_-12px_rgb(26_16_48/0.35)] ring-1 ring-border transition-transform hover:-translate-y-0.5"><?php echo kmg_glyph('send', 'h-[18px] w-[18px]'); ?><span class="hidden sm:inline"><?php echo esc_html($float_tgl); ?></span></a>
+        <a href="<?php echo esc_url($float_tg); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr($float_tgl); ?>" class="inline-flex h-11 w-11 sm:h-12 items-center justify-center gap-2.5 rounded-full bg-white sm:w-auto sm:px-5 text-[15px] font-semibold text-ink shadow-[0_16px_32px_-12px_rgb(26_16_48/0.35)] ring-1 ring-border transition-transform hover:-translate-y-0.5"><?php echo kmg_glyph('send', 'h-[18px] w-[18px]'); ?><span class="hidden sm:inline"><?php echo esc_html($float_tgl); ?></span></a>
     <?php endif; ?>
 </div>
 <?php endif; ?>
