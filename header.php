@@ -150,8 +150,8 @@ $trust_items = array_values(array_filter((array) (function_exists('get_field') ?
             <?php endif; ?>
 
             <?php if ($phone_text !== '' && $phone_href !== '') : ?>
-            <a href="<?php echo esc_attr($phone_href); ?>" class="hidden items-center gap-3 rounded-xl py-1.5 pl-1.5 pr-4 transition-colors hover:bg-primary-softer xl:inline-flex">
-                <span class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-primary text-primary"><?php echo kmg_glyph('phone', 'h-[18px] w-[18px]'); ?></span>
+            <a href="<?php echo esc_attr($phone_href); ?>" class="group hidden items-center gap-3 rounded-xl py-1.5 pl-1.5 pr-4 transition-colors hover:bg-primary-soft xl:inline-flex">
+                <span class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-primary text-primary transition-colors group-hover:bg-primary group-hover:text-white"><?php echo kmg_glyph('phone', 'h-[18px] w-[18px]'); ?></span>
                 <span class="leading-tight">
                     <?php if ($phone_label !== '') : ?><span class="block text-[14px] font-semibold text-primary"><?php echo esc_html($phone_label); ?></span><?php endif; ?>
                     <span class="block font-heading text-[20px] font-bold leading-none text-ink"><?php echo esc_html($phone_text); ?></span>

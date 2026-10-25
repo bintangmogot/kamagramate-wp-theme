@@ -263,7 +263,7 @@ $initial_price = $variations
 
 <?php if ($in_stock && $variations && $sticky_label !== '') : ?>
 <div id="sticky-product-bar" class="pointer-events-none fixed inset-x-0 bottom-0 z-40 translate-y-full border-t border-border bg-white/95 opacity-0 backdrop-blur-md transition duration-300" aria-hidden="true" inert>
-    <div class="kmg-container flex items-center justify-between gap-3 py-3 pr-24 sm:pr-8">
+    <div class="kmg-container flex items-center justify-between gap-3 py-3">
         <div class="flex min-w-0 items-center gap-3">
             <?php if ($image_url) : ?><img src="<?php echo esc_url($image_url); ?>" alt="" class="hidden h-12 w-12 shrink-0 rounded-xl bg-primary-soft object-contain p-1 min-[420px]:block"><?php endif; ?>
             <div class="min-w-0">

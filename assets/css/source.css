@@ -2488,3 +2488,62 @@ footer .site-logo-img { height: 3.75rem !important; }
   .kmg-scroll-x::-webkit-scrollbar { display: none; }
   .kmg-scroll-x > * { scroll-snap-align: start; flex-shrink: 0; }
 }
+
+/*
+ * Product page sticky bar: lift the floating cart, chat buttons and toasts above it
+ * while it is visible (body.has-sticky-product-bar is toggled in single-product.php).
+ */
+.xoo-wsc-basket,
+.kmg-float,
+#kmg-contact-toast {
+  transition: transform 300ms ease-out;
+}
+body.has-sticky-product-bar .xoo-wsc-basket,
+body.has-sticky-product-bar .kmg-float,
+body.has-sticky-product-bar #kmg-contact-toast {
+  transform: translateY(-78px);
+}
+
+/*
+ * WooCommerce primary buttons (cart, checkout, place order) use the theme button:
+ * 12px radius, Afacad 600, soft neutral shadow instead of the purple glow.
+ */
+.woocommerce-cart .wc-proceed-to-checkout .checkout-button,
+.woocommerce-cart .checkout-button,
+#payment .place-order .button,
+.woocommerce #place_order,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 3.5rem !important;
+  padding: 0 2rem !important;
+  border-radius: 0.75rem !important;
+  font-family: var(--font-heading) !important;
+  font-size: 1.1875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  box-shadow: 0 6px 14px -8px rgb(0 0 0 / 0.28) !important;
+  transform: none !important;
+  transition: background-color 200ms ease-out, box-shadow 200ms ease-out !important;
+}
+.woocommerce-cart .wc-proceed-to-checkout .checkout-button:hover,
+.woocommerce-cart .checkout-button:hover,
+#payment .place-order .button:hover,
+.woocommerce #place_order:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover {
+  background-color: var(--color-primary-dark) !important;
+  box-shadow: 0 8px 18px -8px rgb(0 0 0 / 0.32) !important;
+}
+@media (max-width: 639px) {
+  .woocommerce-cart .wc-proceed-to-checkout .checkout-button,
+  .woocommerce #place_order,
+  .woocommerce a.button.alt,
+  .woocommerce button.button.alt {
+    min-height: 3.25rem !important;
+    font-size: 1.0625rem !important;
+  }
+}
