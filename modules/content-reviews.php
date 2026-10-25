@@ -27,19 +27,21 @@ $verified = trim((string) get_sub_field('verified_label'));
 $heading  = trim((string) get_sub_field('heading')) ?: get_the_title();
 ?>
 <section class="border-b border-border bg-primary-softer" data-testid="section-general-reviews">
-    <div class="kmg-container pb-16 pt-12 md:pb-20 md:pt-16">
+    <div class="kmg-container pb-10 pt-8 md:pb-12 md:pt-10">
         <?php get_template_part('template-parts/breadcrumbs'); ?>
-        <div class="mt-8 grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div class="lg:col-span-8">
+        <div class="mt-6 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div class="min-w-0 max-w-2xl">
                 <?php if (get_sub_field('eyebrow')) : ?><p class="kmg-eyebrow"><?php echo esc_html(get_sub_field('eyebrow')); ?></p><?php endif; ?>
-                <h1 class="kmg-display mt-4"><?php echo esc_html($heading); ?></h1>
-                <?php if (get_sub_field('description')) : ?><p class="kmg-lead mt-6 max-w-2xl"><?php echo esc_html(get_sub_field('description')); ?></p><?php endif; ?>
+                <h1 class="kmg-h2 mt-3"><?php echo esc_html($heading); ?></h1>
+                <?php if (get_sub_field('description')) : ?><p class="mt-3 text-[17px] leading-relaxed text-muted-foreground"><?php echo esc_html(get_sub_field('description')); ?></p><?php endif; ?>
             </div>
             <?php if ($total) : ?>
-                <div class="lg:col-span-4 lg:text-right">
-                    <p class="font-heading text-[4.5rem] font-bold leading-none tracking-normal text-ink"><?php echo esc_html(number_format($average, 1)); ?></p>
-                    <div class="mt-3 lg:flex lg:justify-end"><?php echo kmg_stars((int) round($average), 'h-6 w-6'); ?></div>
-                    <?php if ($summary !== '') : ?><p class="mt-2 text-[15px] text-muted-foreground"><?php echo esc_html(sprintf($summary, $total)); ?></p><?php endif; ?>
+                <div class="flex shrink-0 items-center gap-4 self-start rounded-2xl border border-border bg-white px-5 py-4 md:self-auto">
+                    <p class="font-heading text-[2.75rem] font-bold leading-none text-ink"><?php echo esc_html(number_format($average, 1)); ?></p>
+                    <div>
+                        <?php echo kmg_stars((int) round($average), 'h-5 w-5'); ?>
+                        <?php if ($summary !== '') : ?><p class="mt-1 text-[14px] text-muted-foreground"><?php echo esc_html(sprintf($summary, $total)); ?></p><?php endif; ?>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>
