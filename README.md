@@ -56,3 +56,10 @@ links), audience_grid ("used by"), popular_searches.
   `https://github.com/bintangmogot/kamagramate-wp-theme.git`, branch `main`, path
   `public_html/wp-content/themes/kamagramate-wp`. Updates: Manage -> Update from Remote.
   The built `assets/css/main.css` is committed, so no build step runs on the server.
+
+## Admin defaults carried to new projects
+
+When this theme is copied to start another site, keep these (they are in the theme, nothing to set up in WP Admin):
+
+- **Products always visible in Appearance > Menus** (`inc/theme-setup.php`, filter `get_user_option_metaboxhidden_nav-menus`). WordPress hides menu boxes per user through Screen Options, so a box ticked on one account stays hidden for every other account. The filter removes the Products and Product categories boxes from every user's hidden list, so a client who logs in can add products to menus straight away.
+- XML-RPC and the users REST route are blocked (`inc/security.php`).
