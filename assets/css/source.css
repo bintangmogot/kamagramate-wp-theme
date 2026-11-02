@@ -2585,12 +2585,19 @@ body img.footer-shipping-logo {
   line-height: 1.75;
 }
 .kmg-product-description {
-  padding-bottom: 3rem;
+  padding-bottom: 1.5rem;
 }
 .kmg-product-description + [data-testid="faqs"] {
-  padding-top: 3rem;
+  padding-top: 1.5rem;
+}
+/* Cancel the last paragraph's bottom margin and drop empty trailing tags the editor leaves behind. */
+.kmg-product-prose {
+  margin-bottom: -1.25rem;
+}
+.kmg-product-prose > :empty {
+  display: none;
 }
 @media (min-width: 768px) {
-  .kmg-product-description { padding-bottom: 4rem; }
-  .kmg-product-description + [data-testid="faqs"] { padding-top: 4rem; }
+  .kmg-product-description { padding-bottom: 2rem; }
+  .kmg-product-description + [data-testid="faqs"] { padding-top: 2rem; }
 }
