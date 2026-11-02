@@ -287,3 +287,15 @@ add_filter('acf/format_value/type=wysiwyg', 'waklert_wrap_prose_tables', 20);
 
 
 
+
+/**
+ * Appearance > Menus: always show the Products and Product categories boxes.
+ * WordPress stores which boxes are hidden per user (Screen Options), so a box
+ * ticked on one admin account stays hidden for every other account.
+ */
+add_filter('get_user_option_metaboxhidden_nav-menus', static function ($hidden) {
+    if (!is_array($hidden)) {
+        return $hidden;
+    }
+    return array_values(array_diff($hidden, ['add-post-type-product', 'add-product_cat']));
+});
