@@ -2574,3 +2574,23 @@ body img.footer-shipping-logo {
   height: 2.75rem;
   max-width: none;
 }
+
+/*
+ * Product page long description: body text 20% larger than the default prose size,
+ * and a tighter gap between the description and the FAQ section that follows it.
+ */
+.kmg-product-prose p,
+.kmg-product-prose li {
+  font-size: 1.2rem;
+  line-height: 1.75;
+}
+.kmg-product-description {
+  padding-bottom: 3rem;
+}
+.kmg-product-description + [data-testid="faqs"] {
+  padding-top: 3rem;
+}
+@media (min-width: 768px) {
+  .kmg-product-description { padding-bottom: 4rem; }
+  .kmg-product-description + [data-testid="faqs"] { padding-top: 4rem; }
+}

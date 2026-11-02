@@ -277,9 +277,9 @@ $initial_price = $variations
 <?php endif; ?>
 
 <?php if (trim(wp_strip_all_tags($description)) !== '') : ?>
-<section class="kmg-section kmg-section-tint" data-testid="section-product-description">
+<section class="kmg-section kmg-section-tint kmg-product-description" data-testid="section-product-description">
     <div class="kmg-container-narrow">
-        <div class="prose max-w-none text-[18px]"><?php echo apply_filters('the_content', $description); ?></div>
+        <div class="prose kmg-product-prose max-w-none"><?php echo apply_filters('the_content', $description); ?></div>
     </div>
 </section>
 <?php endif; ?>

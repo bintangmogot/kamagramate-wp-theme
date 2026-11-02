@@ -87,7 +87,7 @@ $badge_icon_map     = [
 ];
 ?>
 
-<?php if (!is_front_page() && !empty($pre_footer_enabled) && !empty($pre_footer_badges) && is_array($pre_footer_badges)) : ?>
+<?php if (!is_front_page() && !is_product() && !empty($pre_footer_enabled) && !empty($pre_footer_badges) && is_array($pre_footer_badges)) : ?>
 <section class="border-t border-border bg-primary-softer">
     <div class="kmg-container grid grid-cols-2 gap-x-6 gap-y-10 py-14 md:grid-cols-4 md:py-16">
         <?php foreach ($pre_footer_badges as $badge) :
