@@ -2575,14 +2575,51 @@ body img.footer-shipping-logo {
   max-width: none;
 }
 
-/*
- * Product page long description: body text 20% larger than the default prose size,
- * and a tighter gap between the description and the FAQ section that follows it.
- */
+/* Product page typography: increase the existing text sizes by 15%. */
+body.single-product #main nav[aria-label="Breadcrumb"] {
+  font-size: 16.1px;
+}
+body.single-product #main .prose {
+  font-size: 1.15rem;
+}
+body.single-product #main .prose p {
+  font-size: 1.15rem;
+}
+body.single-product #main .prose .lead { font-size: 1.29375rem; }
+body.single-product #main .prose h1 { font-size: 2.3rem; }
+body.single-product #main .prose h2 { font-size: 1.725rem; }
+body.single-product #main .prose h3 { font-size: 1.4375rem; }
+body.single-product #main .prose h4 { font-size: 1.29375rem; }
+body.single-product #main .prose h5 { font-size: 1.15rem; }
+body.single-product #main .prose h6 { font-size: 1.00625rem; }
+@media (min-width: 768px) {
+  body.single-product #main .prose h1 { font-size: 2.875rem; }
+  body.single-product #main .prose h2 { font-size: 2.15625rem; }
+  body.single-product #main .prose h3 { font-size: 1.725rem; }
+  body.single-product #main .prose h4 { font-size: 1.4375rem; }
+}
+body.single-product #main .kmg-btn,
+body.single-product #sticky-product-bar .kmg-btn {
+  font-size: 1.365625rem;
+}
+body.single-product #sticky-product-bar .kmg-btn-sm {
+  font-size: 1.221875rem;
+}
+body.single-product .woocommerce button.button.alt {
+  font-size: 1.365625rem !important;
+}
+body.single-product #main [data-testid="product-faqs"] summary h3 {
+  font-size: 1.509375rem;
+}
+
+/* Keep the long description's existing 20% emphasis, then apply the 15% increase. */
 .kmg-product-prose p,
 .kmg-product-prose li {
-  font-size: 1.2rem;
+  font-size: 1.38rem;
   line-height: 1.75;
+}
+body.single-product #main .kmg-product-prose p {
+  font-size: 1.38rem;
 }
 .kmg-product-description {
   padding-bottom: 1.5rem;

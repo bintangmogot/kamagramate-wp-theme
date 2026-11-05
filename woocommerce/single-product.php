@@ -124,7 +124,7 @@ $initial_price = $variations
         <div class="md:sticky md:top-32 md:self-start">
             <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[2.5rem] bg-primary-soft" data-testid="product-image">
                 <?php if ($badge !== '') : ?>
-                    <span class="absolute left-6 top-6 rounded-full bg-white px-4 py-1.5 text-[13px] font-bold text-ink"><?php echo esc_html($badge); ?></span>
+                    <span class="absolute left-6 top-6 rounded-full bg-white px-4 py-1.5 text-[14.95px] font-bold text-ink"><?php echo esc_html($badge); ?></span>
                 <?php endif; ?>
                 <?php if ($image_id) : ?>
                     <?php echo wp_get_attachment_image($image_id, 'large', false, ['class' => 'h-full w-full object-contain p-10 mix-blend-multiply md:p-14', 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => $product->get_name()]); ?>
@@ -137,18 +137,18 @@ $initial_price = $variations
 
         <div class="min-w-0">
             <?php if ($stock_badge !== '') : ?>
-                <p class="inline-flex items-center gap-2 text-[14px] font-semibold <?php echo $in_stock ? 'text-success' : 'text-destructive'; ?>">
+                <p class="inline-flex items-center gap-2 text-[16.1px] font-semibold <?php echo $in_stock ? 'text-success' : 'text-destructive'; ?>">
                     <span class="h-2 w-2 rounded-full <?php echo $in_stock ? 'bg-success' : 'bg-destructive'; ?>" aria-hidden="true"></span>
                     <?php echo esc_html($stock_badge); ?>
                 </p>
             <?php endif; ?>
 
-            <h1 class="mt-4 font-heading text-[clamp(2.25rem,1.7rem+2.4vw,3.75rem)] font-bold leading-[1.04] tracking-normal text-ink" data-testid="text-product-title"><?php echo esc_html($product->get_name()); ?></h1>
+            <h1 class="mt-4 font-heading text-[clamp(2.5875rem,1.955rem+2.76vw,4.3125rem)] font-bold leading-[1.04] tracking-normal text-ink" data-testid="text-product-title"><?php echo esc_html($product->get_name()); ?></h1>
             <?php if ($ingredient !== '') : ?>
-                <p class="mt-3 text-[18px] text-muted-foreground"><?php echo esc_html($ingredient); ?></p>
+                <p class="mt-3 text-[20.7px] text-muted-foreground"><?php echo esc_html($ingredient); ?></p>
             <?php endif; ?>
 
-            <p class="mt-8 font-heading text-[2.5rem] font-bold leading-none tracking-normal text-ink" data-testid="text-product-price">
+            <p class="mt-8 font-heading text-[2.875rem] font-bold leading-none tracking-normal text-ink" data-testid="text-product-price">
                 <?php echo $variations ? wp_kses_post(wc_price($initial_price)) : wp_kses_post($product->get_price_html()); ?>
             </p>
 
@@ -158,7 +158,7 @@ $initial_price = $variations
 
             <?php if ($free_message !== '' && is_numeric($free_threshold) && (float) $free_threshold > 0) :
                 $free_threshold = (float) $free_threshold; ?>
-                <p class="mt-8 flex items-center gap-3 rounded-2xl bg-primary-softer px-5 py-4 text-[15px] text-ink">
+                <p class="mt-8 flex items-center gap-3 rounded-2xl bg-primary-softer px-5 py-4 text-[17.25px] text-ink">
                     <?php echo waklert_render_card_icon(['icon_preset' => 'express_shipping', 'size_class' => 'h-6 w-6 shrink-0 text-primary']); ?>
                     <span><?php echo esc_html($free_message); ?> <strong><?php echo wp_kses_post(wc_price($free_threshold, ['decimals' => $free_threshold === floor($free_threshold) ? 0 : wc_get_price_decimals()])); ?></strong></span>
                 </p>
@@ -171,7 +171,7 @@ $initial_price = $variations
                 <form id="product-purchase-form" class="cart custom-variations-form mt-10" action="" method="post" enctype="multipart/form-data" data-buy-label="<?php echo esc_attr($buy_label); ?>">
                     <fieldset data-testid="variation-selector">
                         <?php if ($qty_heading !== '') : ?>
-                            <legend class="mb-4 font-heading text-[18px] font-bold text-ink"><?php echo esc_html($qty_heading); ?></legend>
+                            <legend class="mb-4 font-heading text-[20.7px] font-bold text-ink"><?php echo esc_html($qty_heading); ?></legend>
                         <?php endif; ?>
                         <div class="grid gap-2 sm:grid-cols-2" id="variation-rows">
                             <?php foreach ($variations as $i => $variation) :
@@ -196,8 +196,8 @@ $initial_price = $variations
                                     data-display-price-html="<?php echo esc_attr(wc_price($price)); ?>"
                                     data-per-tab="<?php echo esc_attr($count > 0 ? $price / $count : ''); ?>"
                                     data-val="<?php echo esc_attr($raw_val); ?>">
-                                    <span class="text-[16px] font-semibold text-ink"><?php echo esc_html($label); ?></span>
-                                    <span class="text-[16px] font-bold text-ink"><?php echo wp_kses_post(wc_price($price)); ?></span>
+                                    <span class="text-[18.4px] font-semibold text-ink"><?php echo esc_html($label); ?></span>
+                                    <span class="text-[18.4px] font-bold text-ink"><?php echo wp_kses_post(wc_price($price)); ?></span>
                                 </button>
                             <?php endforeach; ?>
                         </div>
@@ -205,10 +205,10 @@ $initial_price = $variations
 
                     <div class="mt-6 flex flex-col gap-3 lg:flex-row">
                         <div class="flex items-center justify-between gap-4 rounded-full border border-border px-2 lg:justify-start">
-                            <?php if ($qty_label !== '') : ?><span class="pl-4 text-[15px] font-semibold text-ink lg:hidden"><?php echo esc_html($qty_label); ?></span><?php endif; ?>
+                            <?php if ($qty_label !== '') : ?><span class="pl-4 text-[17.25px] font-semibold text-ink lg:hidden"><?php echo esc_html($qty_label); ?></span><?php endif; ?>
                             <div class="flex items-center">
                                 <button type="button" id="qty-dec" class="flex h-12 w-12 items-center justify-center rounded-full text-ink hover:bg-muted" aria-label="<?php echo esc_attr__('Decrease quantity', 'kamagramate'); ?>"><?php echo kmg_glyph('minus'); ?></button>
-                                <span id="qty-val" class="w-8 text-center text-[17px] font-bold text-ink" aria-live="polite">1</span>
+                                <span id="qty-val" class="w-8 text-center text-[19.55px] font-bold text-ink" aria-live="polite">1</span>
                                 <button type="button" id="qty-inc" class="flex h-12 w-12 items-center justify-center rounded-full text-ink hover:bg-muted" aria-label="<?php echo esc_attr__('Increase quantity', 'kamagramate'); ?>"><?php echo kmg_glyph('plus'); ?></button>
                             </div>
                         </div>
@@ -233,8 +233,8 @@ $initial_price = $variations
                         <li class="flex items-start gap-3 sm:flex-col">
                             <span class="kmg-icon !h-11 !w-11 !rounded-xl"><?php echo waklert_render_card_icon(['icon_preset' => $item['icon'], 'size_class' => 'h-5 w-5']); ?></span>
                             <span>
-                                <span class="block text-[15px] font-semibold text-ink"><?php echo esc_html($item['title']); ?></span>
-                                <?php if ($item['desc'] !== '') : ?><span class="block text-[14px] text-muted-foreground"><?php echo esc_html($item['desc']); ?></span><?php endif; ?>
+                                <span class="block text-[17.25px] font-semibold text-ink"><?php echo esc_html($item['title']); ?></span>
+                                <?php if ($item['desc'] !== '') : ?><span class="block text-[16.1px] text-muted-foreground"><?php echo esc_html($item['desc']); ?></span><?php endif; ?>
                             </span>
                         </li>
                     <?php endforeach; ?>
@@ -244,12 +244,12 @@ $initial_price = $variations
             <?php if ($specs) : ?>
                 <details open class="kmg-accordion group mt-10 border-t border-border">
                     <summary class="flex items-center justify-between py-6">
-                        <span class="font-heading text-[20px] font-bold text-ink"><?php echo esc_html($specs_heading); ?></span>
+                        <span class="font-heading text-[23px] font-bold text-ink"><?php echo esc_html($specs_heading); ?></span>
                         <span class="kmg-accordion-icon flex h-8 w-8 items-center justify-center rounded-full bg-primary-soft text-primary"><?php echo kmg_glyph('plus', 'h-4 w-4'); ?></span>
                     </summary>
                     <dl class="divide-y divide-border">
                         <?php foreach ($specs as $spec) : ?>
-                            <div class="flex items-start justify-between gap-6 py-4 text-[16px]">
+                            <div class="flex items-start justify-between gap-6 py-4 text-[18.4px]">
                                 <dt class="text-muted-foreground"><?php echo esc_html($spec[0]); ?></dt>
                                 <dd class="text-right font-semibold text-ink"><?php echo esc_html(wp_strip_all_tags((string) $spec[1])); ?></dd>
                             </div>
@@ -267,8 +267,8 @@ $initial_price = $variations
         <div class="flex min-w-0 items-center gap-3">
             <?php if ($image_url) : ?><img src="<?php echo esc_url($image_url); ?>" alt="" class="hidden h-12 w-12 shrink-0 rounded-xl bg-primary-soft object-contain p-1 min-[420px]:block"><?php endif; ?>
             <div class="min-w-0">
-                <p class="hidden truncate text-[14px] font-semibold text-ink sm:block"><?php echo esc_html($product->get_name()); ?></p>
-                <p class="text-[15px]"><span id="sticky-product-price" class="font-bold text-ink"><?php echo esc_html(wp_strip_all_tags(wc_price($initial_price))); ?></span> <span id="sticky-product-pack" class="text-muted-foreground"><?php echo esc_html($sticky_pack); ?></span></p>
+                <p class="hidden truncate text-[16.1px] font-semibold text-ink sm:block"><?php echo esc_html($product->get_name()); ?></p>
+                <p class="text-[17.25px]"><span id="sticky-product-price" class="font-bold text-ink"><?php echo esc_html(wp_strip_all_tags(wc_price($initial_price))); ?></span> <span id="sticky-product-pack" class="text-muted-foreground"><?php echo esc_html($sticky_pack); ?></span></p>
             </div>
         </div>
         <button id="sticky-product-submit" type="button" class="kmg-btn kmg-btn-primary kmg-btn-sm shrink-0"><?php echo esc_html($sticky_label); ?></button>
